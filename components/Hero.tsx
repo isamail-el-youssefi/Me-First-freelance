@@ -6,8 +6,16 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="relative bg-hero bg-cover bg-center bg-no-repeat h-[100vh] w-full z-10 pb-12">
-      {/* <span className="absolute top-0 left-0 h-full w-full bg-black z-0 opacity-25"></span> */}
+    <section className="relative h-[100vh] w-full z-10 pb-12">
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute top-0 left-0 object-cover w-full h-full"
+      >
+        <source src="sahara.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div className="max-container padding-container relative top-28 sm:top-1/3 z-10">
         <h1 className="bold-44 sm:bold-64 text-white capitalize max-w-[36rem]">
           Explore the world with us

@@ -25,7 +25,7 @@ module.exports = {
       },
      backgroundImage: {
         hero: "url('/hero.jpg')",
-        video: "url('/video7.jpg')"
+        video: "url('/sahara.mp4')"
       },
       screens: {
         xs: '400px',
