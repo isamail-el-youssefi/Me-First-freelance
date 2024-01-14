@@ -3,6 +3,7 @@ import Button from "./Button";
 import { CATEGORIES } from "@/constant";
 import Image from "next/image";
 import Link from "next/link";
+import { Span } from "next/dist/trace";
 
 const Hero = () => {
   return (
@@ -16,10 +17,10 @@ const Hero = () => {
         <source src="sahara.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="max-container padding-container relative top-28 sm:top-1/3 z-10">
-        <h1 className="bold-44 sm:bold-64 text-white capitalize max-w-[36rem]">
-          Explore the world with us
-        </h1>
+      <div className=" flex flex-col justify-center items-center padding-container relative top-[40%]  z-10">
+        <span className="bold-28 sm:bold-64 text-white capitalize ">
+        DISCOVER THE DESERT 
+        </span>
 
         <div className="btn mt-8">
           <Button
@@ -29,7 +30,7 @@ const Hero = () => {
             variant="btn_white_rounded"
           />
         </div>
-        <div className="pt-10 ">
+        {/* <div className="pt-10 ">
           <h4 className="text-white my-4 bold-22">Explore the key points.</h4>
           <ul className="flex flex-wrap gap-4">
             {CATEGORIES.map((category) => (
@@ -40,18 +41,18 @@ const Hero = () => {
               />
             ))}
           </ul>
-        </div>
+        </div> */}
       </div>
     </section>
   );
 };
 
-type CategoryItem = {
+/* type CategoryItem = {
   title: string;
   icon: string;
-};
+}; */
 
-const CategoryItem = ({ icon, title }: CategoryItem) => {
+/* const CategoryItem = ({ icon, title }: CategoryItem) => {
   return (
     <Link
       href="/"
@@ -67,6 +68,6 @@ const CategoryItem = ({ icon, title }: CategoryItem) => {
       <span className="capitalize regular-16">{title}</span>
     </Link>
   );
-};
+}; */
 
 export default Hero;

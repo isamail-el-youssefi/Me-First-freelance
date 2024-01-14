@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import Button from "./Button";
+import './Style/Components.css'
 
 const Navbar = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -11,24 +12,24 @@ const Navbar = () => {
 
   return (
     <nav
-      className="flexBetween max-container px-12 z-30 py-2 shadow-lg bg-white rounded-full ring-2 ring-slate-100 fixed w-[95%] 
-    left-[50%] translate-x-[-50%] top-2 "
+      className="flexBetween max-container px-12 z-30 py-1 shadow-lg bg-white rounded-xl  fixed w-[95%] 
+    left-[50%] translate-x-[-50%] top-5 "
     >
-      <Link href="/" className="xs:bold-20 xs:py-4 md:bold-28">
-        <span className="text-amber-900">LOVER OF SAHARA</span>
+      <Link href="/" className="xs:bold-22 xs:py-2 md:py-4 md:bold-28">
+        <span className="text-amber-950">LOVER OF SAHARA</span>
       </Link>
-      <div className="hidden lg:flex h-full">
+      <div className="hidden xl:flex h-full">
         {NAV_LINKS.map((link) => (
           <Link
             href={link.href}
             key={link.key}
-            className="flex gap-2 mx-4 relative group text-amber-800"
+            className="flex gap-2 mx-4 relative group text-amber-950"
           >
             <Image
               src={link.iconURL}
               alt={link.label}
-              height={20}
-              width={20}
+              height={24}
+              width={24}
               className="h-auto w-4"
             />
             {link.label}
@@ -36,7 +37,7 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      <div className="hidden lg:block">
+      <div className="hidden xl:block">
         <Button
           type="button"
           title="Login"
@@ -48,11 +49,11 @@ const Navbar = () => {
 
       {!menuOpened ? (
         <Image
-          src="menu.svg"
+          src="download.svg"
           alt="menu"
           width={28}
           height={28}
-          className="lg:hidden inline-block cursor-pointer"
+          className="xl:hidden inline-block cursor-pointer icon"
           onClick={toggleMenu}
         />
       ) : (
@@ -61,29 +62,29 @@ const Navbar = () => {
           alt="menu"
           width={28}
           height={28}
-          className="lg:hidden inline-block cursor-pointer"
+          className="xl:hidden inline-block cursor-pointer icon"
           onClick={toggleMenu}
         />
       )}
       <div
         className={
           menuOpened
-            ? "flex flex-col justify-center p-12 fixed top-[106%] bg-amber-100 rounded-3xl transition-all duration-500 shadow-md right-0"
-            : "flex flex-col justify-center p-12 fixed top-14 bg-amber-100 rounded-3xl transition-all duration-500 shadow-md right-[-100%]"
+            ? "flex flex-col justify-center w-full p-12 fixed top-[83%] bg-white rounded-b-lg border-none  transition-all duration-300 ease-in-out shadow-md right-0"
+            : "flex flex-col justify-center w-full p-12 fixed top-[83%] bg-white rounded-b-lg border-none  transition-all duration-300 ease-out shadow-md right-[-500%]"
         }
       >
         {NAV_LINKS.map((link) => (
           <Link
             href={link.href}
             key={link.key}
-            className="flex gap-1 m-6 relative group"
+            className="flex left-6 gap-2 m-10 text-xl relative  group"
           >
             <Image
               src={link.iconURL}
               alt={link.label}
               height={20}
               width={20}
-              className="h-auto w-4"
+              className="h-auto w-6"
             />
             {link.label}
             <span className="inline-block absolute h-[2px] w-0 bg-black -bottom-2 group-hover:w-full transition-all duration-500"></span>
