@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="flexBetween max-container px-12 z-30 py-1 shadow-lg bg-white rounded-xl  fixed w-[95%] 
+      className="flexBetween max-container px-12 z-30 py-3 sm:py-1 shadow-lg bg-white rounded-xl  fixed w-[95%] 
     left-[50%] translate-x-[-50%] top-5 "
     >
       <Link href="/" className="xs:bold-22 xs:py-2 md:py-4 md:bold-28">
@@ -33,15 +33,14 @@ const Navbar = () => {
               className="h-auto w-4"
             />
             {link.label}
-            <span className="inline-block absolute h-[2px] w-0 bg-amber-900 -bottom-2 group-hover:w-full transition-all duration-500"></span>
+            <span className=" absolute h-[3px] w-0 bg-amber-900 -bottom-[24.9px] group-hover:w-full transition-all duration-300 ease-in-out"></span>
           </Link>
         ))}
       </div>
       <div className="hidden xl:block">
         <Button
           type="button"
-          title="Login"
-          icon="/user.svg"
+          title="Get in touch"
           variant="btn_dark_rounded"
         />
       </div>

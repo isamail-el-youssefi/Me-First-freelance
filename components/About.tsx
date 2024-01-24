@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import { ABOUT } from "@/constant";
+import TripData from "./TripData";
+import { TRIPS } from "@/constant";
 
 const About = () => {
   return (
@@ -13,39 +14,32 @@ const About = () => {
       </div>
       <div className="flex flex-col gap-8 xl:flex-row pb-24">
         {/* LEFT */}
-        <div className="flex flex-1 flex-col justify-center items-center text-wrap xl:items-start ">
-          <h1 className="bold-22 md:bold-28 capitalize pb-4 text-amber-900">
-            Erg Chegaga, m'hamid el ghizlane
-          </h1>
-          <p className="text-amber-950 text-lg tracking-tight">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, illum temporibus aliquid distinctio eligendi nostrum
-            porro molestiae ea, necessitatibus, Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Consectetur error corrupti ex aperiam
-            doloribus error corrupti ex aperiam doloribus,Perferendis, illum
-            temporibus aliquid distinctio eligendi nostrum porro molestiae ea,
-            necessitatibus, Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Consectetur
-          </p>
-        </div>
+
+        <TripData
+          title={TRIPS.length > 0 ? TRIPS[0].place : "Default Title"}
+          detail={TRIPS.length > 0 ? TRIPS[0].details : "Default Title"}
+        />
+
         {/* RIGHT */}
-        <div className="flex flex-2 xl:flex-2 gap-4 lg:gap-4">
+        <div className="flex flex-2 xl:flex-2 gap-5">
           <div>
             <Image
-              src="/about1.jpg"
+              src="/sahara-7.jpg"
               alt="about"
               height={444}
               width={333}
-              className="w-auto rounded-lg border border-gray-10 mt-10 "
+              style={{ width: "100%", height: "85%" }}
+              className="w-auto  rounded-lg border  hover:border-amber-800 mt-10 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
             />
           </div>
           <div>
             <Image
-              src="/about2.jpg"
+              src="/chegaga-1.jpg"
               alt="about"
               height={444}
               width={333}
-              className="w-auto rounded-lg border border-gray-10 mb-10 "
+              style={{ width: "100%", height: "85%" }}
+              className="w-auto rounded-lg border hover:border-amber-800 mb-10 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
             />
           </div>
         </div>
@@ -54,57 +48,33 @@ const About = () => {
       <div className="flex flex-col-reverse gap-8 lg:flex-row">
         {/* LEFT */}
         <div className="flex flex-2 xl:flex-2 gap-4 lg:gap-4">
-          <div>
+          <div className="relative overflow-hidden">
             <Image
               src="/about1.jpg"
               alt="about"
-              height={444}
+              height={333}
               width={333}
-              className="w-auto rounded-lg border border-gray-10 mb-10 "
+              className="w-auto rounded-lg border-2 border-amber-800 mb-10 transform transition-transform duration-300 hover:scale-110"
             />
           </div>
           <div>
             <Image
               src="/about2.jpg"
               alt="about"
-              height={444}
+              height={333}
               width={333}
               className="w-auto rounded-lg border border-gray-10 mt-10 "
             />
           </div>
         </div>
         {/* RIGHT */}
-        <div className="flex flex-1 flex-col justify-center items-center text-wrap xl:items-start ">
-          <h1 className="bold-22 md:bold-28 capitalize pb-4 text-amber-900">
-            Erg Chegaga, m'hamid el ghizlane
-          </h1>
-          <p className="text-amber-950 text-lg tracking-tight">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis, illum temporibus aliquid distinctio eligendi nostrum
-            porro molestiae ea, necessitatibus, Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Consectetur error corrupti ex aperiam
-            doloribus error corrupti ex aperiam doloribus,Perferendis, illum
-            temporibus aliquid distinctio eligendi nostrum porro molestiae ea,
-            necessitatibus, Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Consectetur
-          </p>
-        </div>
+
+        <TripData
+          title={TRIPS.length > 0 ? TRIPS[1].place : "Default Title"}
+          detail={TRIPS.length > 0 ? TRIPS[1].details : "Default Title"}
+        />
       </div>
     </section>
-  );
-};
-
-type aboutItem = {
-  title: string;
-  icon: string;
-};
-
-const AboutItem = ({ icon, title }: aboutItem) => {
-  return (
-    <div className="w-1/2 flex gap-2 mb-4">
-      <Image src={icon} alt="icon" height={20} width={20} />
-      <p className="regular-14">{title}</p>
-    </div>
   );
 };
 

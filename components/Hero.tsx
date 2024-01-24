@@ -17,8 +17,8 @@ const Hero = () => {
         <source src="sahara.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className=" flex flex-col justify-center items-center padding-container relative top-[40%]  z-10">
-        <span className="bold-28 sm:bold-64 text-white capitalize ">
+      <div className=" flex flex-col justify-center items-center padding-container relative top-[42%]  z-10">
+        <span className="bold-48 sm:bold-64 text-white capitalize px-5 sm:px-20 text-center ">
         DISCOVER THE DESERT 
         </span>
 
