@@ -1,13 +1,33 @@
 // NAVIGATION
 export const NAV_LINKS = [
   { href: "/", key: "home", label: "Home", iconURL: "/home.svg" },
-  { href: "/", key: "about", label: "About", iconURL: "/about.svg" },
+  { href: "/about", key: "about", label: "About", iconURL: "/about.svg" },
   { href: "/", key: "packages", label: "Packages", iconURL: "/earth.svg" },
   { href: "/", key: "contact", label: "Contact", iconURL: "/contact.svg" },
 ];
 
 // CATEGORIES SECTION
 export const TRIPS = [
+  {
+    place: "Erg Chegaga, m'hamid el ghizlane",
+    details:"Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+  },
+  {
+    place: "Erg Chegaga, m'hamid el ghizlane",
+    details:"Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+  },
+  {
+    place: "Erg Chegaga, m'hamid el ghizlane",
+    details:"Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+  },
+  {
+    place: "Erg Chegaga, m'hamid el ghizlane",
+    details:"Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+  },
+];
+
+
+export const TRIPDAY = [
   {
     place: "Erg Chegaga, m'hamid el ghizlane",
     details:"Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",

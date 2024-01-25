@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+
 type ButtonProps = {
     type: 'button' | 'submit';
     title: string;

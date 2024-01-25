@@ -1,21 +1,18 @@
 import Image from "next/image";
 import React from "react";
-import DestinationData from "./DestinationData";
+import TripData from "../../components/DestinationData";
 import { TRIPS } from "@/constant";
 
 const About = () => {
   return (
-    <section className="max-container padding-container py-24">
+    <section className="max-container padding-container lg:pt-40 pt-36">
       <div className="flex flex-col justify-center items-center text-center">
-        <h1 className="bold-44  pb-2 text-amber-900">Popular Destinations</h1>
-        <p className="text-amber-950 pb-10 tracking-tight text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing
-        </p>
+        <h1 className="bold-44  pb-5 text-amber-900">About Us</h1>
       </div>
       <div className="flex flex-col gap-8 xl:flex-row pb-24">
         {/* LEFT */}
 
-        <DestinationData
+        <TripData
           title={TRIPS.length > 0 ? TRIPS[0].place : "Default Title"}
           detail={TRIPS.length > 0 ? TRIPS[0].details : "Default Title"}
         />
@@ -43,36 +40,6 @@ const About = () => {
             />
           </div>
         </div>
-      </div>
-      {/* SECOND CONTAINER */}
-      <div className="flex flex-col-reverse gap-8 lg:flex-row">
-        {/* LEFT */}
-        <div className="flex flex-2 xl:flex-2 gap-4 lg:gap-4">
-          <div className="relative overflow-hidden">
-            <Image
-              src="/about1.jpg"
-              alt="about"
-              height={333}
-              width={333}
-              className="w-auto rounded-lg border-2 border-amber-800 mb-10 transform transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-          <div>
-            <Image
-              src="/about2.jpg"
-              alt="about"
-              height={333}
-              width={333}
-              className="w-auto rounded-lg border border-gray-10 mt-10 "
-            />
-          </div>
-        </div>
-        {/* RIGHT */}
-
-        <DestinationData
-          title={TRIPS.length > 0 ? TRIPS[1].place : "Default Title"}
-          detail={TRIPS.length > 0 ? TRIPS[1].details : "Default Title"}
-        />
       </div>
     </section>
   );

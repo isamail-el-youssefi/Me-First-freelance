@@ -19,6 +19,7 @@ const Packages = () => {
         height={1280}
         btnType="button"
         btnTitle="MORE DETAILS"
+        link="about"
         />
         <TripPackages
         iamgeSrc="/test2.jpg"
@@ -29,6 +30,8 @@ const Packages = () => {
         height={300}
         btnType="button"
         btnTitle="MORE DETAILS"
+        link="about"
+
         />
         <TripPackages
         iamgeSrc="/test3.jpg"
@@ -39,6 +42,8 @@ const Packages = () => {
         height={300}
         btnType="button"
         btnTitle="MORE DETAILS"
+        link="about"
+
         />
 
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface TripPackagesProps {
   iamgeSrc: string;
@@ -11,6 +12,7 @@ interface TripPackagesProps {
   btnType: "button" | "submit";
   btnTitle: string;
   btnIcon?: string;
+  link: string;
 }
 
 const TripPackages: React.FC<TripPackagesProps> = (props) => {
@@ -31,26 +33,27 @@ const TripPackages: React.FC<TripPackagesProps> = (props) => {
       </h4>
       <p className="text-amber-950 text-justify px-1 pb-4 ">{props.text}</p>
       <div className="flex justify-center pt-4 pb-3">
-      <button
-        className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3.5 text-white hover:bold-16 hover:text-amber-900 transition-all hover:bg-white " 
-        /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
+        <Link href={props.link}>
+          <button
+            className="flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3.5 text-white hover:bold-16 hover:text-amber-950 transition-all hover:bg-white "
+            /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
 
-        type={props.btnType}
-      >
-        {props.btnIcon && (
-          <Image
-            src={props.btnIcon}
-            alt={props.btnTitle}
-            width={20}
-            height={20}
-          />
-        )}
-        <label className="whitespace-nowrap cursor-pointer text-sm">
-          {props.btnTitle}
-        </label>
-      </button>
+            type={props.btnType}
+          >
+            {props.btnIcon && (
+              <Image
+                src={props.btnIcon}
+                alt={props.btnTitle}
+                width={20}
+                height={20}
+              />
+            )}
+            <label className="whitespace-nowrap cursor-pointer text-sm">
+              {props.btnTitle}
+            </label>
+          </button>
+        </Link>
       </div>
-
     </div>
   );
 };

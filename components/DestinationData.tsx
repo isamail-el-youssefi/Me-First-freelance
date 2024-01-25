@@ -7,7 +7,7 @@ interface TripDataProps {
 }
 
 // Use the defined type for props
-const TripData: React.FC<TripDataProps> = (props) => {
+const DestinationData: React.FC<TripDataProps> = (props) => {
   return (
     <div className="flex flex-1 flex-col justify-center items-center text-wrap xl:items-start">
       <h1 className="bold-22 md:bold-28 capitalize pb-4 text-amber-900">
@@ -20,4 +20,4 @@ const TripData: React.FC<TripDataProps> = (props) => {
   );
 };
 
-export default TripData;
+export default DestinationData;
