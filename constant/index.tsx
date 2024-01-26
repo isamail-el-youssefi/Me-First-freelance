@@ -10,40 +10,66 @@ export const NAV_LINKS = [
 export const TRIPS = [
   {
     place: "Erg Chegaga, m'hamid el ghizlane",
-    details:"Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+    details:
+      "Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
   },
   {
     place: "Erg Chegaga, m'hamid el ghizlane",
-    details:"Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+    details:
+      "Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
   },
   {
     place: "Erg Chegaga, m'hamid el ghizlane",
-    details:"Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+    details:
+      "Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
   },
   {
     place: "Erg Chegaga, m'hamid el ghizlane",
-    details:"Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+    details:
+      "Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
   },
 ];
 
-
 export const TRIPDAY = [
-  {
-    place: "Erg Chegaga, m'hamid el ghizlane",
-    details:"Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
-  },
-  {
-    place: "Erg Chegaga, m'hamid el ghizlane",
-    details:"Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
-  },
-  {
-    place: "Erg Chegaga, m'hamid el ghizlane",
-    details:"Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
-  },
-  {
-    place: "Erg Chegaga, m'hamid el ghizlane",
-    details:"Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
-  },
+  [
+    {
+      days: "JOUR 1",
+      details:
+        "Départ le matin après le petit-déjeuner en direction de M’Hamid où la caravane vous attendra. Après 3h de marche, déjeuner à Race Nkhal. Vers 15h, départ pour Oued Naam avec 2h de marche. Bivouac et dîner à côté de magnifiques dunes. ",
+    },
+    {
+      days: "JOUR 2",
+      details:
+        "Départ de Oued Naam vers 8h, marche de 3h en traversant un grand lac séché (reg). Déjeuner à Loitide. Nous repartons vers 15h pour une randonnée à travers une région de dunes merveilleuses (erg). Bivouac et dîner. ",
+    },
+    {
+      days: "JOUR 3",
+      details:
+        "Après le petit-déjeuner, nous allons traverser la Hamada (désert de pierres). Déjeuner à l’Oasis Sacrée. L’après-midi, départ pour les Dunes de Chegaga. C’est la plus grande et vaste dune de la région culminant à 300m d’altitude et s’étalant sur plus de 40 km de long. Repas du soir et nuit sous les tentes nomades. ",
+    },
+    {
+      days: "JOUR 4",
+      details:
+        "Après le petit-déjeuner, retour en 4×4 à Zagora, en passant par M’Hamid et Tamegroute. Arrivée vers 11h à Zagora.",
+    },
+  ],
+  [
+    {
+      days: "JOUR 1",
+      details:
+        "Départ le matin après le petit-déjeuner en direction de M’Hamid où la caravane vous attendra. Après 3h de marche, déjeuner à Race Nkhal. Vers 15h, départ pour Oued Naam avec 2h de marche. Bivouac et dîner à côté de magnifiques dunes. ",
+    },
+    {
+      days: "JOUR 2",
+      details:
+        "Départ de Oued Naam vers 8h, marche de 3h en traversant un grand lac séché (reg). Déjeuner à Loitide. Nous repartons vers 15h pour une randonnée à travers une région de dunes merveilleuses (erg). Bivouac et dîner. ",
+    },
+    {
+      days: "JOUR 3",
+      details:
+        "Après le petit-déjeuner, nous allons traverser la Hamada (désert de pierres). Déjeuner à l’Oasis Sacrée. L’après-midi, départ pour les Dunes de Chegaga. C’est la plus grande et vaste dune de la région culminant à 300m d’altitude et s’étalant sur plus de 40 km de long. Repas du soir et nuit sous les tentes nomades. ",
+    },
+  ]
 ];
 // CATEGORIES SECTION
 export const CATEGORIES = [
