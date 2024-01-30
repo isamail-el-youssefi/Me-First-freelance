@@ -3,7 +3,7 @@ import React from "react";
 import TripData from "../../components/DestinationData";
 import { TRIPS } from "@/constant";
 
-const About = () => {
+const page = () => {
   return (
     <section className="max-container padding-container lg:pt-40 pt-36">
       <div className="flex flex-col justify-center items-center text-center">
@@ -45,4 +45,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default page;

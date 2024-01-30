@@ -1,8 +1,7 @@
 import Packages from "@/components/Packages";
-import TripPackages from "@/components/TripPackages";
 import React from "react";
 
-const Trips = () => {
+const page = () => {
   return (
     <div className="pt-14">
       <Packages />
@@ -10,4 +9,4 @@ const Trips = () => {
   );
 };
 
-export default Trips;
+export default page;

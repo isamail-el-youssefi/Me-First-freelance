@@ -19,16 +19,18 @@ const Hero = () => {
       </video>
       <div className=" flex flex-col justify-center items-center padding-container relative top-[42%]  z-10">
         <span className="bold-48 sm:bold-64 text-white capitalize px-5 sm:px-20 text-center ">
-        DISCOVER THE DESERT 
+          DISCOVER THE DESERT
         </span>
 
         <div className="btn mt-8">
-          <Button
-            type="button"
-            title="Travel Plan"
-            icon="/send-plane.svg"
-            variant="btn_white_rounded"
-          />
+          <button
+            className="flexCenter gap-2 border-2 rounded-full border-white hover:border-amber-950 bg-white px-8 py-3.5 text-white hover:bold-16 hover:text-amber-950 transition-all bg-transparent "
+            /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
+          >
+            <label className="whitespace-nowrap cursor-pointer text-sm">
+              Get In Touch
+            </label>
+          </button>
         </div>
         {/* <div className="pt-10 ">
           <h4 className="text-white my-4 bold-22">Explore the key points.</h4>
