@@ -6,6 +6,7 @@ import Testimonial from "@/components/Testimonial";
 import Video from "@/components/Video";
 import Slide from "@/components/Slide"
 import React from "react";
+import Footer from "@/components/Footer";
 
 const page = () => {
   return (
@@ -14,8 +15,7 @@ const page = () => {
       <Feature />
       <About />
       <Packages />
-      <Video />
-      <Testimonial />
+
     </>
   );
 };

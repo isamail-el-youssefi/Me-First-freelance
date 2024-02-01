@@ -69,7 +69,7 @@ export const TRIPDAY = [
       details:
         "Après le petit-déjeuner, nous allons traverser la Hamada (désert de pierres). Déjeuner à l’Oasis Sacrée. L’après-midi, départ pour les Dunes de Chegaga. C’est la plus grande et vaste dune de la région culminant à 300m d’altitude et s’étalant sur plus de 40 km de long. Repas du soir et nuit sous les tentes nomades. ",
     },
-  ]
+  ],
 ];
 // CATEGORIES SECTION
 export const CATEGORIES = [

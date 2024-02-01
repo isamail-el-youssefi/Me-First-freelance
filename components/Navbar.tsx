@@ -23,10 +23,10 @@ const Navbar = () => {
           <Link
             href={link.href}
             key={link.key}
-            className="flex gap-2 mx-4 relative group text-amber-950 text-md"
+            className="flex gap-2 mx-4 relative group text-amber-950 text-md py-5"
           >
             {link.label}
-            <span className=" absolute h-[3px] w-0 bg-amber-900 -bottom-[24.9px] group-hover:w-full transition-all duration-300 ease-in-out"></span>
+            <span className=" absolute h-[2.5px] w-0 bg-amber-900 -bottom-[6px]  group-hover:w-full group-focus:w-full transition-all duration-300 ease-in-out"></span>
           </Link>
         ))}
       </div>

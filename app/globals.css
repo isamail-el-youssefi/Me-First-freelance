@@ -151,6 +151,9 @@ body {
   .bold-16 {
     @apply text-[16px] font-[700];
   }
+  .bold-13 {
+    @apply text-[13px] font-[700];
+  }
 
 }
 
