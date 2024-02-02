@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/carousel";
 
 import { TRIPDAY } from "@/constant";
-import { Fullscreen } from "lucide-react";
 
 interface PageProps {
   Heading: string;
@@ -111,7 +110,6 @@ const Page: React.FC<PageProps> = (props) => {
                   />
                 </CarouselItem>
                 <CarouselItem>
-                  {" "}
                   <Image
                     src= {props.carousel3}
                     alt="about"
