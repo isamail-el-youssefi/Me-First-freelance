@@ -3,7 +3,7 @@ import Button from "./Button";
 import { CATEGORIES } from "@/constant";
 import Image from "next/image";
 import Link from "next/link";
-import { Span } from "next/dist/trace";
+
 
 const Hero = () => {
   return (
