@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import Packages from "@/components/Packages";
 import Testimonial from "@/components/Testimonial";
 import Video from "@/components/Video";
-import Slide from "@/components/Slide"
+import Slide from "@/components/Slide";
 import React from "react";
 import Footer from "@/components/Footer";
 
@@ -12,10 +12,8 @@ const page = () => {
   return (
     <>
       <Hero />
-      <Feature />
       <About />
       <Packages />
-
     </>
   );
 };

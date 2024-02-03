@@ -4,7 +4,6 @@ import { CATEGORIES } from "@/constant";
 import Image from "next/image";
 import Link from "next/link";
 
-
 const Hero = () => {
   return (
     <section className="relative h-[100vh] w-full z-10 pb-12">
@@ -22,16 +21,19 @@ const Hero = () => {
           DISCOVER THE DESERT
         </span>
 
-        <div className="btn mt-8">
-          <button
-            className="flexCenter gap-2 border-2 rounded-full border-white hover:border-amber-950 bg-white px-8 py-3.5 text-white hover:bold-16 hover:text-amber-950 transition-all bg-transparent "
-            /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
-          >
-            <label className="whitespace-nowrap cursor-pointer text-sm">
-              Get In Touch
-            </label>
-          </button>
-        </div>
+        <Link href={'/trips'}>
+          <div className="btn mt-8">
+            <button
+              className="flexCenter gap-2 rounded-full  bg-white hover:bg-amber-950  hover:text-white px-8 py-3.5  bold-16  transition-all ease-in-out duration-500 "
+              /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
+            >
+              <label className="whitespace-nowrap cursor-pointer text-sm">
+                View Tours
+              </label>
+            </button>
+          </div>
+        </Link>
+
         {/* <div className="pt-10 ">
           <h4 className="text-white my-4 bold-22">Explore the key points.</h4>
           <ul className="flex flex-wrap gap-4">

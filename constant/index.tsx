@@ -24,9 +24,9 @@ export const TRIPS = [
       "Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
   },
   {
-    place: "Erg Chegaga, m'hamid el ghizlane",
+    place: "Salah Mouna | Tour Guide",
     details:
-      "Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+      "Welcome to Salah Mouna's Desert Tours! With over 4 years of experience, I am passionate about guiding people to discover the beauty of the Moroccan desert. Join me for an unforgettable journey through stunning landscapes, traditional culture, and thrilling adventures. Let me be your trusted companion in exploring the wonders of the desert.",
   },
 ];
 

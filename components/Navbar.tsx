@@ -3,7 +3,6 @@ import { NAV_LINKS } from "@/constant";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import Button from "./Button";
 import "./Style/Components.css";
 
 const Navbar = () => {
@@ -72,19 +71,24 @@ const Navbar = () => {
           <Link
             href={link.href}
             key={link.key}
-            className="flex left-6 gap-2 m-10 text-xl relative  group"
+            className="flex text-amber-900  gap-2 my-7 mx-7 text-xl font-medium hover:font-semibold hover:text-amber-950  relative  group"
           >
-            <Image
-              src={link.iconURL}
-              alt={link.label}
-              height={20}
-              width={20}
-              className="h-auto w-6"
-            />
             {link.label}
-            <span className="inline-block absolute h-[2px] w-0 bg-black -bottom-2 group-hover:w-full transition-all duration-500"></span>
+            <span className="inline-block absolute h-[2px] w-0 bg-amber-950 -bottom-2 group-hover:w-28 transition-all duration-500"></span>
           </Link>
         ))}
+        <Link href={"/contact"}>
+          <div className="pt-7 mx-7">
+            <button
+              className="flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3.5 text-white hover:bold-16 hover:text-amber-950 transition-all hover:bg-white "
+              /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
+            >
+              <label className="whitespace-nowrap cursor-pointer text-sm">
+                Get In Touch
+              </label>
+            </button>
+          </div>
+        </Link>
       </div>
     </nav>
   );

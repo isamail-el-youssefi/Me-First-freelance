@@ -7,14 +7,14 @@ const page = () => {
   return (
     <section className="max-container padding-container lg:pt-40 pt-36">
       <div className="flex flex-col justify-center items-center text-center">
-        <h1 className="bold-44  pb-5 text-amber-900">About Us</h1>
+        <h1 className="bold-44  pb-5 text-amber-900">About Me</h1>
       </div>
       <div className="flex flex-col gap-8 xl:flex-row pb-24">
         {/* LEFT */}
 
         <TripData
-          title={TRIPS.length > 0 ? TRIPS[0].place : "Default Title"}
-          detail={TRIPS.length > 0 ? TRIPS[0].details : "Default Title"}
+          title={TRIPS.length > 0 ? TRIPS[3].place : "Default Title"}
+          detail={TRIPS.length > 0 ? TRIPS[3].details : "Default Title"}
         />
 
         {/* RIGHT */}
