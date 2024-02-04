@@ -18,25 +18,23 @@ const page = () => {
         />
 
         {/* RIGHT */}
-        <div className="flex flex-2 xl:flex-2 gap-5">
+        <div className="flex  flex-2 md:flex-1 gap-3">
           <div>
             <Image
-              src="/sahara-7.jpg"
+              src="/about2.jpg"
               alt="about"
-              height={444}
-              width={333}
-              style={{ width: "100%", height: "85%" }}
-              className="w-auto  rounded-lg border  hover:border-amber-800 mt-10 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
+              height={1500}
+              width={1000}
+              className="w-auto  rounded-lg border  hover:border-amber-800 mt-8 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
             />
           </div>
           <div>
             <Image
-              src="/chegaga-1.jpg"
+              src="/about22.jpg"
               alt="about"
-              height={444}
-              width={333}
-              style={{ width: "100%", height: "85%" }}
-              className="w-auto rounded-lg border hover:border-amber-800 mb-10 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
+              height={1500}
+              width={1000}
+              className="w-auto rounded-lg border hover:border-amber-800 mb-8 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
             />
           </div>
         </div>

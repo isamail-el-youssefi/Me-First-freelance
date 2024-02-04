@@ -6,22 +6,39 @@ const Contact = () => {
   return (
     <section>
       <div className="relative h-[100vh] w-full z-10 pb-12">
-        <Image
+{/*         <Image
           src="/oasis3.jpg"
           alt="about"
           height={3000}
           width={4200}
           style={{ width: "100%", height: "100%" }}
           className="absolute top-0 left-0 object-cover w-full h-full"
+        /> */}
+        <Image
+          src="/contact1.jpg"
+          alt="about"
+          height={1260}
+          width={1920}
+          style={{ width: "100%", height: "100%" }}
+          className="absolute top-0 left-0 object-cover w-full h-full"
         />
-        <div className=" flex flex-col justify-center items-center padding-container relative top-[46%]  z-10">
-          <span className="bold-44 sm:bold-52 lg:bold-64 text-white capitalize px-5 sm:px-20 text-center ">
+        <div className=" flex flex-col justify-center items-center padding-container relative top-[38%] md:top-[34%]  z-10">
+          <span className="bold-32 sm:bold-32 lg:bold-64 text-white capitalize px-5 sm:px-20 text-center ">
             CONTACT ME.
           </span>
+          <Link href={"#Contact"}>
+            <Image
+              src="/down.png"
+              alt="Down arrow"
+              height={55}
+              width={55}
+              className=" hover:scale-105 duration-300 transition-all ease-in  mt-2 w-[45px] h-[45px] lg:w-[55px] lg:h-[55px] "
+            />
+          </Link>
         </div>
       </div>
-      <div className="max-container padding-container py-12">
-        <h4 className="bold-28 md:bold-32 capitalize  px-1 pb-16 text-amber-900 text-center ">
+      <div id="Contact" className="max-container padding-container pt-24 pb-">
+        <h4 className="bold-28 md:bold-32 capitalize  px-1 pb-16 text-amber-900 text-center leading-10 lg:px-40 3xl:px-96 ">
           I would be delighted to address any inquiries you may have
         </h4>
         <div className="grid sm:grid-flow-col  justify-evenly pb-4">

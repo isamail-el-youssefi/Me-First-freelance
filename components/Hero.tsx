@@ -13,7 +13,7 @@ const Hero = () => {
         muted
         className="absolute top-0 left-0 object-cover w-full h-full"
       >
-        <source src="sahara.mp4" type="video/mp4" />
+        <source src="herovideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className=" flex flex-col justify-center items-center padding-container relative top-[42%]  z-10">

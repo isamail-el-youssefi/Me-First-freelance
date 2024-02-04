@@ -18,50 +18,50 @@ const About = () => {
         />
 
         {/* RIGHT */}
-        <div className="flex flex-2 xl:flex-2 gap-5">
+        <div className="flex flex-1 gap-5">
           <div>
             <Image
-              src="/sahara-7.jpg"
+              src="/chegaga2.jpg"
               alt="about"
-              height={444}
-              width={333}
-              style={{ width: "100%", height: "85%" }}
-              className="w-auto  rounded-lg border  hover:border-amber-800 mt-10 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
+              height={888}
+              width={666}
+              style={{ width: "100%", height: "87%" }}
+              className="w-auto  rounded-lg border hover:border-amber-800 mt-10 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
             />
           </div>
           <div>
             <Image
-              src="/chegaga-1.jpg"
+              src="/chegaga1.jpg"
               alt="about"
-              height={444}
-              width={333}
-              style={{ width: "100%", height: "85%" }}
-              className="w-auto rounded-lg border hover:border-amber-800 mb-10 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
+              height={888}
+              width={666}
+              style={{ width: "100%", height: "87%" }}
+              className="w-auto  rounded-lg border  hover:border-amber-800 mb-10 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
             />
           </div>
         </div>
       </div>
       {/* SECOND CONTAINER */}
-      <div className="flex flex-col-reverse gap-8 lg:flex-row pb-12">
+      <div className="flex flex-col-reverse gap-8 xl:flex-row pb-12">
         {/* LEFT */}
-        <div className="flex flex-2 xl:flex-2 gap-5">
+        <div className="flex flex-1 gap-5">
           <div>
             <Image
-              src="/sahara-7.jpg"
+              src="/fint1.jpg"
               alt="about"
-              height={444}
-              width={333}
-              style={{ width: "100%", height: "85%" }}
+              height={888}
+              width={666}
+              style={{ width: "100%", height: "87%" }}
               className="w-auto  rounded-lg border hover:border-amber-800 mb-10 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
             />
           </div>
           <div>
             <Image
-              src="/chegaga-1.jpg"
+              src="/fint2.jpg"
               alt="about"
-              height={444}
-              width={333}
-              style={{ width: "100%", height: "85%" }}
+              height={888}
+              width={666}
+              style={{ width: "100%", height: "87%" }}
               className="w-auto  rounded-lg border  hover:border-amber-800 mt-10 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
             />
           </div>
@@ -82,25 +82,25 @@ const About = () => {
         />
 
         {/* RIGHT */}
-        <div className="flex flex-2 xl:flex-2 gap-5">
+        <div className="flex flex-1 gap-5">
           <div>
             <Image
-              src="/sahara-7.jpg"
+              src="/ait1.jpg"
               alt="about"
-              height={444}
-              width={333}
-              style={{ width: "100%", height: "85%" }}
-              className="w-auto  rounded-lg border  hover:border-amber-800 mt-10 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
+              height={888}
+              width={666}
+              style={{ width: "100%", height: "87%" }}
+              className="w-auto  rounded-lg border hover:border-amber-800 mt-10 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
             />
           </div>
           <div>
             <Image
-              src="/chegaga-1.jpg"
+              src="/ait2.jpg"
               alt="about"
-              height={444}
-              width={333}
-              style={{ width: "100%", height: "85%" }}
-              className="w-auto rounded-lg border hover:border-amber-800 mb-10 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
+              height={888}
+              width={666}
+              style={{ width: "100%", height: "87%" }}
+              className="w-auto  rounded-lg border  hover:border-amber-800 mb-10 hover:scale-105  transition-all ease-in-out duration-300 cursor-pointer "
             />
           </div>
         </div>
