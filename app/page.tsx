@@ -6,7 +6,7 @@ import Testimonial from "@/components/Testimonial";
 import Video from "@/components/Video";
 import Slide from "@/components/Slide";
 import React from "react";
-import Footer from "@/components/Footer";
+import CarouselMain from "@/components/Carousel";
 
 const page = () => {
   return (
@@ -14,6 +14,7 @@ const page = () => {
       <Hero />
       <About />
       <Packages />
+      <CarouselMain />
     </>
   );
 };

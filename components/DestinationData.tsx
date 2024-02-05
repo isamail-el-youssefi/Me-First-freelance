@@ -1,4 +1,3 @@
-import { TRIPS } from "@/constant";
 
 // Define the type for your props
 interface TripDataProps {

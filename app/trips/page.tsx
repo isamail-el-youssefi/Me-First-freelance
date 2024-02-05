@@ -3,7 +3,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="pt-14">
+    <div className="lg:pt-40 pt-36">
       <Packages />
     </div>
   );

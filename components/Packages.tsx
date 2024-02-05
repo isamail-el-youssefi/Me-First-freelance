@@ -2,7 +2,7 @@ import TripPackages from "./TripPackages"
 
 const Packages = () => {
   return (
-    <section className="max-container padding-container py-10">
+    <section className="max-container padding-container py-16">
       <div className="flex flex-col justify-center items-center text-center">
         <h1 className="bold-44  pb-2 text-amber-900">Popular Destinations</h1>
         <p className="text-amber-950 pb-10 tracking-tight text-lg">

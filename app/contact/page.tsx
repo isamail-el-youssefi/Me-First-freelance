@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <section>
       <div className="relative h-[100vh] w-full z-10 pb-12">
-{/*         <Image
+        {/*         <Image
           src="/oasis3.jpg"
           alt="about"
           height={3000}
@@ -37,51 +37,56 @@ const Contact = () => {
           </Link>
         </div>
       </div>
-      <div id="Contact" className="max-container padding-container pt-24 pb-">
-        <h4 className="bold-28 md:bold-32 capitalize  px-1 pb-16 text-amber-900 text-center leading-10 lg:px-40 3xl:px-96 ">
+      <div id="Contact" className="max-container padding-container pt-24 pb-6">
+        <h4 className="bold-22 md:bold-32 capitalize  px-1 pb-16 md:pb-20 text-amber-900 text-center leading-10 lg:px-40 3xl:px-96 ">
           I would be delighted to address any inquiries you may have
         </h4>
-        <div className="grid sm:grid-flow-col  justify-evenly pb-4">
-          <div className="flex flex-col items-center pb-10 ">
+        <div className="grid sm:grid-flow-col  justify-around pb-4 md:pb-8">
+          <div className="flex flex-col items-center pb-14 ">
             <Image
               src="/phone.png"
               alt="phone"
               height={64}
               width={64}
-              style={{ width: "45%", height: "45%" }}
+              style={{ width: "25%", height: "30%" }}
             />
-            <span className="pb-3"></span>
+            <span className="mb-7"></span>
 
-            <p className="text-amber-950  tra text-2xl pb-2 px-3">Call me at</p>
-            <div>NUMBER</div>
+            <p className="text-amber-800  tra text-2xl pb-2 x-3">Call me at</p>
+            <div>+212 6677345712</div>
           </div>
-          <div className="flex flex-col items-center pb-10 ">
-            <Image
-              src="/whatsapp.png"
-              alt="whatsapp"
-              height={64}
-              width={64}
-              style={{ width: "45%", height: "45%" }}
-            />
-            <span className="pb-3"></span>
-            <p className="text-amber-950  tracking-tight text-2xl pb-2 px-3 ">
-              Text me at
-            </p>
-            <div>NUMBER</div>
-          </div>
-          <div className="flex flex-col items-center pb-10  ">
+          <div className="flex flex-col items-center pb-14  ">
             <Image
               src="/email.png"
               alt="phone"
               height={64}
               width={64}
-              style={{ width: "45%", height: "45%" }}
+              style={{ width: "25%", height: "30%" }}
             />
-            <span className="pb-3"></span>
-            <p className="text-amber-950  tracking-tight text-2xl pb-2 ">
+            <span className="mb-7"></span>
+            <p className="text-amber-800  tracking-tight text-2xl pb-1 ">
               Email me at
             </p>
-            <div>NUMBER</div>
+            <div>loveroffsahara@gmail.com</div>
+          </div>
+          <div className="flex flex-col items-center pb-14 ">
+            <Image
+              src="/whatsapp.png"
+              alt="whatsapp"
+              height={64}
+              width={64}
+              style={{ width: "25%", height: "30%" }}
+            />
+            <span className="mb-7"></span>
+            <p className="text-amber-800  tracking-tight text-2xl pb-2 mx-3 ">
+              Text me at
+            </p>
+            <div
+              className=" cursor-pointer flexCenter gap-2 border-2 rounded-full border-amber-800 hover:border-amber-800 bg-amber-800 px-8 py-2.5 text-white font-semibold hover:text-amber-800 transition-all duration-300 ease-out hover:bg-white "
+              /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
+            >
+              <div className="whitespace-nowrap  text-sm">Whatsapp</div>
+            </div>
           </div>
         </div>
         <div>

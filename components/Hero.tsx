@@ -13,7 +13,7 @@ const Hero = () => {
         muted
         className="absolute top-0 left-0 object-cover w-full h-full"
       >
-        <source src="herovideo.mp4" type="video/mp4" />
+        <source src="/herovideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className=" flex flex-col justify-center items-center padding-container relative top-[42%]  z-10">
@@ -21,16 +21,16 @@ const Hero = () => {
           DISCOVER THE DESERT
         </span>
 
-        <Link href={'/trips'}>
+        <Link href={"/trips"}>
           <div className="btn mt-8">
-            <button
+            <div
               className="flexCenter gap-2 rounded-full  bg-white hover:bg-amber-950  hover:text-white px-8 py-3.5  bold-16  transition-all ease-in-out duration-500 "
               /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
             >
-              <label className="whitespace-nowrap cursor-pointer text-sm">
+              <div className="whitespace-nowrap cursor-pointer text-sm">
                 View Tours
-              </label>
-            </button>
+              </div>
+            </div>
           </div>
         </Link>
 

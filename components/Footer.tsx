@@ -2,10 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-
 const Footer = () => {
   return (
-    <footer className="flex flex-col content-center pb-4 pt-16 bg-white padding-container max-container border-gray-200  ">
+    <footer className="flex flex-col content-center pb-3 pt-16 bg-white padding-container max-container border-gray-200  ">
       <div className="  flex justify-between  ">
         <h1 className="bold-18 lg:bold-28 text-amber-900">LOVER OF SAHARA</h1>
         <div className="grid grid-flow-col gap-[2vw] text-sm font-medium leading-7 lg:text-lg lg:font-normal text-amber-900">
@@ -50,7 +49,7 @@ const Footer = () => {
             width={32}
             style={{ width: "100%", height: "100%" }}
           />
-          <Link  href={"https://www.facebook.com/loveroffsahara"}>
+          <Link href={"https://www.facebook.com/loveroffsahara"}>
             <Image
               src="/nav3.png"
               alt="fb"

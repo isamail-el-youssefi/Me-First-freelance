@@ -2,7 +2,7 @@
 import { NAV_LINKS } from "@/constant";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Style/Components.css";
 
 const Navbar = () => {
@@ -30,20 +30,20 @@ const Navbar = () => {
         ))}
       </div>
       <div className="hidden xl:block">
-        <button
+        <div
           className="flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3.5 text-white hover:bold-16 hover:text-amber-950 transition-all hover:bg-white "
           /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
         >
-          <label className="whitespace-nowrap cursor-pointer text-sm">
+          <div className="whitespace-nowrap cursor-pointer text-sm">
             Get In Touch
-          </label>
-        </button>
+          </div>
+        </div>
       </div>
       {/* MOBILE */}
 
       {!menuOpened ? (
         <Image
-          src="download.svg"
+          src="/nav3.png"
           alt="menu"
           width={28}
           height={28}
@@ -52,7 +52,7 @@ const Navbar = () => {
         />
       ) : (
         <Image
-          src="close.svg"
+          src="/nav3.png"
           alt="menu"
           width={28}
           height={28}
@@ -79,14 +79,14 @@ const Navbar = () => {
         ))}
         <Link href={"/contact"}>
           <div className="pt-7 mx-7">
-            <button
+            <div
               className="flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3.5 text-white hover:bold-16 hover:text-amber-950 transition-all hover:bg-white "
               /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
             >
-              <label className="whitespace-nowrap cursor-pointer text-sm">
+              <div className="whitespace-nowrap cursor-pointer text-sm">
                 Get In Touch
-              </label>
-            </button>
+              </div>
+            </div>
           </div>
         </Link>
       </div>
