@@ -29,21 +29,23 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      <div className="hidden xl:block">
-        <div
-          className="flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3.5 text-white hover:bold-16 hover:text-amber-950 transition-all hover:bg-white "
-          /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
-        >
-          <div className="whitespace-nowrap cursor-pointer text-sm">
-            Get In Touch
+      <Link href={"/contact"}>
+        <div className="hidden xl:block">
+          <div
+            className="flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3.5 text-white hover:bold-16 hover:text-amber-950 transition-all hover:bg-white "
+            /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
+          >
+            <div className="whitespace-nowrap cursor-pointer text-sm">
+              Get In Touch
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
       {/* MOBILE */}
 
       {!menuOpened ? (
         <Image
-          src="/nav3.png"
+          src="/circle-ellipsis.png"
           alt="menu"
           width={28}
           height={28}
@@ -52,7 +54,7 @@ const Navbar = () => {
         />
       ) : (
         <Image
-          src="/nav3.png"
+          src="/minus-circle.png"
           alt="menu"
           width={28}
           height={28}
@@ -72,6 +74,7 @@ const Navbar = () => {
             href={link.href}
             key={link.key}
             className="flex text-amber-900  gap-2 my-7 mx-7 text-xl font-medium hover:font-semibold hover:text-amber-950  relative  group"
+            onClick={toggleMenu}
           >
             {link.label}
             <span className="inline-block absolute h-[2px] w-0 bg-amber-950 -bottom-2 group-hover:w-28 transition-all duration-500"></span>

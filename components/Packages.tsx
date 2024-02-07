@@ -1,4 +1,4 @@
-import TripPackages from "./TripPackages"
+import TripPackages from "./TripPackages";
 
 const Packages = () => {
   return (
@@ -11,44 +11,41 @@ const Packages = () => {
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 content-between gap-6 ">
         <TripPackages
-        iamgeSrc="/test1.jpg"
-        iamgeAlt="sahara"
-        heading="3 Days Marrakech Zagora"
-        text="simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        width={1920}
-        height={1280}
-        btnType="button"
-        btnTitle="MORE DETAILS"
-        link="about"
+          iamgeSrc="/test1.jpg"
+          iamgeAlt="sahara"
+          heading="3 Days Marrakech Zagora"
+          text="simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          width={1920}
+          height={1280}
+          btnType="button"
+          btnTitle="MORE DETAILS"
+          link="/trips/details"
         />
         <TripPackages
-        iamgeSrc="/test2.jpg"
-        iamgeAlt="sahara"
-        heading="3 Days Marrakech Zagora"
-        text="simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        width={500}
-        height={300}
-        btnType="button"
-        btnTitle="MORE DETAILS"
-        link="about"
-
+          iamgeSrc="/test2.jpg"
+          iamgeAlt="sahara"
+          heading="3 Days Marrakech Zagora"
+          text="simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          width={500}
+          height={300}
+          btnType="button"
+          btnTitle="MORE DETAILS"
+          link="/trips/details"
         />
         <TripPackages
-        iamgeSrc="/test3.jpg"
-        iamgeAlt="sahara"
-        heading="3 Days Marrakech Zagora"
-        text="simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-        width={500}
-        height={300}
-        btnType="button"
-        btnTitle="MORE DETAILS"
-        link="about"
-
+          iamgeSrc="/test3.jpg"
+          iamgeAlt="sahara"
+          heading="3 Days Marrakech Zagora"
+          text="simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+          width={500}
+          height={300}
+          btnType="button"
+          btnTitle="MORE DETAILS"
+          link="/trips/details"
         />
-
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Packages
+export default Packages;
