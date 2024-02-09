@@ -4,8 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import "./Style/Components.css";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { t } = useTranslation();
+
   const [menuOpened, setMenuOpened] = useState(false);
   const toggleMenu = () => setMenuOpened(!menuOpened);
 
@@ -36,7 +39,7 @@ const Navbar = () => {
             /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
           >
             <div className="whitespace-nowrap cursor-pointer text-sm">
-              Get In Touch
+            {t("hero-btn")}
             </div>
           </div>
         </div>
@@ -80,14 +83,14 @@ const Navbar = () => {
             <span className="inline-block absolute h-[2px] w-0 bg-amber-950 -bottom-2 group-hover:w-28 transition-all duration-500"></span>
           </Link>
         ))}
-        <Link href={"/contact"}>
+        <Link href={"/contact"} onClick={toggleMenu}>
           <div className="pt-7 mx-7">
             <div
               className="flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3.5 text-white hover:bold-16 hover:text-amber-950 transition-all hover:bg-white "
               /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
             >
               <div className="whitespace-nowrap cursor-pointer text-sm">
-                Get In Touch
+                {t("hero-btn")}
               </div>
             </div>
           </div>

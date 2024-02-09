@@ -29,7 +29,9 @@
     ".next/types/**/*.ts",
     "components/Packages.jsx",
     "components/Slide.jsx",
-    ".next/types/app/about/page.tsx"
-  ],
+    ".next/types/app/about/page.tsx",
+    "middleware.ts",
+    "i18nConfig.ts"
+, "components/TranslationsProvider.ts", "app/[locale]/layout.jsx"  ],
   "exclude": ["node_modules"]
 }

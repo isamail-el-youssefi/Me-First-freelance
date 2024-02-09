@@ -7,9 +7,9 @@ const page = () => {
   return (
     <section className="max-container padding-container lg:pt-40 pt-36">
       <div className="flex flex-col justify-center items-center text-center">
-        <h1 className="bold-44  pb-5 text-amber-900">About Me</h1>
+        <h1 className="bold-44  pb-12 text-amber-900">About Me</h1>
       </div>
-      <div className="flex flex-col gap-8 xl:flex-row sm:pb-3 xl:mb-56">
+      <div className="flex flex-col gap-8 xl:flex-row sm:pb-3 xl:mb-40">
         {/* LEFT */}
 
         <TripData

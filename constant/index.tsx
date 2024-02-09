@@ -1,9 +1,9 @@
 // NAVIGATION
 export const NAV_LINKS = [
-  { href: "/", key: "home", label: "Home"},
-  { href: "/about", key: "about", label: "About"},
+  { href: "/", key: "home", label: "Home" },
+  { href: "/about", key: "about", label: "About" },
   { href: "/trips", key: "packages", label: "Packages" },
-  { href: "/gallery", key: "gallery", label: "Gallery", },
+  { href: "/gallery", key: "gallery", label: "Gallery" },
 ];
 
 // CATEGORIES SECTION
@@ -14,12 +14,12 @@ export const TRIPS = [
       "Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
   },
   {
-    place: "Erg Chegaga, m'hamid el ghizlane",
+    place: "Oasis Fint, Ouarzazate",
     details:
       "Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
   },
   {
-    place: "Erg Chegaga, m'hamid el ghizlane",
+    place: "Ait Ben Haddou, Ouarzazate",
     details:
       "Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
   },

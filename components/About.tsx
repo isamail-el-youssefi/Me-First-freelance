@@ -77,8 +77,8 @@ const About = () => {
       <div className="flex flex-col gap-8 xl:flex-row ">
         {/* LEFT */}
         <DestinationData
-          title={TRIPS.length > 0 ? TRIPS[0].place : "Default Title"}
-          detail={TRIPS.length > 0 ? TRIPS[0].details : "Default Title"}
+          title={TRIPS.length > 0 ? TRIPS[2].place : "Default Title"}
+          detail={TRIPS.length > 0 ? TRIPS[2].details : "Default Title"}
         />
 
         {/* RIGHT */}

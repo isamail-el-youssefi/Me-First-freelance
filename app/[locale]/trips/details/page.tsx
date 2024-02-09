@@ -1,5 +1,5 @@
 'use client'
-import TripDetails2 from "../../../components/TripDetails2";
+import TripDetails2 from '../../../../components/TripDetails2';
 
 const page = () => {
   return (
