@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import TripData from "../../components/DestinationData";
+import DestinationData from "../../../components/DestinationData";
 import { TRIPS } from "@/constant";
 
 const page = () => {
@@ -12,7 +12,7 @@ const page = () => {
       <div className="flex flex-col gap-8 xl:flex-row sm:pb-3 xl:mb-40">
         {/* LEFT */}
 
-        <TripData
+        <DestinationData
           title={TRIPS.length > 0 ? TRIPS[3].place : "Default Title"}
           detail={TRIPS.length > 0 ? TRIPS[3].details : "Default Title"}
         />

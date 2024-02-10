@@ -1,10 +1,12 @@
+"use client";
+
 import React from "react";
-import Button from "./Button";
-import { CATEGORIES } from "@/constant";
-import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative h-[100vh] w-full z-10 pb-12">
       <video
@@ -18,7 +20,7 @@ const Hero = () => {
       </video>
       <div className=" flex flex-col justify-center items-center padding-container relative top-[42%]  z-10">
         <span className="bold-48 sm:bold-64 text-white capitalize px-5 sm:px-20 text-center ">
-          DISCOVER THE DESERT
+          {t('hero-title')}
         </span>
 
         <Link href={"/trips"}>
@@ -37,7 +39,5 @@ const Hero = () => {
     </section>
   );
 };
-
-
 
 export default Hero;

@@ -9,7 +9,7 @@ export const metadata = {
   description: "Tour and Travel app",
 };
 
-const i18nNamespaces = ["Homepage", "Common"];
+const i18nNamespaces = ["Homepage", "Common", "Details"];
 
 export default async function RootLayout({ children, params: { locale } }) {
   const { t, resources } = await initTranslations(locale, i18nNamespaces);

@@ -9,8 +9,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
 import { TRIPDAY } from "@/constant";
+import { useTranslation } from "react-i18next";
 
 interface PageProps {
   Heading: string;
@@ -22,6 +22,10 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = (props) => {
+
+  const { t } = useTranslation();
+
+
   return (
     <section className="max-container padding-container lg:pt-40 pt-36 pb-6">
       {/* HEADING */}
@@ -61,10 +65,11 @@ const Page: React.FC<PageProps> = (props) => {
               {TRIPDAY[props.days].map((trip, index) => (
                 <div key={index}>
                   <h1 className="bold-18 md:bold-20 capitalize pl-2 pb-1 text-amber-900">
-                    {trip.days}
+                    {t(trip.d)}
                   </h1>
                   <p className="text-amber-950 text-lg tracking-tight leading-7 xl:leading-8 text-justify pb-3 ">
-                    {trip.details}
+                    {t(trip.details)}
+
                   </p>
                 </div>
               ))}

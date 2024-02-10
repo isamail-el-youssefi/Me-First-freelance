@@ -27,7 +27,7 @@ const Navbar = () => {
             key={link.key}
             className="flex gap-2 mx-4 relative group text-amber-950 text-md py-5"
           >
-            {link.label}
+            {t(link.label)}
             <span className=" absolute h-[2.5px] w-0 bg-amber-900 -bottom-[6px]  group-hover:w-full group-focus:w-full transition-all duration-300 ease-in-out"></span>
           </Link>
         ))}
@@ -39,7 +39,7 @@ const Navbar = () => {
             /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
           >
             <div className="whitespace-nowrap cursor-pointer text-sm">
-            {t("hero-btn")}
+              {t("nav-btn")}
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@ const Navbar = () => {
               /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
             >
               <div className="whitespace-nowrap cursor-pointer text-sm">
-                {t("hero-btn")}
+                {t("nav-btn")}
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import DestinationData from "./DestinationData";
 import { TRIPS } from "@/constant";
+import DestinationData from "./DestinationData";
 
 const About = () => {
   return (

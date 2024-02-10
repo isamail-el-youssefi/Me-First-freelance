@@ -1,9 +1,9 @@
 // NAVIGATION
 export const NAV_LINKS = [
-  { href: "/", key: "home", label: "Home" },
-  { href: "/about", key: "about", label: "About" },
-  { href: "/trips", key: "packages", label: "Packages" },
-  { href: "/gallery", key: "gallery", label: "Gallery" },
+  { href: "/", key: "Home", label: "Home" },
+  { href: "/about", key: "About", label: "About" },
+  { href: "/trips", key: "Packages", label: "Packages" },
+  { href: "/gallery", key: "Gallery", label: "Gallery" },
 ];
 
 // CATEGORIES SECTION
@@ -11,61 +11,57 @@ export const TRIPS = [
   {
     place: "Erg Chegaga, m'hamid el ghizlane",
     details:
-      "Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+      "Erg Chegaga, A few d ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
   },
   {
     place: "Oasis Fint, Ouarzazate",
     details:
-      "Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+      "Erg Chegaga, A few d ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
   },
   {
     place: "Ait Ben Haddou, Ouarzazate",
     details:
-      "Erg Chegaga, A few days ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+      "Erg Chegaga, A few d ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
   },
   {
     place: "Salah Mouna | Tour Guide",
     details:
-      "Welcome to Salah Mouna's Desert Tours! With over 4 years of experience, I am passionate about guiding people to discover the beauty of the Moroccan desert. Join me for an unforgettable journey through stunning landscapes, traditional culture, and thrilling adventures. Let me be your trusted companion in exploring the wonders of the desert.",
+      "Welcome to Salah Mouna's Desert Tours! With over 4 years of experience, I am passionate about guiding people to discover the beauty of the Moroccan desert. Join me for an unforgettable dey through stunning landscapes, traditional culture, and thrilling adventures. Let me be your trusted companion in exploring the wonders of the desert.",
   },
 ];
 
 export const TRIPDAY = [
   [
     {
-      days: "JOUR 1",
-      details:
-        "Départ le matin après le petit-déjeuner en direction de M’Hamid où la caravane vous attendra. Après 3h de marche, déjeuner à Race Nkhal. Vers 15h, départ pour Oued Naam avec 2h de marche. Bivouac et dîner à côté de magnifiques dunes. ",
+      d: "d1",
+      details: "0d1",
     },
     {
-      days: "JOUR 2",
-      details:
-        "Départ de Oued Naam vers 8h, marche de 3h en traversant un grand lac séché (reg). Déjeuner à Loitide. Nous repartons vers 15h pour une randonnée à travers une région de dunes merveilleuses (erg). Bivouac et dîner. ",
+      d: "d2",
+      details: "0d2",
     },
     {
-      days: "JOUR 3",
-      details:
-        "Après le petit-déjeuner, nous allons traverser la Hamada (désert de pierres). Déjeuner à l’Oasis Sacrée. L’après-midi, départ pour les Dunes de Chegaga. C’est la plus grande et vaste dune de la région culminant à 300m d’altitude et s’étalant sur plus de 40 km de long. Repas du soir et nuit sous les tentes nomades. ",
+      d: "d3",
+      details: "0d3",
     },
     {
-      days: "JOUR 4",
-      details:
-        "Après le petit-déjeuner, retour en 4×4 à Zagora, en passant par M’Hamid et Tamegroute. Arrivée vers 11h à Zagora.",
+      d: "d4",
+      details: "0d4",
     },
   ],
   [
     {
-      days: "JOUR 1",
+      d: "d1",
       details:
         "Départ le matin après le petit-déjeuner en direction de M’Hamid où la caravane vous attendra. Après 3h de marche, déjeuner à Race Nkhal. Vers 15h, départ pour Oued Naam avec 2h de marche. Bivouac et dîner à côté de magnifiques dunes. ",
     },
     {
-      days: "JOUR 2",
+      d: "d2",
       details:
         "Départ de Oued Naam vers 8h, marche de 3h en traversant un grand lac séché (reg). Déjeuner à Loitide. Nous repartons vers 15h pour une randonnée à travers une région de dunes merveilleuses (erg). Bivouac et dîner. ",
     },
     {
-      days: "JOUR 3",
+      d: "d3",
       details:
         "Après le petit-déjeuner, nous allons traverser la Hamada (désert de pierres). Déjeuner à l’Oasis Sacrée. L’après-midi, départ pour les Dunes de Chegaga. C’est la plus grande et vaste dune de la région culminant à 300m d’altitude et s’étalant sur plus de 40 km de long. Repas du soir et nuit sous les tentes nomades. ",
     },
@@ -133,7 +129,7 @@ export const FEATURE = [
 // ABOUT SECTION
 export const ABOUT = [
   {
-    title: "Comfortable Journey",
+    title: "Comfortable dey",
     icon: "/checkbox.svg",
   },
   {
@@ -157,56 +153,56 @@ export const PACKAGES = [
     price: "$240",
     URL: "/pkg-italy.jpg",
     des: "Embark on an unforgettable adventure with our all-inclusive tour and travel package, offering immersive experiences and arrangements",
-    duration: "2 days",
+    duration: "2 d",
   },
   {
     title: "australia",
     price: "$140",
     URL: "/pkg-australia.jpg",
     des: "Embark on an unforgettable adventure with our all-inclusive tour and travel package, offering immersive experiences and arrangements",
-    duration: "2 days",
+    duration: "2 d",
   },
   {
     title: "france",
     price: "$140",
     URL: "/pkg-france.jpg",
     des: "Embark on an unforgettable adventure with our all-inclusive tour and travel package, offering immersive experiences and arrangements",
-    duration: "2 days",
+    duration: "2 d",
   },
   {
     title: "hong kong",
     price: "$300",
     URL: "/pkg-hong-kong.jpg",
     des: "Embark on an unforgettable adventure with our all-inclusive tour and travel package, offering immersive experiences and arrangements",
-    duration: "2 days",
+    duration: "2 d",
   },
   {
     title: "brazil",
     price: "$200",
     URL: "/pkg-brazil.jpg",
     des: "Embark on an unforgettable adventure with our all-inclusive tour and travel package, offering immersive experiences and arrangements",
-    duration: "2 days",
+    duration: "2 d",
   },
   {
     title: "london",
     price: "$240",
     URL: "/pkg-london.jpg",
     des: "Embark on an unforgettable adventure with our all-inclusive tour and travel package, offering immersive experiences and arrangements",
-    duration: "2 days",
+    duration: "2 d",
   },
   {
     title: "indonesia",
     price: "$240",
     URL: "/pkg-indonesia.jpg",
     des: "Embark on an unforgettable adventure with our all-inclusive tour and travel package, offering immersive experiences and arrangements",
-    duration: "2 days",
+    duration: "2 d",
   },
   {
     title: "switzerland",
     price: "$240",
     URL: "/pkg-switzerland.jpg",
     des: "Embark on an unforgettable adventure with our all-inclusive tour and travel package, offering immersive experiences and arrangements",
-    duration: "2 days",
+    duration: "2 d",
   },
 ];
 
@@ -240,7 +236,7 @@ export const TESTIMONIAL = [
     title: "Ali Khan",
     profession: "CEO, High Chase",
     URL: "/person-5.jpg",
-    desc: "Outstanding journeys, knowledgeable guides, seamless execution. Each trip exceeds expectations, ensuring lasting memories and remarkable experiences.",
+    desc: "Outstanding deys, knowledgeable guides, seamless execution. Each trip exceeds expectations, ensuring lasting memories and remarkable experiences.",
   },
 ];
 

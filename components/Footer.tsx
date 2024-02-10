@@ -1,8 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="flex flex-col content-center pb-3 pt-16 bg-white padding-container max-container border-gray-200   ">
       <div className="  flex justify-between  ">
@@ -10,22 +15,22 @@ const Footer = () => {
         <div className="grid grid-flow-col gap-[2vw] text-sm font-medium leading-7 lg:text-lg lg:font-normal text-amber-900">
           <Link href={"/about"}>
             <h1 className="border-b-[1px] font-semibold hover:border-amber-900 border-white transition-all ease-in-out duration-500">
-              About
+              {t("About")}
             </h1>
           </Link>
           <Link href={"/trips"}>
             <h1 className="border-b-[1px] font-semibold hover:border-amber-900 border-white transition-all ease-in-out duration-500">
-              Trips
+              {t("Trips")}
             </h1>
           </Link>
           <Link href={"/gallery"}>
             <h1 className="border-b-[1px] font-semibold hover:border-amber-900 border-white transition-all ease-in-out duration-500">
-              Gallery
+              {t("Gallery")}
             </h1>
           </Link>
           <Link href={"/contact"}>
             <h1 className="border-b-[1px] font-semibold hover:border-amber-900 border-white transition-all ease-in-out duration-500">
-              Contact
+              {t("nav-btn")}
             </h1>
           </Link>
         </div>
