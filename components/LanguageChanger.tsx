@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import i18nConfig from "@/i18nConfig";
-import { BsFlagEs, BsFlag } from "react-icons/bs";
 
 function LanguageChanger() {
   const { i18n } = useTranslation();
