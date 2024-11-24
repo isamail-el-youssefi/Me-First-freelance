@@ -35,7 +35,7 @@ const page = () => {
               <TabPanel>
                 {TRIPDAY[0].map((trip, index) => (
                   <div key={index}>
-                    <h1>{trip.days}</h1>
+                    <h1>{trip.d}</h1>
                     <p>{trip.details}</p>
                   </div>
                 ))}
