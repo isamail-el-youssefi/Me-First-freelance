@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&family=Varela&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&family=Varela&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -13,24 +13,24 @@
 body {
   font-family: Montserrat;
 }
-.linearGradient{
+.linearGradient {
   background: linear-gradient(97deg, #4066ff 4%, #2949c6 100%);
 }
 
 @layer utilities {
-  .btn_white_rounded  { 
-    @apply  bg-white px-8 py-4 text-gray-90 
+  .btn_white_rounded {
+    @apply bg-white px-8 py-4 text-gray-90;
   }
-  .btn_light_rounded  { 
-    @apply  border-slate-10 bg-slate-10 px-8 py-4 text-gray-90 
+  .btn_light_rounded {
+    @apply border-slate-10 bg-slate-10 px-8 py-4 text-gray-90;
   }
-  .btn_dark_rounded { 
-    @apply  border-green-90 bg-green-90 px-8 py-4 text-white transition-all hover:bg-black
+  .btn_dark_rounded {
+    @apply border-green-90 bg-green-90 px-8 py-4 text-white transition-all hover:bg-black;
   }
-  .btn_green  { 
-    @apply  border-green-50 bg-green-50 px-8 py-5 text-white
+  .btn_green {
+    @apply border-green-50 bg-green-50 px-8 py-5 text-white;
   }
-  
+
   .max-container {
     @apply mx-auto max-w-[1440px];
   }
@@ -154,7 +154,6 @@ body {
   .bold-13 {
     @apply text-[13px] font-[700];
   }
-
 }
 
 @layer base {

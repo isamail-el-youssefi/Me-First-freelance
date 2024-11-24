@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import "./Style/Components.css";
 import { useTranslation } from "react-i18next";
+import LanguageChanger from "./LanguageChanger";
 
 const Navbar = () => {
   const { t } = useTranslation();
@@ -32,6 +33,7 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
+      {<LanguageChanger/> }
       <Link href={"/contact"}>
         <div className="hidden xl:block">
           <div

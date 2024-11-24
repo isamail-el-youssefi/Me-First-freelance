@@ -77,6 +77,7 @@ const Page: React.FC<PageProps> = (props) => {
             <TabsContent value="password" className="pt-4 w-full"></TabsContent>
             <TabsContent value="3rd" className="pt-4 ">
               <iframe
+              // style={{height: '500px'}}
                 src={props.map}
                 className="w-full h-96 rounded-2xl"
               ></iframe>

@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import initTranslations from '../i18n';
+import initTranslations from "../i18n";
 import TranslationsProvider from "@/components/TranslationsProvider";
 
 export const metadata = {
@@ -23,7 +23,7 @@ export default async function RootLayout({ children, params: { locale } }) {
           resources={resources}
         >
           <Navbar />
-          <main className="relative overflow-hidden">{children}</main>
+          <main className=" overflow-hidden">{children}</main>
           <Footer />
         </TranslationsProvider>
       </body>

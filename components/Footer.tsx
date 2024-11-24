@@ -9,7 +9,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="flex flex-col content-center pb-3 pt-16 bg-white padding-container max-container border-gray-200   ">
+    <footer className=" bg-[#faece570]   flex flex-col content-center pb-3 pt-16  padding-container max-container border-gray-200   ">
       <div className="  flex justify-between  ">
         <h1 className="bold-18 lg:bold-28 text-amber-900">LOVER OF SAHARA</h1>
         <div className="grid grid-flow-col gap-[2vw] text-sm font-medium leading-7 lg:text-lg lg:font-normal text-amber-900">

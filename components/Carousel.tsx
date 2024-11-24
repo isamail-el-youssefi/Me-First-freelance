@@ -31,7 +31,8 @@ const CarouselMain = () => {
         <p className="text-amber-950 pb-10 tracking-tight text-lg">
           Lorem ipsum dolor sit amet consectetur
         </p>
-      </div>      <Carousel
+      </div>
+      <Carousel
         plugins={[
           Autoplay({
             delay: 2700,
