@@ -31,41 +31,51 @@ export const TRIPS = [
 ];
 
 export const TRIPDAY = [
+  // Package 1: Desert Adventure
   [
     {
-      d: "d1",
-      details: "0d1",
+      d: "Day 1",
+      details: "Morning departure after breakfast towards M'Hamid where the caravan awaits. After a 3-hour walk, lunch at Race Nkhal. Around 3 PM, departure for Oued Naam with a 2-hour walk. Bivouac and dinner next to magnificent dunes."
     },
     {
-      d: "d2",
-      details: "0d2",
+      d: "Day 2",
+      details: "Departure from Oued Naam around 8 AM, 3-hour walk crossing a large dried lake (reg). Lunch at Loitide. We leave again around 3 PM for a hike through a region of wonderful dunes (erg). Bivouac and dinner."
     },
     {
-      d: "d3",
-      details: "0d3",
-    },
-    {
-      d: "d4",
-      details: "0d4",
-    },
+      d: "Day 3",
+      details: "After breakfast, we cross the Hamada (stone desert). Lunch at the Sacred Oasis. In the afternoon, departure for the Chegaga Dunes. It's the largest and most vast dune in the region, rising to 300m altitude and stretching over 40 km long. Evening meal and overnight stay in nomadic tents."
+    }
   ],
+  // Package 2: Oasis Explorer
   [
     {
-      d: "d1",
-      details:
-        "Départ le matin après le petit-déjeuner en direction de M’Hamid où la caravane vous attendra. Après 3h de marche, déjeuner à Race Nkhal. Vers 15h, départ pour Oued Naam avec 2h de marche. Bivouac et dîner à côté de magnifiques dunes. ",
+      d: "Day 1",
+      details: "Departure from Marrakech at 8 AM, heading to the stunning Oasis Fint. Travel through scenic mountain passes with photo stops along the way. Arrive at the oasis by afternoon, explore local village life. Traditional dinner and overnight at a charming guesthouse."
     },
     {
-      d: "d2",
-      details:
-        "Départ de Oued Naam vers 8h, marche de 3h en traversant un grand lac séché (reg). Déjeuner à Loitide. Nous repartons vers 15h pour une randonnée à travers une région de dunes merveilleuses (erg). Bivouac et dîner. ",
+      d: "Day 2",
+      details: "Morning guided walk through palm groves and traditional irrigation systems. Learn about sustainable desert agriculture from local farmers. Afternoon cooking class using fresh oasis ingredients. Evening storytelling session under the stars."
     },
     {
-      d: "d3",
-      details:
-        "Après le petit-déjeuner, nous allons traverser la Hamada (désert de pierres). Déjeuner à l’Oasis Sacrée. L’après-midi, départ pour les Dunes de Chegaga. C’est la plus grande et vaste dune de la région culminant à 300m d’altitude et s’étalant sur plus de 40 km de long. Repas du soir et nuit sous les tentes nomades. ",
-    },
+      d: "Day 3",
+      details: "Sunrise yoga session with views of the oasis. Visit to local artisan workshops and opportunity to learn traditional crafts. Return to Marrakech in the late afternoon, arriving by evening."
+    }
   ],
+  // Package 3: Historical Journey
+  [
+    {
+      d: "Day 1",
+      details: "Early departure from Marrakech to Ait Ben Haddou, a UNESCO World Heritage Site. Guided tour of this ancient fortified village, famous for featuring in numerous Hollywood films. Free time to explore and photograph the kasbah. Dinner and overnight in a traditional riad."
+    },
+    {
+      d: "Day 2",
+      details: "Morning exploration of nearby filming locations and historical sites. Visit to Ouarzazate, known as the 'Hollywood of Morocco' and tour of Atlas Film Studios. Afternoon visit to Kasbah Taourirt. Traditional Moroccan dinner with local entertainment."
+    },
+    {
+      d: "Day 3",
+      details: "Journey through the Valley of the Roses, famous for its annual Rose Festival. Visit to a rose cooperative to learn about rose water production. Return to Marrakech via the spectacular Tizi n'Tichka mountain pass, with scenic stops along the way."
+    }
+  ]
 ];
 // CATEGORIES SECTION
 export const CATEGORIES = [
