@@ -1,14 +1,20 @@
+'use client';
+
 import Image from "next/image";
 import React from "react";
-import { TRIPS } from "@/constant";
+import { TRIPS, TITLES } from "@/constant";
 import DestinationData from "./DestinationData";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+
+  const { t } = useTranslation();
+
   return (
     <section>
       <div className="bg-[#faece570]  ">
         <div className=" max-container padding-container flex flex-col justify-center items-center text-center pt-16">
-          <h1 className="bold-32 lg:bold-40  uppercase pb-8 text-amber-900">Must-See Places</h1>
+          <h1 className="bold-32 lg:bold-40  uppercase pb-8 text-amber-900">{t(TITLES.MustSee)}</h1>
 {/*           <hr className="text-center w-[10%] border-2 inline-block border-black"/>
  */}        </div>
         <div className=" max-container padding-container flex flex-col gap-8 xl:flex-row pb-12">

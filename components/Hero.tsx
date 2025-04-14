@@ -20,7 +20,7 @@ const Hero = () => {
       </video>
       <div className=" flex flex-col justify-center items-center padding-container relative top-[42%]  z-10">
         <span className="bold-48 sm:bold-64 text-white capitalize px-5 sm:px-20 text-center ">
-          {t('hero-title')}
+          {t("hero-title")}
         </span>
 
         <Link href={"/trips"}>
@@ -30,7 +30,7 @@ const Hero = () => {
               /* className= "flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3 text-white transition-all hover:bg-amber-950 "  */
             >
               <div className="whitespace-nowrap cursor-pointer text-sm">
-                View Tours
+                {t("view-tours")}{" "}
               </div>
             </div>
           </div>

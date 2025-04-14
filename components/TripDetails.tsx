@@ -55,7 +55,7 @@ const page = () => {
 
         {/* RIGHT */}
         <div className="flex flex-1  gap-5">
-          <h1>kh</h1>
+          <h1>khnhhl</h1>
         </div>
       </div>
     </section>

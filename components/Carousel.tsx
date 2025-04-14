@@ -8,6 +8,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { useTranslation } from "react-i18next";
+import { TITLES } from "@/constant";
 
 import Image from "next/image";
 
@@ -24,13 +26,13 @@ const CarouselMain = () => {
     "/9.jpg",
   ];
 
+  const { t } = useTranslation();
+
   return (
     <div className="max-container padding-container pb-10 pt-3">
       <div className="flex flex-col justify-center items-center text-center">
-        <h1 className="bold-44  pb-2 text-amber-900">Happy Visitors</h1>
-        <p className="text-amber-950 pb-10 tracking-tight text-lg">
-          Lorem ipsum dolor sit amet consectetur
-        </p>
+        <h1 className="bold-32 lg:bold-40  pb-10 uppercase text-amber-900">{t(TITLES.Happy)}</h1>
+
       </div>
       <Carousel
         plugins={[

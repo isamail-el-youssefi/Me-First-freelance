@@ -1,1 +1,39 @@
-{"d1":"Jour 1","d2":"Jour 2","d3":"Jour 3","d4":"Jour 4","d5":"Jour 5","d6":"Jour 6","d7":"Jour 7","0d1":"Départ le matin après le petit déjeuner vers M'Hamid où la caravane vous attendra. Après 3 heures de marche, déjeuner à Race Nkhal. Vers 15h, départ pour Oued Naam avec 2 heures de marche. Bivouac et dîner au bord de magnifiques dunes.\n","0d2":"Départ de Oued Naam vers 8h, marche de 3 heures traversant un grand lac asséché (reg). Déjeuner à Loitide. Nous partons vers 15h pour une randonnée à travers une région de magnifiques dunes (erg). Bivouac et dîner.\n","0d3":"Après le petit-déjeuner, nous traverserons la Hamada (désert de pierre). Déjeuner à l'Oasis Sacrée. L'après-midi, départ pour les Dunes de Chegaga. C'est la plus grande et la plus vaste dune de la région, atteignant 300 mètres d'altitude et s'étendant sur plus de 40 kilomètres de long. Repas du soir et nuit sous les tentes nomades.\n","0d4":"Après le petit-déjeuner, retour en 4x4 à Zagora en passant par M'Hamid et Tamegroute. Arrivée à Zagora vers 11h\n","Home":"Page d'accueil","About":"À propos","Trips":"Voyages","Gallery":"Galerie","nav-btn":"Contactez moi","hero-btn":"Voir les circuits\n","hero-title":"DÉCOUVREZ LE DÉSERT\n"}
+{
+  "d1": "Jour 1",
+  "d2": "Jour 2",
+  "d3": "Jour 3",
+  "d4": "Jour 4",
+  "d5": "Jour 5",
+  "d6": "Jour 6",
+  "d7": "Jour 7",
+  "0d1": "Départ le matin après le petit déjeuner vers M'Hamid où la caravane vous attendra. Après 3 heures de marche, déjeuner à Race Nkhal. Vers 15h, départ pour Oued Naam avec 2 heures de marche. Bivouac et dîner au bord de magnifiques dunes.\n",
+  "0d2": "Départ de Oued Naam vers 8h, marche de 3 heures traversant un grand lac asséché (reg). Déjeuner à Loitide. Nous partons vers 15h pour une randonnée à travers une région de magnifiques dunes (erg). Bivouac et dîner.\n",
+  "0d3": "Après le petit-déjeuner, nous traverserons la Hamada (désert de pierre). Déjeuner à l'Oasis Sacrée. L'après-midi, départ pour les Dunes de Chegaga. C'est la plus grande et la plus vaste dune de la région, atteignant 300 mètres d'altitude et s'étendant sur plus de 40 kilomètres de long. Repas du soir et nuit sous les tentes nomades.\n",
+  "0d4": "Après le petit-déjeuner, retour en 4x4 à Zagora en passant par M'Hamid et Tamegroute. Arrivée à Zagora vers 11h\n",
+  "Home": "Page d'accueil",
+  "About": "À propos",
+  "Trips": "Voyages",
+  "Gallery": "Galerie",
+  "nav-btn": "Contactez moi",
+  "hero-btn": "Voir les circuits\n",
+  "hero-title": "DÉCOUVREZ LE DÉSERT\n",
+  "view-tours": "Voir les circuits",
+  "about-title": "À propos de moi",
+  "must-see": "Lieux incontournables",
+  "popular": "Voyages populaires",
+  "happy": "Voyageurs heureux",
+  "moreDetails": "PLUS DE DÉTAILS",
+
+  "trip1-title": "Erg Chegaga, M'Hamid El Ghizlane",
+  "trip1-detail": "Loin de la foule, l'Erg Chegaga est le champ de dunes le plus sauvage et le plus vaste du Maroc, s’élevant en vagues majestueuses de sable doré. Accessible en 4x4 ou à dos de chameau via d’anciens sentiers caravaniers, ce désert intact offre silence, sérénité et paysages surréalistes. Passez vos nuits sous un ciel étoilé dans des tentes berbères traditionnelles, savourez une cuisine locale autour du feu et admirez le soleil peindre les dunes en or et en pourpre à l’aube et au crépuscule. Ce n’est pas qu’une destination — c’est une rencontre spirituelle avec l’âme du Sahara.",
+
+  "trip2-title": "Oasis Fint, Ouarzazate",
+  "trip2-detail": "Nichée dans une vallée rocheuse près de Ouarzazate, l’Oasis Fint est un joyau caché — un contraste saisissant entre palmeraies luxuriantes et collines désertiques escarpées. Ce village paisible abrite des familles berbères traditionnelles vivant dans des maisons en pisé et cultivant la terre selon des méthodes ancestrales. Promenez-vous sur les sentiers étroits ombragés par les palmiers-dattiers, traversez les ponts de pierre sur des rivières paisibles et partagez un thé avec les habitants ravis de raconter leurs histoires. Fint offre un aperçu rare de la vie authentique dans une oasis, épargnée par le tourisme moderne.",
+
+  "trip3-title": "Aït Ben Haddou, Ouarzazate",
+  "trip3-detail": "Remontez le temps à Aït Ben Haddou — un village fortifié entièrement construit en terre et en argile, où le temps semble s’être arrêté. Ce site classé au patrimoine mondial de l’UNESCO, situé sur l’ancienne route caravanière entre le Sahara et Marrakech, est un chef-d'œuvre de l’architecture du sud marocain. Ses kasbahs emblématiques ont servi de décor à des films hollywoodiens tels que Gladiator, Kingdom of Heaven et Game of Thrones. Grimpez au sommet de la colline pour profiter d’une vue panoramique sur le désert et les montagnes de l’Atlas, et ressentez l’âme des siècles passés dans ses ruelles ensoleillées.",
+
+  "trip4-title": "Salah Mouna | Guide touristique",
+  "trip4-detail": "Né et élevé à Zagora, porte d’entrée du désert du Sahara au sud du Maroc, j’ai des racines profondes dans ce paysage envoûtant. En grandissant dans cette région désertique, j’ai acquis une connaissance intime des dunes, des oasis et des trésors cachés que la plupart des visiteurs ne découvrent jamais. Mon lien avec cette terre va bien au-delà du métier de guide — le désert est mon héritage et ma maison. En tant qu’habitant de Zagora, je vous offre un regard authentique sur la vie dans le désert, que seul un local peut fournir. Je parle couramment le berbère, l’arabe, le français et l’anglais, ce qui me permet de combler les différences culturelles et d’offrir une expérience réellement immersive aux voyageurs du monde entier. Ma famille vit ici depuis des générations, et je suis impatient de partager nos traditions, histoires et lieux secrets avec vous. Mes circuits dans le désert incluent des randonnées à dos de chameau dans les dunes d’Erg Chigaga, des nuits en camp berbère traditionnel sous les étoiles, des visites de villages reculés et des expériences culinaires authentiques."
+}
+

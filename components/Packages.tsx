@@ -1,13 +1,19 @@
+'use client';
+
 import TripPackages from "./TripPackages";
+import { useTranslation } from "react-i18next";
+import { TITLES } from "@/constant";
+
 
 const Packages = () => {
+  const { t } = useTranslation();
+
+
   return (
     <section className="max-container padding-container py-16">
       <div className="flex flex-col justify-center items-center text-center">
-        <h1 className="bold-44  pb-2 text-amber-900">Popular Destinations</h1>
-        <p className="text-amber-950 pb-10 tracking-tight text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing
-        </p>
+        <h1 className="bold-32 lg:bold-40 uppercase  pb-7 text-amber-900">{t(TITLES.Popular)}</h1>
+
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 content-between gap-6 ">
         <TripPackages
@@ -18,7 +24,7 @@ const Packages = () => {
           width={1920}
           height={1280}
           btnType="button"
-          btnTitle="MORE DETAILS"
+          btnTitle={t('moreDetails')}
           link="/trips/1" // Dynamic ID for package 1
         />
         <TripPackages
@@ -29,7 +35,7 @@ const Packages = () => {
           width={500}
           height={300}
           btnType="button"
-          btnTitle="MORE DETAILS"
+          btnTitle={t('moreDetails')}
           link="/trips/2" // Dynamic ID for package 2
         />
         <TripPackages
@@ -40,7 +46,7 @@ const Packages = () => {
           width={500}
           height={300}
           btnType="button"
-          btnTitle="MORE DETAILS"
+          btnTitle={t('moreDetails')}
           link="/trips/3" // Dynamic ID for package 3
         />
       </div>

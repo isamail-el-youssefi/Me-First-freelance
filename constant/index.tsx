@@ -9,73 +9,85 @@ export const NAV_LINKS = [
 // CATEGORIES SECTION
 export const TRIPS = [
   {
-    place: "Erg Chegaga, m'hamid el ghizlane",
-    details:
-      "Erg Chegaga, A few d ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+    place: "trip1-title",
+    details: "trip1-detail",
   },
   {
-    place: "Oasis Fint, Ouarzazate",
-    details:
-      "Erg Chegaga, A few d ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+    place: "trip2-title",
+    details: "trip2-detail",
   },
   {
-    place: "Ait Ben Haddou, Ouarzazate",
-    details:
-      "Erg Chegaga, A few d ago I came across my neighbor, a British guy, who’s not been living in Seville for long. He showed me his collection of ceramic tile fragments that he found on the streets of the city. He was able to use these old shards of tile to tell the story of this city in a fascinating way. I’ve lived here for seven years and never given these pieces of tile a second thought. It just goes to show, we’re all tourists of a sort. Even locals don’t know everything about the places where they live. ",
+    place: "trip3-title",
+    details: "trip3-detail",
   },
   {
-    place: "Salah Mouna | Tour Guide",
-    details:
-      "Welcome to Salah Mouna's Desert Tours! With over 4 years of experience, I am passionate about guiding people to discover the beauty of the Moroccan desert. Join me for an unforgettable dey through stunning landscapes, traditional culture, and thrilling adventures. Let me be your trusted companion in exploring the wonders of the desert.",
+    place: "trip4-title",
+    details: "trip4-detail",
   },
+
 ];
+
+export const TITLES = {
+  MustSee: "must-see",
+  Popular: "popular",
+  Happy: "happy",
+}
 
 export const TRIPDAY = [
   // Package 1: Desert Adventure
   [
     {
       d: "Day 1",
-      details: "Morning departure after breakfast towards M'Hamid where the caravan awaits. After a 3-hour walk, lunch at Race Nkhal. Around 3 PM, departure for Oued Naam with a 2-hour walk. Bivouac and dinner next to magnificent dunes."
+      details:
+        "Morning departure after breakfast towards M'Hamid where the caravan awaits. After a 3-hour walk, lunch at Race Nkhal. Around 3 PM, departure for Oued Naam with a 2-hour walk. Bivouac and dinner next to magnificent dunes.",
     },
     {
       d: "Day 2",
-      details: "Departure from Oued Naam around 8 AM, 3-hour walk crossing a large dried lake (reg). Lunch at Loitide. We leave again around 3 PM for a hike through a region of wonderful dunes (erg). Bivouac and dinner."
+      details:
+        "Departure from Oued Naam around 8 AM, 3-hour walk crossing a large dried lake (reg). Lunch at Loitide. We leave again around 3 PM for a hike through a region of wonderful dunes (erg). Bivouac and dinner.",
     },
     {
       d: "Day 3",
-      details: "After breakfast, we cross the Hamada (stone desert). Lunch at the Sacred Oasis. In the afternoon, departure for the Chegaga Dunes. It's the largest and most vast dune in the region, rising to 300m altitude and stretching over 40 km long. Evening meal and overnight stay in nomadic tents."
-    }
+      details:
+        "After breakfast, we cross the Hamada (stone desert). Lunch at the Sacred Oasis. In the afternoon, departure for the Chegaga Dunes. It's the largest and most vast dune in the region, rising to 300m altitude and stretching over 40 km long. Evening meal and overnight stay in nomadic tents.",
+    },
   ],
   // Package 2: Oasis Explorer
   [
     {
       d: "Day 1",
-      details: "Departure from Marrakech at 8 AM, heading to the stunning Oasis Fint. Travel through scenic mountain passes with photo stops along the way. Arrive at the oasis by afternoon, explore local village life. Traditional dinner and overnight at a charming guesthouse."
+      details:
+        "Departure from Marrakech at 8 AM, heading to the stunning Oasis Fint. Travel through scenic mountain passes with photo stops along the way. Arrive at the oasis by afternoon, explore local village life. Traditional dinner and overnight at a charming guesthouse.",
     },
     {
       d: "Day 2",
-      details: "Morning guided walk through palm groves and traditional irrigation systems. Learn about sustainable desert agriculture from local farmers. Afternoon cooking class using fresh oasis ingredients. Evening storytelling session under the stars."
+      details:
+        "Morning guided walk through palm groves and traditional irrigation systems. Learn about sustainable desert agriculture from local farmers. Afternoon cooking class using fresh oasis ingredients. Evening storytelling session under the stars.",
     },
     {
       d: "Day 3",
-      details: "Sunrise yoga session with views of the oasis. Visit to local artisan workshops and opportunity to learn traditional crafts. Return to Marrakech in the late afternoon, arriving by evening."
-    }
+      details:
+        "Sunrise yoga session with views of the oasis. Visit to local artisan workshops and opportunity to learn traditional crafts. Return to Marrakech in the late afternoon, arriving by evening.",
+    },
   ],
   // Package 3: Historical Journey
   [
     {
       d: "Day 1",
-      details: "Early departure from Marrakech to Ait Ben Haddou, a UNESCO World Heritage Site. Guided tour of this ancient fortified village, famous for featuring in numerous Hollywood films. Free time to explore and photograph the kasbah. Dinner and overnight in a traditional riad."
+      details:
+        "Early departure from Marrakech to Ait Ben Haddou, a UNESCO World Heritage Site. Guided tour of this ancient fortified village, famous for featuring in numerous Hollywood films. Free time to explore and photograph the kasbah. Dinner and overnight in a traditional riad.",
     },
     {
       d: "Day 2",
-      details: "Morning exploration of nearby filming locations and historical sites. Visit to Ouarzazate, known as the 'Hollywood of Morocco' and tour of Atlas Film Studios. Afternoon visit to Kasbah Taourirt. Traditional Moroccan dinner with local entertainment."
+      details:
+        "Morning exploration of nearby filming locations and historical sites. Visit to Ouarzazate, known as the 'Hollywood of Morocco' and tour of Atlas Film Studios. Afternoon visit to Kasbah Taourirt. Traditional Moroccan dinner with local entertainment.",
     },
     {
       d: "Day 3",
-      details: "Journey through the Valley of the Roses, famous for its annual Rose Festival. Visit to a rose cooperative to learn about rose water production. Return to Marrakech via the spectacular Tizi n'Tichka mountain pass, with scenic stops along the way."
-    }
-  ]
+      details:
+        "Journey through the Valley of the Roses, famous for its annual Rose Festival. Visit to a rose cooperative to learn about rose water production. Return to Marrakech via the spectacular Tizi n'Tichka mountain pass, with scenic stops along the way.",
+    },
+  ],
 ];
 // CATEGORIES SECTION
 export const CATEGORIES = [

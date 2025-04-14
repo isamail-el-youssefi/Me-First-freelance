@@ -1,1 +1,38 @@
-{"d1":"Tag 1","d2":"Tag 2","d3":"Tag 3","d4":"Tag 4","d5":"Tag 5","d6":"Tag 6","d7":"Tag 7","0d1":"Abfahrt am Morgen nach dem Frühstück in Richtung M'Hamid, wo die Karawane auf Sie wartet. Nach 3 Stunden Wanderung Mittagessen im Race Nkhal. Gegen 15 Uhr Abfahrt nach Oued Naam mit 2 Stunden Fußmarsch. Biwakieren und Abendessen neben herrlichen Dünen.\n","0d2":"Abfahrt von Oued Naam gegen 8 Uhr morgens, 3-stündiger Spaziergang über einen großen ausgetrockneten See (reg.). Mittagessen bei Loitide. Wir brechen gegen 15 Uhr zu einer Wanderung durch eine Region mit wunderschönen Dünen (Erg) auf. Biwak und Abendessen.\n","0d3":"Nach dem Frühstück durchqueren wir die Hamada (Steinwüste). Mittagessen in der Heiligen Oase. Am Nachmittag Abfahrt zu den Chegaga Dunes. Mit einer Höhe von 300 Metern und einer Länge von über 40 Kilometern ist sie die größte und ausgedehnteste Düne der Region. Abendessen und Übernachtung in den Nomadenzelten.\n","0d4":"Nach dem Frühstück kehren Sie mit dem Geländewagen über M'Hamid und Tamegroute nach Zagora zurück. Ankunft in Zagora gegen 11 Uhr\n","Home":"Startseite","About":"Um","Trips":"Reisen","Gallery":"Galerie","nav-btn":"Kontaktiere mich","hero-btn":"Siehe die Schaltkreise\n","hero-title":"ENTDECKEN SIE DIE WÜSTE\n"}
+{
+  "d1": "Tag 1",
+  "d2": "Tag 2",
+  "d3": "Tag 3",
+  "d4": "Tag 4",
+  "d5": "Tag 5",
+  "d6": "Tag 6",
+  "d7": "Tag 7",
+  "0d1": "Abfahrt am Morgen nach dem Frühstück in Richtung M'Hamid, wo die Karawane auf Sie wartet. Nach 3 Stunden Wanderung Mittagessen im Race Nkhal. Gegen 15 Uhr Abfahrt nach Oued Naam mit 2 Stunden Fußmarsch. Biwakieren und Abendessen neben herrlichen Dünen.\n",
+  "0d2": "Abfahrt von Oued Naam gegen 8 Uhr morgens, 3-stündiger Spaziergang über einen großen ausgetrockneten See (reg.). Mittagessen bei Loitide. Wir brechen gegen 15 Uhr zu einer Wanderung durch eine Region mit wunderschönen Dünen (Erg) auf. Biwak und Abendessen.\n",
+  "0d3": "Nach dem Frühstück durchqueren wir die Hamada (Steinwüste). Mittagessen in der Heiligen Oase. Am Nachmittag Abfahrt zu den Chegaga Dunes. Mit einer Höhe von 300 Metern und einer Länge von über 40 Kilometern ist sie die größte und ausgedehnteste Düne der Region. Abendessen und Übernachtung in den Nomadenzelten.\n",
+  "0d4": "Nach dem Frühstück kehren Sie mit dem Geländewagen über M'Hamid und Tamegroute nach Zagora zurück. Ankunft in Zagora gegen 11 Uhr\n",
+  "Home": "Startseite",
+  "About": "Um",
+  "Trips": "Reisen",
+  "Gallery": "Galerie",
+  "nav-btn": "Kontaktiere mich",
+  "hero-btn": "Siehe die Schaltkreise\n",
+  "hero-title": "ENTDECKEN SIE DIE WÜSTE\n",
+  "view-tours": "Touren anzeigen",
+  "about-title": "Über mich",
+  "must-see": "Sehenswerte Orte",
+  "popular": "Beliebte Reisen",
+  "happy": "Zufriedene Reisende",
+  "moreDetails": "MEHR DETAILS",
+
+  "trip1-title": "Erg Chegaga, M'Hamid El Ghizlane",
+  "trip1-detail": "Abseits der Massen ist Erg Chegaga das wildeste und größte Dünenfeld Marokkos, das sich in majestätischen Wellen aus goldenem Sand erhebt. Erreichbar mit dem 4x4 oder Kamel über alte Karawanenrouten, bietet diese unberührte Wüste Stille, Gelassenheit und surreale Landschaften. Verbringen Sie Ihre Nächte unter dem Sternenhimmel in traditionellen Berberzelten, genießen Sie lokale Küche am Lagerfeuer und beobachten Sie, wie die Sonne die Dünen bei Sonnenaufgang und Sonnenuntergang in goldene und purpurne Farben taucht. Es ist mehr als ein Ziel – es ist eine tief spirituelle Begegnung mit der Seele der Sahara.",
+
+  "trip2-title": "Oasis Fint, Ouarzazate",
+  "trip2-detail": "Versteckt in einem felsigen Tal außerhalb von Ouarzazate liegt das versteckte Juwel der Oasis Fint – ein atemberaubender Kontrast aus üppigen Palmenhainen und einer zerklüfteten Wüstenlandschaft. Dieses ruhige Dorf beherbergt traditionelle Berberfamilien, die in Lehmhäusern leben und mit jahrhundertealten Methoden die Erde bebauen. Wandern Sie auf engen Wegen, die von Dattelpalmen gesäumt sind, überqueren Sie Steinbrücken über fließende Flüsse und teilen Sie Tee mit den Einheimischen, die gerne ihre Geschichten erzählen. Fint bietet einen seltenen Einblick in das authentische Leben in einer Oase, unberührt vom modernen Tourismus.",
+
+  "trip3-title": "Ait Ben Haddou, Ouarzazate",
+  "trip3-detail": "Tauchen Sie ein in die Geschichte von Ait Ben Haddou – einem befestigten Dorf, das vollständig aus Erde und Lehm gebaut ist, wo die Zeit stillzustehen scheint. Dieses UNESCO-Weltkulturerbe, das an der alten Karawanenstraße zwischen dem Sahara und Marrakesch liegt, ist ein Meisterwerk der südmarokkanischen Architektur. Seine ikonischen Kasbahs dienten als Kulisse für Hollywood-Filme wie Gladiator, Kingdom of Heaven und Game of Thrones. Besteigen Sie den Hügel, um einen atemberaubenden Blick auf die Wüste und das Atlasgebirge zu genießen, und spüren Sie den Geist vergangener Jahrhunderte, der durch die engen, sonnenverbrannten Gassen hallt.",
+
+  "trip4-title": "Salah Mouna | Reiseführer",
+  "trip4-detail": "Geboren und aufgewachsen in Zagora, dem Tor zur Sahara im Süden Marokkos, habe ich tiefe Wurzeln in dieser faszinierenden Landschaft. Aufgewachsen in dieser Wüstenregion habe ich ein tiefes Wissen über die Dünen, Oasen und verborgenen Schätze entwickelt, die die meisten Besucher nie entdecken. Meine Verbindung zu diesem Land geht über den Beruf des Reiseführers hinaus – die Wüste ist mein Erbe und mein Zuhause. Als Einheimischer von Zagora biete ich authentische Einblicke in das Leben in der Wüste, die nur ein Einheimischer geben kann. Ich spreche fließend Berber, Arabisch, Französisch und Englisch, was mir ermöglicht, kulturelle Unterschiede zu überwinden und internationalen Reisenden ein wirklich immersives Erlebnis zu bieten. Meine Familie lebt seit Generationen in dieser Region, und ich freue mich darauf, unsere Traditionen, Geschichten und geheimen Orte mit Ihnen zu teilen. Meine Wüstentouren umfassen Kamelritte über die beeindruckenden Erg Chigaga-Dünen, Übernachtungen in traditionellen Berberlagern unter den Sternen, Besuche abgelegener Dörfer und authentische kulinarische Erlebnisse."
+}
