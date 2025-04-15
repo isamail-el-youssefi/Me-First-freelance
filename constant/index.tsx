@@ -37,55 +37,81 @@ export const TRIPDAY = [
   // Package 1: Desert Adventure
   [
     {
-      d: "Day 1",
-      details:
-        "Morning departure after breakfast towards M'Hamid where the caravan awaits. After a 3-hour walk, lunch at Race Nkhal. Around 3 PM, departure for Oued Naam with a 2-hour walk. Bivouac and dinner next to magnificent dunes.",
+      d: "d1",
+      itinerary: "MARRAKECH - AIT BEN HADOU - OUARZAZATE - GORGES DE DADES:",
+      details: "package1-day1"
     },
     {
-      d: "Day 2",
-      details:
-        "Departure from Oued Naam around 8 AM, 3-hour walk crossing a large dried lake (reg). Lunch at Loitide. We leave again around 3 PM for a hike through a region of wonderful dunes (erg). Bivouac and dinner.",
+      d: "d2",
+      itinerary: "BOUMALN DADES - MSEMRIR - GORGES TODGHA",
+      details: "package1-day2"
     },
     {
-      d: "Day 3",
-      details:
-        "After breakfast, we cross the Hamada (stone desert). Lunch at the Sacred Oasis. In the afternoon, departure for the Chegaga Dunes. It's the largest and most vast dune in the region, rising to 300m altitude and stretching over 40 km long. Evening meal and overnight stay in nomadic tents.",
-    },
-  ],
-  // Package 2: Oasis Explorer
-  [
-    {
-      d: "Day 1",
-      details:
-        "Departure from Marrakech at 8 AM, heading to the stunning Oasis Fint. Travel through scenic mountain passes with photo stops along the way. Arrive at the oasis by afternoon, explore local village life. Traditional dinner and overnight at a charming guesthouse.",
+      d: "d3",
+      itinerary: "GORGES TODGHA - ZAGORA - DESERT CHEGAGA",
+      details: "package1-day3"
     },
     {
-      d: "Day 2",
-      details:
-        "Morning guided walk through palm groves and traditional irrigation systems. Learn about sustainable desert agriculture from local farmers. Afternoon cooking class using fresh oasis ingredients. Evening storytelling session under the stars.",
+      d: "d4",
+      itinerary: "DESERT CHEGAGA",
+      details: "package1-day4"
     },
     {
-      d: "Day 3",
-      details:
-        "Sunrise yoga session with views of the oasis. Visit to local artisan workshops and opportunity to learn traditional crafts. Return to Marrakech in the late afternoon, arriving by evening.",
+      d: "d5",
+      itinerary: "CHEGAGA - FOUM ZGUID - MARRAKECH",
+      details: "package1-day5"
     },
   ],
-  // Package 3: Historical Journey
+  // Programme 3 jours Chigaga 2 nuit
+
   [
     {
-      d: "Day 1",
-      details:
-        "Early departure from Marrakech to Ait Ben Haddou, a UNESCO World Heritage Site. Guided tour of this ancient fortified village, famous for featuring in numerous Hollywood films. Free time to explore and photograph the kasbah. Dinner and overnight in a traditional riad.",
+      d: "d1",
+      itinerary: "MARRAKECH - TICHKA - AIT BEN HADDOU - ZAGORA - ERG LIHODI:",
+      details: "package2-day1"
     },
     {
-      d: "Day 2",
-      details:
-        "Morning exploration of nearby filming locations and historical sites. Visit to Ouarzazate, known as the 'Hollywood of Morocco' and tour of Atlas Film Studios. Afternoon visit to Kasbah Taourirt. Traditional Moroccan dinner with local entertainment.",
+      d: "d2",
+      itinerary: "ERG LIHODI - LES DUNES DE CHEGAGA",
+      details: "package2-day2"
     },
     {
-      d: "Day 3",
-      details:
-        "Journey through the Valley of the Roses, famous for its annual Rose Festival. Visit to a rose cooperative to learn about rose water production. Return to Marrakech via the spectacular Tizi n'Tichka mountain pass, with scenic stops along the way.",
+      d: "d3",
+      itinerary: "CHEGAGA -  MARRAKECH",
+      details: "package2-day3"
+    },
+  ],
+  // PROGRAMME 6 JOUR MARRAKECH -BOUMALN DADES - GORGES TOUDRA-CHEGAGA- OASIS DE FINT - MARRAKECH 
+  [
+    {
+      d: "d1",
+      itinerary: "MARRAKECH - AIT BEN HADOU - OUARZAZATE - GORGES DE DADES:",
+      details: "package3-day1"
+    },
+    {
+      d: "d2",
+      itinerary: "BOUMALN DADES - MSEMRIR - TIZI NOUGDAL - GORGES TODGHA",
+      details: "package3-day2"
+    },
+    {
+      d: "d3",
+      itinerary: "GORGES TODGHA - ZAGORA - DESERT CHEGAGA",
+      details: "package3-day3"
+    },
+    {
+      d: "d4",
+      itinerary: "DESERT CHEGAGA",
+      details: "package3-day4"
+    },
+    {
+      d: "d5",
+      itinerary: "CHEGAGA - FOUM ZGUID - OASIS FINT",
+      details: "package3-day5"
+    },
+    {
+      d: "d6",
+      itinerary: "OASIS FINT - VALLEY OURIKA - MARRAKECH",
+      details: "package3-day6"
     },
   ],
 ];

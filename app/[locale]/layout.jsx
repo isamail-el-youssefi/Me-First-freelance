@@ -16,7 +16,7 @@ export default async function RootLayout({ children, params: { locale } }) {
 
   return (
     <html lang="en">
-      <body>
+      <body className="overflow-y-scroll h-[500px] scrollbar-thin scrollbar-thumb-amber-900 scrollbar-track-amber-100">
         <TranslationsProvider
           namespaces={i18nNamespaces}
           locale={locale}

@@ -1,55 +1,69 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import i18nConfig from "@/i18nConfig";
+import { useState } from "react";
 
-function LanguageChanger() {
+const LANGUAGES = [
+  { code: "en", flag: "🇬🇧" },
+  { code: "fr", flag: "🇫🇷" },
+  { code: "es", flag: "🇪🇸" },
+  { code: "it", flag: "🇮🇹" },
+  { code: "de", flag: "🇩🇪" },
+  { code: "zh", flag: "🇨🇳" },
+];
+
+export default function LanguageDropdown() {
   const { i18n } = useTranslation();
-  const currentLocale = i18n.language;
   const router = useRouter();
   const currentPathname = usePathname();
+  const currentLocale = i18n.language;
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleChange = (e: { target: { value: string } }) => {
-    const newLocale = e.target.value;
+  const handleChange = (newLocale: string) => {
+    setIsOpen(false);
 
-    // set cookie for next-i18n-router
-    const days = 30;
+    // Save cookie
     const date = new Date();
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    const expires = date.toUTCString();
-    document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
+    date.setTime(date.getTime() + 30 * 24 * 60 * 60 * 1000);
+    document.cookie = `NEXT_LOCALE=${newLocale};expires=${date.toUTCString()};path=/`;
 
-    // redirect to the new locale path
-    if (
-      currentLocale === i18nConfig.defaultLocale &&
-      !i18nConfig.prefixDefault
-    ) {
+    // Navigate
+    if (currentLocale === i18nConfig.defaultLocale && !i18nConfig.prefixDefault) {
       router.push("/" + newLocale + currentPathname);
     } else {
-      router.push(
-        currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
-      );
+      router.push(currentPathname.replace(`/${currentLocale}`, `/${newLocale}`));
     }
 
     router.refresh();
   };
 
+  const selected = LANGUAGES.find(l => l.code === currentLocale) || LANGUAGES[0];
+
   return (
-    <select 
-      onChange={handleChange} 
-      value={currentLocale}
-      className="bg-transparent border-none outline-none cursor-pointer"
-    >
-      <option value="en">🇬🇧</option>
-      <option value="fr">🇫🇷</option>
-      <option value="es">🇪🇸</option>
-      <option value="it">🇮🇹</option>
-      <option value="de">🇩🇪</option>
-      <option value="zh">🇨🇳</option>
-    </select>
+    <div className="relative inline-block text-left">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-2 bg-white px-3 py-1 rounded-full  cursor-pointer"
+      >
+        <span className="text-l">{selected.flag}</span>
+
+      </button>
+
+      {isOpen && (
+        <div className="absolute z-10 mt-2 bg-white rounded-md shadow-lg w-16 py-2">
+          {LANGUAGES.map((lang) => (
+            <button
+              key={lang.code}
+              onClick={() => handleChange(lang.code)}
+              className="w-full flex justify-center py-2 hover:bg-gray-100 text-l"
+            >
+              {lang.flag}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
-
-export default LanguageChanger;

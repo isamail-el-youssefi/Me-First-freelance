@@ -79,32 +79,32 @@ const Page: React.FC<PageProps> = (props) => {
   return (
     <section className="max-container padding-container lg:pt-40 pt-36 pb-28">
       {/* HEADING */}
-      <div className="flex flex-col justify-center items-center text-center ">
-        <h1 className="lg:bold-44 bold-28 pb-2 text-amber-900">
+      <div className="flex flex-col justify-center items-center text-center md:pb-6 pb-4 pt-6">
+        <h1 className=" text-2xl md:text-3xl pb-2 text-amber-900">
           {props.Heading}
         </h1>
       </div>
-      <div className="flex flex-col gap-10 lg:gap-28 lg:flex-row pt-6">
+      <div className="flex flex-col gap-10 lg:gap-28 lg:flex-row pt-6 ">
         {/* LEFT */}
-        <div className="flex-1">
+        <div className="flex-1 ">
           {/* MAIN TABS */}
           <Tabs defaultValue="tour">
-            <TabsList className="bg-amber-100 flex justify-evenly py-7 rounded-full">
+            <TabsList className="bg-amber-50 flex justify-evenly py-7 rounded-xl">
               <TabsTrigger
                 value="tour"
-                className="rounded-full text-amber-950 text-md py-2 px-4"
+                className="rounded-full text-amber-950 text-md  px-4 "
               >
                 Tour
               </TabsTrigger>
               <TabsTrigger
                 value="details"
-                className="rounded-full text-amber-950 text-md py-2 px-4"
+                className="rounded-full text-amber-950 text-md  px-4"
               >
                 Details
               </TabsTrigger>
               <TabsTrigger
                 value="map"
-                className="rounded-full text-amber-950 text-md py-2 px-4"
+                className="rounded-full text-amber-950 text-md  px-4"
               >
                 Tour in map
               </TabsTrigger>
@@ -112,14 +112,15 @@ const Page: React.FC<PageProps> = (props) => {
 
             {/* TOUR TAB CONTENT */}
             <TabsContent value="tour" className="pt-4">
+              <div className="bg-amber-50 rounded-xl p-3 md:min-h-[680px] min-h-[500px]">
               {/* NESTED TABS FOR DAYS - Using a separate Tabs component */}
               <Tabs defaultValue="day1" onValueChange={handleDayChange}>
-                <TabsList className="bg-amber-50 flex justify-evenly py-4 rounded-full mb-6">
+                <TabsList className="bg-amber-50 flex flex-wrap sm:justify-evenly gap-2 sm:gap-0 pt-6 rounded-full mb-6 min-h-[80px]">
                   {tripData.map((trip, index) => (
                     <TabsTrigger
                       key={`day-tab-${index}`}
                       value={`day${index + 1}`}
-                      className="rounded-full text-amber-950 text-md py-2 px-4"
+                      className="rounded-full text-amber-900 text-sm py-2 px-4 border-2 border-amber-900 bg-amber-50"
                     >
                       {t(trip.d)}
                     </TabsTrigger>
@@ -132,15 +133,18 @@ const Page: React.FC<PageProps> = (props) => {
                     key={`day-content-${index}`}
                     value={`day${index + 1}`}
                   >
-                    <h1 className="bold-18 md:bold-20 capitalize pl-2 pb-1 text-amber-900">
-                      {t(trip.d)}
-                    </h1>
-                    <p className="text-amber-950 text-lg tracking-tight leading-7 xl:leading-8 text-justify pb-3">
-                      {t(trip.details)}
-                    </p>
+                    <div className="bg-amber-50 rounded-xl p-6">
+                      <h1 className="capitalize pb-3 text-lg text-amber-800">
+                        {t(trip.itinerary)}
+                      </h1>
+                      <p className="text-amber-950 text-lg  leading-7 xl:leading-9 text-justify pb-3">
+                        {t(trip.details)}
+                      </p>{" "}
+                    </div>
                   </TabsContent>
                 ))}
               </Tabs>
+              </div>
             </TabsContent>
 
             {/* DETAILS TAB CONTENT */}
@@ -174,10 +178,18 @@ const Page: React.FC<PageProps> = (props) => {
 
             {/* MAP TAB CONTENT */}
             <TabsContent value="map" className="pt-4">
-              <iframe
-                src={props.map}
-                className="w-full h-96 rounded-2xl"
-              ></iframe>
+              {/* Map container with enhanced styling */}
+              <div className="relative rounded-2xl overflow-hidden shadow-lg">
+                {/* Map iframe */}
+                <iframe
+                  src={props.map}
+                  className="w-full rounded-2xl"
+                  loading="lazy"
+                  width="600"
+                  height="600"
+                  style={{ border: "13px solid white " }}
+                ></iframe>
+              </div>
             </TabsContent>
           </Tabs>
           {/* Day indicator title */}
