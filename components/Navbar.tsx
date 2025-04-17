@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import "./Style/Components.css";
 import { useTranslation } from "react-i18next";
 import LanguageChanger from "./LanguageChanger";
+import { TransitionLink } from "../components/utils/TransitionLink";
 
 const Navbar = () => {
   const { t } = useTranslation();
@@ -20,7 +21,7 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY && currentScrollY > 100 && !menuOpened) {
+      if (currentScrollY > lastScrollY && currentScrollY > 50 && !menuOpened) {
         setShowNavbar(false); // hide on scroll down
       } else {
         setShowNavbar(true); // show on scroll up or when menu is open
@@ -49,20 +50,20 @@ const Navbar = () => {
 
       <div className="hidden xl:flex h-full">
         {NAV_LINKS.map((link) => (
-          <Link
+          <TransitionLink
             href={link.href}
             key={link.key}
             className="flex gap-2 mx-4 relative group text-amber-950 text-md py-5"
           >
             {t(link.label)}
             <span className="absolute h-[2.5px] w-0 bg-amber-900 -bottom-[6px] group-hover:w-full transition-all duration-300 ease-in-out"></span>
-          </Link>
+          </TransitionLink>
         ))}
       </div>
 
       <LanguageChanger />
 
-      <Link href="/contact">
+      <TransitionLink href="/contact">
         <div className="hidden xl:block">
           <div className="flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-8 py-3.5 text-white hover:bold-16 hover:text-amber-950 transition-all hover:bg-white">
             <div className="whitespace-nowrap cursor-pointer text-sm">
@@ -70,7 +71,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-      </Link>
+      </TransitionLink>
 
       {/* MOBILE MENU ICON */}
       {!menuOpened ? (
@@ -102,15 +103,15 @@ const Navbar = () => {
         }
       >
         {NAV_LINKS.map((link) => (
-          <Link
+          <TransitionLink
             href={link.href}
             key={link.key}
             className="flex text-amber-900 gap-2 my-7 mx-7 text-xl font-medium hover:font-semibold hover:text-amber-950 relative group"
-            onClick={toggleMenu}
+            onClick={toggleMenu} // <- this now works
           >
             {t(link.label)}
             <span className="inline-block absolute h-[2px] w-0 bg-amber-950 -bottom-2 group-hover:w-28 transition-all duration-500"></span>
-          </Link>
+          </TransitionLink>
         ))}
         <Link href="/contact" onClick={toggleMenu}>
           <div className="pt-7 mx-7">

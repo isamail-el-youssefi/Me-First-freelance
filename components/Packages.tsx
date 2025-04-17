@@ -39,12 +39,12 @@ const Packages = () => {
           link="/trips/2" // Dynamic ID for package 2
         />
         <TripPackages
-          iamgeSrc="/test3.jpg"
+          iamgeSrc="/oasis2.jpg"
           iamgeAlt="kasbah"
           heading="Historical Journey"
           text="Visit the UNESCO World Heritage site of Ait Ben Haddou and explore Morocco's rich history on this 3-day tour. See famous movie locations, visit ancient kasbahs, and travel through stunning mountain scenery."
-          width={500}
-          height={300}
+          width={1920}
+          height={1280}
           btnType="button"
           btnTitle={t('moreDetails')}
           link="/trips/3" // Dynamic ID for package 3

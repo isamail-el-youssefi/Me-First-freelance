@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -10,8 +10,9 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { useTranslation } from "react-i18next";
 import { TITLES } from "@/constant";
-
 import Image from "next/image";
+import { ChevronLeft, ChevronRight, X } from "lucide-react"; // optional icons
+import { useEffect } from "react";
 
 const CarouselMain = () => {
   const imageSources = [
@@ -28,13 +29,66 @@ const CarouselMain = () => {
 
   const { t } = useTranslation();
 
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const closeModal = () => setSelectedIndex(null);
+
+  const showNext = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex + 1) % imageSources.length);
+    }
+  };
+
+  const showPrevious = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex(
+        (selectedIndex - 1 + imageSources.length) % imageSources.length
+      );
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedIndex === null) return;
+
+      if (e.key === "ArrowLeft") {
+        showPrevious();
+      } else if (e.key === "ArrowRight") {
+        showNext();
+      } else if (e.key === "Escape") {
+        closeModal();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }); 
+
+
+    const [modalVisible, setModalVisible] = useState(false);
+  
+    useEffect(() => {
+      if (selectedIndex !== null) {
+        // Delay to allow CSS transition to trigger
+        setTimeout(() => setModalVisible(true), 10);
+      } else {
+        setModalVisible(false);
+      }
+    }, [selectedIndex]);
+
   return (
     <div className="max-container padding-container pb-10 pt-3">
       <div className="flex flex-col justify-center items-center text-center">
-        <h1 className="bold-32 lg:bold-40  pb-10 uppercase text-amber-900">{t(TITLES.Happy)}</h1>
-
+        <h1 className="bold-32 lg:bold-40 pb-10 uppercase text-amber-900">
+          {t(TITLES.Happy)}
+        </h1>
       </div>
+
       <Carousel
+        opts={{ loop: true }}
         plugins={[
           Autoplay({
             delay: 2700,
@@ -43,16 +97,16 @@ const CarouselMain = () => {
         ]}
       >
         <CarouselContent>
-          {/* Map over image sources to generate CarouselItems */}
           {imageSources.map((src, index) => (
             <CarouselItem key={index} className="lg:basis-1/3 basis-1/2">
               <Image
                 src={src}
-                alt="about"
+                alt={`happy-traveler-${index}`}
                 height={400}
                 width={400}
-                style={{ width: "100%", height: "100%" }}
+                style={{ width: "100%", height: "100%", cursor: "pointer" }}
                 className="rounded-2xl"
+                onClick={() => setSelectedIndex(index)}
               />
             </CarouselItem>
           ))}
@@ -60,6 +114,46 @@ const CarouselMain = () => {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
+
+      {/* Modal with navigation */}
+      {selectedIndex !== null && (
+        <div
+          className={`fixed lg:px-0 px-6 inset-0 bg-gray-90 bg-opacity-65 flex items-center justify-center z-50 transition-all duration-500 overflow-auto ${modalVisible ? "opacity-100 scale-100" : "opacity-0 scale-100"}`}
+          onClick={closeModal} // Close when clicking outside
+        >
+          {/* Previous button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              showPrevious();
+            }}
+            className="absolute invisible lg:visible left-0 lg:left-10 text-white hover:scale-110 transition"
+          >
+            <ChevronLeft size={40} />
+          </button>
+
+          {/* Image */}
+          <Image
+            src={imageSources[selectedIndex]}
+            alt="zoomed"
+            width={900}
+            height={600}
+            className="rounded-2xl lg:max-w-[800px] lg:max-h-[800px] max-h-full max-w-full object-contain"
+            onClick={(e) => e.stopPropagation()} // Prevent modal close on image click
+          />
+
+          {/* Next button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              showNext();
+            }}
+            className="absolute invisible lg:visible right-0 lg:right-10 text-white hover:scale-110 transition"
+          >
+            <ChevronRight size={40} />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

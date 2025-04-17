@@ -11,6 +11,19 @@
 }
 
 body {
+  transition-property: opacity, transform, filter, background;
+  transition-timing-function: ease-in-out;
+  transition-duration: 450ms;
+  overflow-x: hidden;
+}
+
+.page-transition {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(20px);
+}
+
+body {
   font-family: Montserrat;
 }
 .linearGradient {
@@ -32,7 +45,7 @@ body {
   }
 
   .max-container {
-    @apply mx-auto max-w-[1440px];
+    @apply mx-auto max-w-[1340px];
   }
 
   .padding-container {
@@ -239,4 +252,9 @@ body {
 }
 ::-webkit-scrollbar-track {
   background-color: #fef3c7; /* amber-100 */
+}
+
+::selection {
+  background-color: #fde68a; /* amber-300 */
+  color: #431407; /* slate-900 or your brand color */
 }

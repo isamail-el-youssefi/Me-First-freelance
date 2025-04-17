@@ -14,8 +14,9 @@ const page = () => {
       <Hero />
       <About />
       <Packages />
-{/*       <Testimonial></Testimonial>
- */}      <CarouselMain />
+      {/*       <Testimonial></Testimonial>
+       */}
+      <CarouselMain />
     </>
   );
 };
