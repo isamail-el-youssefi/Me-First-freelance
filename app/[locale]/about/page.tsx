@@ -5,6 +5,7 @@ import React from "react";
 import { useTranslation } from 'react-i18next';
 import DestinationData from "../../../components/DestinationData";
 import { TRIPS } from "@/constant";
+import Feedback from "@/components/Feedback";
 
 const Page = () => {
   const { t } = useTranslation();
@@ -44,20 +45,7 @@ const Page = () => {
       </div>
 
       {/* TESTIMONIALS PREVIEW */}
-      <div className="mb-16">
-        <h2 className="text-3xl font-bold text-amber-900 mb-6">
-          What Travelers Say
-        </h2>
-        <div className="bg-amber-50 p-6 rounded-lg shadow-md italic">
-          <p className="text-gray-700 mb-4">
-            "Our desert tour with Salah was the highlight of our Morocco trip.
-            His knowledge of the region and genuine warmth made this experience
-            truly special. The sunset camel ride and overnight camp under the
-            stars was magical!"
-          </p>
-          <p className="text-amber-800 font-semibold">— Maria & John, Spain</p>
-        </div>
-      </div>
+      <Feedback />
     </section>
   );
 };

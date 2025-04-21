@@ -121,35 +121,26 @@ export const TRIPDAY = [
 
 
 // TESTIMONIAL SECTION
-export const TESTIMONIAL = [
+export const testimonials = [
   {
-    title: "James Martinez",
-    profession: "Director, Nova Gold",
-    URL: "/person-1.jpg",
-    desc: "Fantastic destinations, knowledgeable guides, seamless logistics. Spectacular views and memories. Exceeded expectations; worth every penny",
+    name: '— Maria & John',
+    country: 'Spain',
+    recommendation: `Our desert tour with Salah was the highlight of our Morocco trip.
+      His knowledge of the region and genuine warmth made this experience
+      truly special. The sunset camel ride and overnight camp under the
+      stars was magical!`,
+    link: 'https://web.facebook.com/fmonot',
   },
   {
-    title: "Sophia Anderson",
-    profession: "Manager, Safe City",
-    URL: "/person-2.jpg",
-    desc: "Unforgettable experiences, friendly staff, and top-notch organization. Highly recommended for adventurous souls. A must-try. Highly recommend",
+    name: '— Mounya',
+    country: 'Morocco',
+    recommendation: `SALAH guide touristique de notre aventure vers le desert du Chegaga, a été accueillant et nous a fait découvrir tout au long du parcours les spécialités géographiques et les espèces animales qui y survivent. Il a animé notre voyage d'une valeur ajoutée indiscutable. C'est un connaisseur professionnel du parcours du désert, a éveillé notre curiosité. Il fait de son mieux pour nous faire découvrir tout détail intéressant tout au long du circuit choisi. C'était un voyage exceptionnel en plein desert depuis Tagounite à Chegaga pour la nuité au bivouac puis vers Foum Zguid en passant par Iriki. Merci beaucoup SALAH.`,
+    link: 'https://www.facebook.com/share/p/1Bb3ASpYkw/',
   },
   {
-    title: "Lily Walker",
-    profession: "Director, High Gold",
-    URL: "/person-3.jpg",
-    desc: "Unbelievable sights, professional guides, seamless planning. Unmatched experiences that leave you wanting more. Highly recommended",
-  },
-  {
-    title: "Ninna Williams",
-    profession: "CEO, Rafa Builds",
-    URL: "/person-4.jpg",
-    desc: "Unparalleled expertise, personalized service, breathtaking destinations. Consistently delivers an extraordinary travel experience. Highly recommended",
-  },
-  {
-    title: "Ali Khan",
-    profession: "CEO, High Chase",
-    URL: "/person-5.jpg",
-    desc: "Outstanding deys, knowledgeable guides, seamless execution. Each trip exceeds expectations, ensuring lasting memories and remarkable experiences.",
+    name: '— Fan Schlichter',
+    country: 'France',
+    recommendation: `Salah est le meilleur guide et un amoureux du désert qui transmet sa passion : en trek ou en famille, Salah vous concoctera le meilleur séjour hors des sentiers battus et vous accompagnera avec toute sa gentillesse.`,
+    link: 'https://www.facebook.com/share/p/1AUznvNSxm/',
   },
 ];
