@@ -13,6 +13,7 @@ import { TITLES } from "@/constant";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react"; // optional icons
 import { useEffect } from "react";
+import AnimatedSection from "./AnimatedSection";
 
 const CarouselMain = () => {
   const imageSources = [
@@ -65,60 +66,65 @@ const CarouselMain = () => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }); 
+  });
 
+  const [modalVisible, setModalVisible] = useState(false);
 
-    const [modalVisible, setModalVisible] = useState(false);
-  
-    useEffect(() => {
-      if (selectedIndex !== null) {
-        // Delay to allow CSS transition to trigger
-        setTimeout(() => setModalVisible(true), 10);
-      } else {
-        setModalVisible(false);
-      }
-    }, [selectedIndex]);
+  useEffect(() => {
+    if (selectedIndex !== null) {
+      // Delay to allow CSS transition to trigger
+      setTimeout(() => setModalVisible(true), 10);
+    } else {
+      setModalVisible(false);
+    }
+  }, [selectedIndex]);
 
   return (
     <div className="max-container padding-container pb-10 pt-3">
-      <div className="flex flex-col justify-center items-center text-center">
-        <h1 className="bold-32 lg:bold-40 pb-10 uppercase text-amber-900">
-          {t(TITLES.Happy)}
-        </h1>
-      </div>
+      <AnimatedSection>
+        <div className="flex flex-col justify-center items-center text-center">
+          <h1 className="bold-32 lg:bold-40 pb-10 uppercase text-amber-900">
+            {t(TITLES.Happy)}
+          </h1>
+        </div>
+      </AnimatedSection>
 
-      <Carousel
-        opts={{ loop: true }}
-        plugins={[
-          Autoplay({
-            delay: 2700,
-            stopOnInteraction: false,
-          }),
-        ]}
-      >
-        <CarouselContent>
-          {imageSources.map((src, index) => (
-            <CarouselItem key={index} className="lg:basis-1/3 basis-1/2">
-              <Image
-                src={src}
-                alt={`happy-traveler-${index}`}
-                height={400}
-                width={400}
-                style={{ width: "100%", height: "100%", cursor: "pointer" }}
-                className="rounded-2xl"
-                onClick={() => setSelectedIndex(index)}
-              />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+      <AnimatedSection>
+        <Carousel
+          opts={{ loop: true }}
+          plugins={[
+            Autoplay({
+              delay: 2700,
+              stopOnInteraction: false,
+            }),
+          ]}
+        >
+          <CarouselContent>
+            {imageSources.map((src, index) => (
+              <CarouselItem key={index} className="lg:basis-1/3 basis-1/2">
+                <Image
+                  src={src}
+                  alt={`happy-traveler-${index}`}
+                  height={400}
+                  width={400}
+                  style={{ width: "100%", height: "100%", cursor: "pointer" }}
+                  className="rounded-2xl"
+                  onClick={() => setSelectedIndex(index)}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </AnimatedSection>
 
       {/* Modal with navigation */}
       {selectedIndex !== null && (
         <div
-          className={`fixed lg:px-0 px-6 inset-0 bg-gray-90 bg-opacity-65 flex items-center justify-center z-50 transition-all duration-500 overflow-auto ${modalVisible ? "opacity-100 scale-100" : "opacity-0 scale-100"}`}
+          className={`fixed lg:px-0 px-6 inset-0 bg-gray-90 bg-opacity-65 flex items-center justify-center z-50 transition-all duration-500 overflow-auto ${
+            modalVisible ? "opacity-100 scale-100" : "opacity-0 scale-100"
+          }`}
           onClick={closeModal} // Close when clicking outside
         >
           {/* Previous button */}

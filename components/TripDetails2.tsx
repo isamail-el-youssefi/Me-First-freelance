@@ -11,6 +11,9 @@ import {
 } from "@/components/ui/carousel";
 import { TRIPDAY } from "@/constant";
 import { useTranslation } from "react-i18next";
+import AnimatedSectionText from "./AnimatedSectionText";
+import { motion, AnimatePresence } from "framer-motion";
+import BookingCalendar from "./BookingCalendar";
 
 // Add this type for the day images
 interface DayImages {
@@ -30,6 +33,8 @@ interface PageProps {
   carousel3: string;
   // Optional day images object that can be passed from the parent
   dayImages?: DayImages;
+  price: string;
+  duration: string;
 }
 
 const Page: React.FC<PageProps> = (props) => {
@@ -43,6 +48,8 @@ const Page: React.FC<PageProps> = (props) => {
 
   // State for showing the image change notification
   const [showNotification, setShowNotification] = useState(false);
+
+  const [calendarOpen, setCalendarOpen] = useState(false);
 
   // Default images if no day-specific images are provided
   const defaultDayImages: DayImages = {
@@ -103,6 +110,12 @@ const Page: React.FC<PageProps> = (props) => {
                 Details
               </TabsTrigger>
               <TabsTrigger
+                value="prix"
+                className="rounded-full text-amber-950 text-md  px-4"
+              >
+                Price
+              </TabsTrigger>
+              <TabsTrigger
                 value="map"
                 className="rounded-full text-amber-950 text-md  px-4"
               >
@@ -113,37 +126,39 @@ const Page: React.FC<PageProps> = (props) => {
             {/* TOUR TAB CONTENT */}
             <TabsContent value="tour" className="pt-4">
               <div className="bg-amber-50 rounded-xl p-3 md:min-h-[680px] min-h-[500px]">
-              {/* NESTED TABS FOR DAYS - Using a separate Tabs component */}
-              <Tabs defaultValue="day1" onValueChange={handleDayChange}>
-                <TabsList className="bg-amber-50 flex flex-wrap sm:justify-evenly gap-2 sm:gap-0 pt-6 rounded-full mb-6 min-h-[80px]">
-                  {tripData.map((trip, index) => (
-                    <TabsTrigger
-                      key={`day-tab-${index}`}
-                      value={`day${index + 1}`}
-                      className="rounded-full text-amber-900 text-sm py-2 px-4 border-2 border-amber-900 bg-amber-50"
-                    >
-                      {t(trip.d)}
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
+                {/* NESTED TABS FOR DAYS - Using a separate Tabs component */}
+                <Tabs defaultValue="day1" onValueChange={handleDayChange}>
+                  <TabsList className="bg-amber-50 flex flex-wrap sm:justify-evenly gap-2 sm:gap-0 pt-6 rounded-full mb-6 min-h-[80px]">
+                    {tripData.map((trip, index) => (
+                      <TabsTrigger
+                        key={`day-tab-${index}`}
+                        value={`day${index + 1}`}
+                        className="rounded-full text-amber-900 text-sm py-2 px-4 border-2 border-amber-900 bg-amber-50"
+                      >
+                        {t(trip.d)}
+                      </TabsTrigger>
+                    ))}
+                  </TabsList>
 
-                {/* DAY CONTENT - Each day as a separate TabsContent */}
-                {tripData.map((trip, index) => (
-                  <TabsContent
-                    key={`day-content-${index}`}
-                    value={`day${index + 1}`}
-                  >
-                    <div className="bg-amber-50 rounded-xl p-6">
-                      <h1 className="capitalize pb-3 text-lg text-amber-800">
-                        {t(trip.itinerary)}
-                      </h1>
-                      <p className="text-amber-950 text-lg  leading-7 xl:leading-9 text-justify pb-3">
-                        {t(trip.details)}
-                      </p>{" "}
-                    </div>
-                  </TabsContent>
-                ))}
-              </Tabs>
+                  {/* DAY CONTENT - Each day as a separate TabsContent */}
+                  {tripData.map((trip, index) => (
+                    <TabsContent
+                      key={`day-content-${index}`}
+                      value={`day${index + 1}`}
+                    >
+                      <AnimatedSectionText triggerKey={activeDay}>
+                        <div className="bg-amber-50 rounded-xl p-6">
+                          <h1 className="capitalize pb-3 text-lg text-amber-800">
+                            {t(trip.itinerary)}
+                          </h1>
+                          <p className="text-amber-950 text-lg  leading-7 xl:leading-9 text-justify pb-3">
+                            {t(trip.details)}
+                          </p>{" "}
+                        </div>
+                      </AnimatedSectionText>
+                    </TabsContent>
+                  ))}
+                </Tabs>
               </div>
             </TabsContent>
 
@@ -174,6 +189,73 @@ const Page: React.FC<PageProps> = (props) => {
                   <li className="text-amber-950">Water bottle</li>
                 </ul>
               </div>
+            </TabsContent>
+
+            {/* PRICE AND RESERVATION TAB CONTENT */}
+            {/* PRICE AND RESERVATION TAB CONTENT */}
+            <TabsContent value="prix" className="pt-4">
+              <div className="bg-amber-50 rounded-xl">
+                <table className="min-w-full bg-amber-50 rounded-xl overflow-hidden">
+                  <thead>
+                    <tr className="text-left bg-amber-100 text-amber-900 uppercase text-sm">
+                      <th className="px-6 py-3">Durée</th>
+                      <th className="px-6 py-3">Nombre de Personnes</th>
+                      <th className="px-6 py-3">Prix</th>
+                      <th className="px-6 py-3">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {props.pricing.map((tier, index) => (
+                      <tr
+                        key={`pricing-tier-${index}`}
+                        className="border-t border-amber-200"
+                      >
+                        {index === 0 && (
+                          <td
+                            className="px-6 py-4"
+                            rowSpan={props.pricing.length}
+                          >
+                            {props.duration}
+                          </td>
+                        )}
+                        <td className="px-6 py-4">{tier.persons}</td>
+                        <td className="px-6 py-4">{tier.price}</td>
+                        <td className="px-6 py-4">
+                          <motion.a
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            href="https://wa.me/212707992405"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-medium py-2 px-4 rounded-full transition mr-2"
+                          >
+                            Réserver
+                          </motion.a>
+
+                          {/*
+                            <motion.button
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              onClick={() => setCalendarOpen(true)}
+                              className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition mt-2 sm:mt-0"
+                            >
+                              Choisir une date
+                            </motion.button>
+                          */}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Add the BookingCalendar component outside the table but still within the TabsContent */}
+              <BookingCalendar
+                open={calendarOpen}
+                onOpenChange={setCalendarOpen}
+                tripId={props.days.toString()}
+                tripName={props.Heading}
+              />
             </TabsContent>
 
             {/* MAP TAB CONTENT */}
@@ -209,26 +291,33 @@ const Page: React.FC<PageProps> = (props) => {
         <div className="flex-1 relative">
           {/* Permanent indicator below carousel */}
           <div className="mb-4 flex items-center justify-center">
-            <Carousel>
-              <CarouselContent>
-                {currentDayImages.map((imageSrc, index) => (
-                  <CarouselItem key={`image-${activeDay}-${index}`}>
-                    <Image
-                      src={imageSrc}
-                      alt={`Day ${activeDay.replace("day", "")} - Image ${
-                        index + 1
-                      }`}
-                      height={400}
-                      width={400}
-                      style={{ width: "100%", height: "100%" }}
-                      className="rounded-2xl"
-                    />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+            <motion.div
+              key={activeDay} // Ensures re-render + animation on day change
+              initial={{ opacity: 0, translateY: 0 }}
+              animate={{ opacity: 1, translateY: 30 }}
+              transition={{ duration: 1.1, ease: "easeInOut" }}
+            >
+              <Carousel>
+                <CarouselContent>
+                  {currentDayImages.map((imageSrc, index) => (
+                    <CarouselItem key={`image-${activeDay}-${index}`}>
+                      <Image
+                        src={imageSrc}
+                        alt={`Day ${activeDay.replace("day", "")} - Image ${
+                          index + 1
+                        }`}
+                        height={400}
+                        width={400}
+                        style={{ width: "100%", height: "100%" }}
+                        className="rounded-2xl"
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </motion.div>
           </div>
         </div>
       </div>

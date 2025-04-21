@@ -13,14 +13,14 @@
 body {
   transition-property: opacity, transform, filter, background;
   transition-timing-function: ease-in-out;
-  transition-duration: 450ms;
+  transition-duration: 500ms;
   overflow-x: hidden;
 }
 
 .page-transition {
   opacity: 0;
   transform: translateY(20px);
-  filter: blur(20px);
+  filter: blur(12px);
 }
 
 body {
@@ -257,4 +257,8 @@ body {
 ::selection {
   background-color: #fde68a; /* amber-300 */
   color: #431407; /* slate-900 or your brand color */
+}
+
+html {
+  scroll-behavior: smooth;
 }

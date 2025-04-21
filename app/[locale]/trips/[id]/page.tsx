@@ -7,6 +7,12 @@ import { TRIPDAY } from "@/constant";
 const packageInfo = {
   "1": {
     heading: "Desert Adventure - Erg Chegaga",
+    pricing: [
+      { persons: "1 person", price: "100$" },
+      { persons: "3 persons", price: "200$" },
+      { persons: "+4 persons", price: "300$" },
+    ],
+    duration: "3 Days",
     days: 0, // Index to TRIPDAY array
     // Default carousel images (for backward compatibility)
     carousel1: "/test1.jpg",
@@ -30,12 +36,39 @@ const packageInfo = {
         "/3jp/day1/1d12.jpg",
         "/3jp/day1/1d14.jpg",
       ],
-      day2: ["/222.jpg", "/222.jpg", "/222.jpg"],
-      day3: ["/333.jpg", "/333.jpg", "/333.jpg"],
+      day2: [
+        "/3jp/day2/1.jpg",
+        "/3jp/day2/2.jpg",
+        "/3jp/day2/3.jpg",
+        "/3jp/day2/4.jpg",
+        "/3jp/day2/5.jpg",
+        "/3jp/day2/6.jpg",
+        "/3jp/day2/7.jpg",
+        "/3jp/day2/8.jpg",
+        "/3jp/day2/9.jpg",
+        "/3jp/day2/10.jpg",
+        "/3jp/day2/11.jpg",
+        "/3jp/day2/12.jpg",
+        "/3jp/day2/14.jpg",
+      ],
+      day3: [
+        "/3jp/day3/1.jpg",
+        "/3jp/day3/2.jpg",
+        "/3jp/day3/3.jpg",
+        "/3jp/day3/4.jpg",
+        "/3jp/day3/5.jpg",
+        "/3jp/day3/6.jpg",
+        "/3jp/day3/7.jpg",
+      ],
     },
   },
   "2": {
     heading: "Oasis Explorer - Fint Oasis",
+    pricing: [
+      { persons: "1 person", price: "100$" },
+      { persons: "3 persons", price: "200$" },
+      { persons: "+4 persons", price: "300$" },
+    ],
     days: 1, // Index to TRIPDAY array
     carousel1: "/test2.jpg",
     carousel2: "/oasis1.jpg",
@@ -58,12 +91,54 @@ const packageInfo = {
         "/3jp/day1/1d12.jpg",
         "/3jp/day1/1d14.jpg",
       ],
-      day2: ["/3jp/day2/1.jpg", "/3jp/day2/2.jpg", "/3jp/day2/3.jpg"],
-      day3: ["/oasis/day3-1.jpg", "/oasis/day3-2.jpg", "/oasis/day3-3.jpg"],
+      day2: [
+        "/3jp/day2/25.jpg",
+        "/3jp/day2/26.jpg",
+        "/3jp/day2/27.jpg",
+        "/3jp/day2/28.jpg",
+        "/3jp/day2/29.jpg",
+        "/3jp/day2/1.jpg",
+        "/3jp/day2/2.jpg",
+        "/3jp/day2/3.jpg",
+        "/3jp/day2/4.jpg",
+        "/3jp/day2/5.jpg",
+        "/3jp/day2/6.jpg",
+        "/3jp/day2/7.jpg",
+        "/3jp/day2/8.jpg",
+        "/3jp/day2/9.jpg",
+        "/3jp/day2/10.jpg",
+        "/3jp/day2/11.jpg",
+        "/3jp/day2/12.jpg",
+        "/3jp/day2/14.jpg",
+        "/3jp/day2/15.jpg",
+        "/3jp/day2/16.jpg",
+        "/3jp/day2/17.jpg",
+        "/3jp/day2/18.jpg",
+        "/3jp/day2/19.jpg",
+        "/3jp/day2/20.jpg",
+        "/3jp/day2/21.jpg",
+        "/3jp/day2/22.jpg",
+        "/3jp/day2/23.jpg",
+        "/3jp/day2/24.jpg",
+      ],
+      day3: [
+        "/3jp/day3/1.jpg",
+        "/3jp/day3/2.jpg",
+        "/3jp/day3/3.jpg",
+        "/3jp/day3/4.jpg",
+        "/3jp/day3/5.jpg",
+        "/3jp/day3/6.jpg",
+        "/3jp/day3/7.jpg",
+      ],
     },
   },
   "3": {
     heading: "Historical Journey - Ait Ben Haddou",
+    pricing: [
+      { persons: "1 person", price: "100$" },
+      { persons: "3 persons", price: "200$" },
+      { persons: "+4 persons", price: "300$" },
+    ],
     days: 2, // Index to TRIPDAY array
     carousel1: "/test3.jpg",
     carousel2: "/kasbah1.jpg",
@@ -89,6 +164,8 @@ const TripDetailsPage = () => {
     <div>
       <TripDetails2
         Heading={packageData.heading}
+        pricing={packageData.pricing}
+        duration={packageData.duration}
         days={packageData.days}
         carousel1={packageData.carousel1}
         carousel2={packageData.carousel2}

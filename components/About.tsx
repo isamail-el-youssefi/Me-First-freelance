@@ -1,39 +1,14 @@
 'use client';
 
 import Image from "next/image";
-import React, { useEffect } from "react";
 import { TRIPS, TITLES } from "@/constant";
 import DestinationData from "./DestinationData";
 import { useTranslation } from "react-i18next";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import AnimatedSection from "./AnimatedSection";
+
 
 // Reusable animated section wrapper
-const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.2 });
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      variants={{
-        visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 50 },
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-};
 
 const About = () => {
   const { t } = useTranslation();

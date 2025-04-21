@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const Page = () => {
   const images = [
@@ -101,7 +102,7 @@ const Page = () => {
   }, [selectedIndex]);
 
   return (
-    <div className="max-container padding-container lg:pt-40 pt-36">
+    <div className="max-container padding-container lg:pt-40 pt-36 pb-6">
       <div className="gap-4 lg:gap-5 columns-2 md:columns-3 space-y-4">
         {images.map((image, index) => (
           <div
@@ -110,13 +111,15 @@ const Page = () => {
             onClick={() => setSelectedIndex(index)}
           >
             <div className="w-full h-full overflow-hidden relative">
-              <Image
-                src={image.src}
-                alt="gallery"
-                width={image.width}
-                height={image.height}
-                className="rounded-lg"
-              />
+              <AnimatedSection>
+                <Image
+                  src={image.src}
+                  alt="gallery"
+                  width={image.width}
+                  height={image.height}
+                  className="rounded-lg"
+                />
+              </AnimatedSection>
             </div>
           </div>
         ))}
