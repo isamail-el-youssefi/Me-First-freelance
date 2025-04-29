@@ -7,12 +7,20 @@ import { TRIPDAY } from "@/constant";
 const packageInfo = {
   "1": {
     heading: "Desert Adventure - Erg Chegaga",
+    
     pricing: [
-      { persons: "1 person", price: "100$" },
-      { persons: "3 persons", price: "200$" },
-      { persons: "+4 persons", price: "300$" },
+      { persons: 1, price: "100$" },
+      { persons: 2, price: "200$" },
+      { persons: 3, price: "300$" },
     ],
-    duration: "3 Days",
+    keyStops: [
+      "Telouat Oasis",
+      "Ait Benhaddou",
+      "Erg Chegaga",
+      "Tizi N'Tichka Pass",
+      "Ouarzgane",
+      "Tamegroute Clay",
+    ],
     days: 0, // Index to TRIPDAY array
     // Default carousel images (for backward compatibility)
     carousel1: "/test1.jpg",
@@ -68,6 +76,14 @@ const packageInfo = {
       { persons: "1 person", price: "100$" },
       { persons: "3 persons", price: "200$" },
       { persons: "+4 persons", price: "300$" },
+    ],
+    keyStops: [
+      "Telouat Oasis",
+      "Ait Benhaddou",
+      "Erg Chegaga",
+      "Tizi N'Tichka Pass",
+      "Ouarzgane",
+      "Tamegroute Clay",
     ],
     days: 1, // Index to TRIPDAY array
     carousel1: "/test2.jpg",
@@ -139,6 +155,14 @@ const packageInfo = {
       { persons: "3 persons", price: "200$" },
       { persons: "+4 persons", price: "300$" },
     ],
+    keyStops: [
+      "Telouat Oasis",
+      "Ait Benhaddou",
+      "Erg Chegaga",
+      "Tizi N'Tichka Pass",
+      "Ouarzgane",
+      "Tamegroute Clay",
+    ],
     days: 2, // Index to TRIPDAY array
     carousel1: "/test3.jpg",
     carousel2: "/kasbah1.jpg",
@@ -172,6 +196,8 @@ const TripDetailsPage = () => {
         carousel3={packageData.carousel3}
         map={packageData.map}
         dayImages={packageData.dayImages}
+        keyStops={packageData.keyStops}
+
       />
     </div>
   );

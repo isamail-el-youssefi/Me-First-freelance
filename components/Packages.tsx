@@ -9,10 +9,10 @@ const Packages = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="max-container padding-container py-16">
+    <section className="max-container padding-container py-10">
       <AnimatedSection>
         <div className="flex flex-col justify-center items-center text-center">
-          <h1 className="bold-32 lg:bold-40 uppercase  pb-7 text-amber-900">
+          <h1 className="md:text-4xl text-3xl font-semibold uppercase pb-8 text-amber-900">
             {t(TITLES.Popular)}
           </h1>
         </div>

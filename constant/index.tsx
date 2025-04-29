@@ -119,28 +119,33 @@ export const TRIPDAY = [
   ],
 ];
 
-
 // TESTIMONIAL SECTION
 export const testimonials = [
   {
-    name: '— Maria & John',
-    country: 'Spain',
+    name: "Maria & John",
+    country: "Spain",
     recommendation: `Our desert tour with Salah was the highlight of our Morocco trip.
       His knowledge of the region and genuine warmth made this experience
       truly special. The sunset camel ride and overnight camp under the
       stars was magical!`,
-    link: 'https://web.facebook.com/fmonot',
+    link: "https://web.facebook.com/fmonot",
   },
   {
-    name: '— Mounya',
-    country: 'Morocco',
-    recommendation: `SALAH guide touristique de notre aventure vers le desert du Chegaga, a été accueillant et nous a fait découvrir tout au long du parcours les spécialités géographiques et les espèces animales qui y survivent. Il a animé notre voyage d'une valeur ajoutée indiscutable. C'est un connaisseur professionnel du parcours du désert, a éveillé notre curiosité. Il fait de son mieux pour nous faire découvrir tout détail intéressant tout au long du circuit choisi. C'était un voyage exceptionnel en plein desert depuis Tagounite à Chegaga pour la nuité au bivouac puis vers Foum Zguid en passant par Iriki. Merci beaucoup SALAH.`,
-    link: 'https://www.facebook.com/share/p/1Bb3ASpYkw/',
-  },
-  {
-    name: '— Fan Schlichter',
-    country: 'France',
+    name: "— Fan Schlichter",
+    country: "France",
     recommendation: `Salah est le meilleur guide et un amoureux du désert qui transmet sa passion : en trek ou en famille, Salah vous concoctera le meilleur séjour hors des sentiers battus et vous accompagnera avec toute sa gentillesse.`,
-    link: 'https://www.facebook.com/share/p/1AUznvNSxm/',
+    link: "https://www.facebook.com/share/p/1AUznvNSxm/",
+  },
+  {
+    name: "— Mounya",
+    country: "Morocco",
+    recommendation: `SALAH guide touristique de notre aventure vers le desert du Chegaga, a été accueillant et nous a fait découvrir tout au long du parcours les spécialités géographiques et les espèces animales qui y survivent. Il a animé notre voyage d'une valeur ajoutée indiscutable. C'est un connaisseur professionnel du parcours du désert, a éveillé notre curiosité. Il fait de son mieux pour nous faire découvrir tout détail intéressant tout au long du circuit choisi. C'était un voyage exceptionnel en plein desert depuis Tagounite à Chegaga pour la nuité au bivouac puis vers Foum Zguid en passant par Iriki. Merci beaucoup SALAH.`,
+    link: "https://www.facebook.com/share/p/1Bb3ASpYkw/",
+  },
+  {
+    name: "— Fan Schlichter",
+    country: "France",
+    recommendation: `Salah est le meilleur guide et un amoureux du désert qui transmet sa passion : en trek ou en famille, Salah vous concoctera le meilleur séjour hors des sentiers battus et vous accompagnera avec toute sa gentillesse.`,
+    link: "https://www.facebook.com/share/p/1AUznvNSxm/",
   },
 ];

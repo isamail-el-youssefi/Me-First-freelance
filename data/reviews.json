@@ -1,0 +1,25 @@
+{
+  "reviews": [
+    {
+      "id": "1745943154543",
+      "fullName": "jyjyj",
+      "rating": 3,
+      "comment": "yjyjuy",
+      "date": "29/04/2025"
+    },
+    {
+      "id": "1745943192040",
+      "fullName": "yjdjyjyj",
+      "rating": 5,
+      "comment": "25858",
+      "date": "29/04/2025"
+    },
+    {
+      "id": "1745943476238",
+      "fullName": "l",
+      "rating": 5,
+      "comment": "l",
+      "date": "29/04/2025"
+    }
+  ]
+}

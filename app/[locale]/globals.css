@@ -45,7 +45,7 @@ body {
   }
 
   .max-container {
-    @apply mx-auto max-w-[1340px];
+    @apply mx-auto max-w-[1200px];
   }
 
   .padding-container {

@@ -14,6 +14,9 @@ import { useTranslation } from "react-i18next";
 import AnimatedSectionText from "./AnimatedSectionText";
 import { motion, AnimatePresence } from "framer-motion";
 import BookingCalendar from "./BookingCalendar";
+import { User } from "lucide-react";
+import ReviewList from "./ReviewList";
+import ReviewModal from "./ReviewModal";
 
 // Add this type for the day images
 interface DayImages {
@@ -33,8 +36,10 @@ interface PageProps {
   carousel3: string;
   // Optional day images object that can be passed from the parent
   dayImages?: DayImages;
-  price: string;
+  pricing: string;
   duration: string;
+  keyStops: string[];
+  tripId: string;
 }
 
 const Page: React.FC<PageProps> = (props) => {
@@ -83,6 +88,36 @@ const Page: React.FC<PageProps> = (props) => {
     }
   }, [showNotification]);
 
+  const [reviewModalOpen, setReviewModalOpen] = useState(false);
+  const [reviews, setReviews] = useState<Review[]>([]);
+  const [isLoadingReviews, setIsLoadingReviews] = useState(false);
+
+  // Add this function to fetch reviews
+  const fetchReviews = async () => {
+    try {
+      setIsLoadingReviews(true);
+      const response = await fetch(`/api/reviews?tripId=${props.tripId}`);
+      if (response.ok) {
+        const data = await response.json();
+        setReviews(data.reviews);
+      }
+    } catch (error) {
+      console.error("Error fetching reviews:", error);
+    } finally {
+      setIsLoadingReviews(false);
+    }
+  };
+
+  // Add this useEffect to load reviews when the component mounts
+  useEffect(() => {
+    fetchReviews();
+  }, [props.tripId]);
+
+  // Add this function to handle when a new review is added
+  const handleReviewAdded = () => {
+    fetchReviews();
+  };
+
   return (
     <section className="max-container padding-container lg:pt-40 pt-36 pb-28">
       {/* HEADING */}
@@ -91,7 +126,7 @@ const Page: React.FC<PageProps> = (props) => {
           {props.Heading}
         </h1>
       </div>
-      <div className="flex flex-col gap-10 lg:gap-28 lg:flex-row pt-6 ">
+      <div className="flex flex-col gap-10 lg:gap-28 lg:flex-row pt-6  ">
         {/* LEFT */}
         <div className="flex-1 ">
           {/* MAIN TABS */}
@@ -116,13 +151,18 @@ const Page: React.FC<PageProps> = (props) => {
                 Price
               </TabsTrigger>
               <TabsTrigger
+                value="review"
+                className="rounded-full text-amber-950 text-md  px-4"
+              >
+                Reviews
+              </TabsTrigger>
+              <TabsTrigger
                 value="map"
                 className="rounded-full text-amber-950 text-md  px-4"
               >
-                Tour in map
+                Map
               </TabsTrigger>
             </TabsList>
-
             {/* TOUR TAB CONTENT */}
             <TabsContent value="tour" className="pt-4">
               <div className="bg-amber-50 rounded-xl p-3 md:min-h-[680px] min-h-[500px]">
@@ -161,11 +201,43 @@ const Page: React.FC<PageProps> = (props) => {
                 </Tabs>
               </div>
             </TabsContent>
-
             {/* DETAILS TAB CONTENT */}
             <TabsContent value="details" className="pt-4 w-full">
               <div className="bg-amber-50 rounded-xl p-6">
-                <h2 className="bold-20 text-amber-900 mb-4">Trip Highlights</h2>
+                <h2 className="bold-20 text-amber-900 mb-4">
+                  Key stops of the trip
+                </h2>
+                <ul className="list-disc pl-5 space-y-2">
+                  {props.keyStops ? (
+                    // If keyStops are provided, use them
+                    props.keyStops.map((stop, index) => (
+                      <li key={`key-stop-${index}`} className="text-amber-950">
+                        {stop}
+                      </li>
+                    ))
+                  ) : (
+                    // Fallback static content if no keyStops provided
+                    <>
+                      <li className="text-amber-950">
+                        Visite des greniers de la falaise dAoujgal
+                      </li>
+                      <li className="text-amber-950">
+                        Exploration de la grotte Akhiam
+                      </li>
+                      <li className="text-amber-950">
+                        Ascension guidée du sommet de Bab Nouayad
+                      </li>
+                      <li className="text-amber-950">
+                        Découverte des lacs Isli & Tislit
+                      </li>
+                      <li className="text-amber-950">Oasis fint</li>
+                    </>
+                  )}
+                </ul>
+
+                <h2 className="bold-20 text-amber-900 mb-4 mt-6">
+                  Trip Highlights
+                </h2>
                 <ul className="list-disc pl-5 space-y-2">
                   <li className="text-amber-950">
                     Authentic local experiences
@@ -175,62 +247,57 @@ const Page: React.FC<PageProps> = (props) => {
                   <li className="text-amber-950">Comfortable transportation</li>
                   <li className="text-amber-950">Photography opportunities</li>
                 </ul>
-
-                <h2 className="bold-20 text-amber-900 mt-6 mb-4">
-                  What to Bring
-                </h2>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li className="text-amber-950">Comfortable walking shoes</li>
-                  <li className="text-amber-950">
-                    Sun protection (hat, sunglasses, sunscreen)
-                  </li>
-                  <li className="text-amber-950">Light, breathable clothing</li>
-                  <li className="text-amber-950">Camera</li>
-                  <li className="text-amber-950">Water bottle</li>
-                </ul>
               </div>
             </TabsContent>
+            {/* PRICE AND RESERVATION TAB CONTENT */}
 
-            {/* PRICE AND RESERVATION TAB CONTENT */}
-            {/* PRICE AND RESERVATION TAB CONTENT */}
             <TabsContent value="prix" className="pt-4">
-              <div className="bg-amber-50 rounded-xl">
+              <div className="bg-amber-50 rounded-xl w-full">
                 <table className="min-w-full bg-amber-50 rounded-xl overflow-hidden">
                   <thead>
-                    <tr className="text-left bg-amber-100 text-amber-900 uppercase text-sm">
-                      <th className="px-6 py-3">Durée</th>
-                      <th className="px-6 py-3">Nombre de Personnes</th>
-                      <th className="px-6 py-3">Prix</th>
-                      <th className="px-6 py-3">Action</th>
+                    <tr className="text-center bg-amber-100 text-amber-900 uppercase text-sm">
+                      <th className=" py-3 font-semibold">Personnes</th>
+                      <th className=" py-3 font-semibold">Prix</th>
+                      <th className=" py-3 font-semibold">Action</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="text-amber-800 font-medium text-center">
                     {props.pricing.map((tier, index) => (
                       <tr
                         key={`pricing-tier-${index}`}
                         className="border-t border-amber-200"
                       >
-                        {index === 0 && (
-                          <td
-                            className="px-6 py-4"
-                            rowSpan={props.pricing.length}
-                          >
-                            {props.duration}
-                          </td>
-                        )}
-                        <td className="px-6 py-4">{tier.persons}</td>
-                        <td className="px-6 py-4">{tier.price}</td>
-                        <td className="px-6 py-4">
-                          <motion.a
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                        <td className="px-5 md:px-10 py-4">
+                          {/* Display person icons based on the number */}
+                          <div className="flex items-center">
+                            {/* Add "+" sign for the last tier (indicating 5+ people) */}
+
+                            {Array.from({
+                              length: Number(tier.persons) || 1,
+                            }).map((_, i) => (
+                              <User
+                                key={i}
+                                className="text-amber-800 mr-1"
+                                size={20}
+                              />
+                            ))}
+                            {index === props.pricing.length - 1 && (
+                              <span className="text-amber-800 font-medium mr-1">
+                                +
+                              </span>
+                            )}
+                          </div>
+                        </td>
+                        <td className="px-2 md:px-6 py-4">{tier.price}</td>
+                        <td className="px-5 md:px-6 py-4">
+                          <a
                             href="https://wa.me/212707992405"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-medium py-2 px-4 rounded-full transition mr-2"
+                            className="inline-block bg-amber-50  border-[1px] border-amber-900 hover:bg-amber-900 hover:text-amber-50 duration-300 text-amber-900 font-semibold hover:font-medium py-2 px-4 rounded-full transition mr-1"
                           >
                             Réserver
-                          </motion.a>
+                          </a>
 
                           {/*
                             <motion.button
@@ -249,13 +316,30 @@ const Page: React.FC<PageProps> = (props) => {
                 </table>
               </div>
 
-              {/* Add the BookingCalendar component outside the table but still within the TabsContent */}
               <BookingCalendar
                 open={calendarOpen}
                 onOpenChange={setCalendarOpen}
                 tripId={props.days.toString()}
                 tripName={props.Heading}
               />
+            </TabsContent>
+
+            {/* REVIEW TAB */}
+            <TabsContent value="review" className="pt-4">
+              <div className="bg-amber-50 rounded-xl">
+                <div className="p-4 flex justify-between items-center border-b border-amber-200">
+                  <h2 className="text-xl font-semibold text-amber-900">
+                    Customer Reviews
+                  </h2>
+                  <button
+                    onClick={() => setReviewModalOpen(true)}
+                    className="bg-amber-50  border-[1px] border-amber-900 hover:bg-amber-900 hover:text-amber-50 duration-300 text-amber-900 font-semibold hover:font-medium py-2 px-4 rounded-full transition mr-1"
+                    >
+                    Write a Review
+                  </button>
+                </div>
+                <ReviewList reviews={reviews} isLoading={isLoadingReviews} />
+              </div>
             </TabsContent>
 
             {/* MAP TAB CONTENT */}
@@ -321,6 +405,13 @@ const Page: React.FC<PageProps> = (props) => {
           </div>
         </div>
       </div>
+      <ReviewModal
+        open={reviewModalOpen}
+        onOpenChange={setReviewModalOpen}
+        tripId={props.tripId}
+        tripName={props.Heading}
+        onReviewAdded={handleReviewAdded}
+      />
     </section>
   );
 };

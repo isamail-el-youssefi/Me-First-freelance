@@ -95,7 +95,7 @@ const CarouselMain = () => {
           plugins={[
             Autoplay({
               delay: 2700,
-              stopOnInteraction: false,
+              stopOnInteraction: true,
             }),
           ]}
         >
