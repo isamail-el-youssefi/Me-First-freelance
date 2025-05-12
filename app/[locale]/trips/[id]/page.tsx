@@ -73,9 +73,9 @@ const packageInfo = {
   "2": {
     heading: "Oasis Explorer - Fint Oasis",
     pricing: [
-      { persons: "1 person", price: "100$" },
-      { persons: "3 persons", price: "200$" },
-      { persons: "+4 persons", price: "300$" },
+      { persons: 1, price: "100$" },
+      { persons: 2, price: "200$" },
+      { persons: 3, price: "300$" },
     ],
     keyStops: [
       "Telouat Oasis",
@@ -151,9 +151,9 @@ const packageInfo = {
   "3": {
     heading: "Historical Journey - Ait Ben Haddou",
     pricing: [
-      { persons: "1 person", price: "100$" },
-      { persons: "3 persons", price: "200$" },
-      { persons: "+4 persons", price: "300$" },
+      { persons: 1, price: "100$" },
+      { persons: 2, price: "200$" },
+      { persons: 3, price: "300$" },
     ],
     keyStops: [
       "Telouat Oasis",

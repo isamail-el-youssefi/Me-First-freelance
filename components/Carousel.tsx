@@ -57,7 +57,7 @@ const CarouselMain = () => {
       } else if (e.key === "ArrowRight") {
         showNext();
       } else if (e.key === "Escape") {
-        closeModal();
+        closeModal();npx prisma init
       }
     };
 
@@ -80,10 +80,10 @@ const CarouselMain = () => {
   }, [selectedIndex]);
 
   return (
-    <div className="max-container padding-container pb-10 pt-3">
+    <div className="max-container padding-container pb-10 pt-12">
       <AnimatedSection>
         <div className="flex flex-col justify-center items-center text-center">
-          <h1 className="bold-32 lg:bold-40 pb-10 uppercase text-amber-900">
+          <h1 className="md:text-4xl text-3xl font-semibold uppercase pb-8 text-amber-900">
             {t(TITLES.Happy)}
           </h1>
         </div>
