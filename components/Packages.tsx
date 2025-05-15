@@ -19,39 +19,47 @@ const Packages = () => {
       </AnimatedSection>
 
       <AnimatedSection>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 content-between gap-6 ">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 content-between gap-9 ">
+          {/* Desert Adventure */}
           <TripPackages
-            iamgeSrc="/test1.jpg"
-            iamgeAlt="sahara"
+            imageSrc="/test1.jpg"
+            imageAlt="sahara desert"
             heading="Desert Adventure"
-            text="Experience the majestic Sahara Desert with our 3-day journey to Erg Chegaga, one of Morocco's largest dune fields. Camp under the stars, ride camels, and immerse yourself in nomadic culture in this unforgettable desert experience."
+            text="Visit the UNESCO World Heritage site of Ait Ben Haddou and explore Morocco's rich history on this 3-day tour. See famous movie locations, visit ancient kasbahs, and travel through stunning mountain scenery."
             width={1920}
             height={1280}
-            btnType="button"
             btnTitle={t("moreDetails")}
-            link="/trips/1" // Dynamic ID for package 1
+            link="/trips/1"
+            duration="3 day trip"
+            compact={true}
           />
+
+          {/* Camel Ride */}
           <TripPackages
-            iamgeSrc="/test2.jpg"
-            iamgeAlt="oasis"
-            heading="Oasis Explorer"
-            text="Discover the hidden paradise of Oasis Fint near Ouarzazate. This 3-day tour lets you experience traditional oasis life, explore palm groves, and learn about desert agriculture while staying in authentic accommodations."
+            imageSrc="/test2.jpg"
+            imageAlt="camel caravan"
+            heading="Camel Ride"
+            text="Visit the UNESCO World Heritage site of Ait Ben Haddou and explore Morocco's rich history on this 3-day tour. See famous movie locations, visit ancient kasbahs, and travel through stunning mountain scenery."
             width={500}
             height={300}
-            btnType="button"
             btnTitle={t("moreDetails")}
-            link="/trips/2" // Dynamic ID for package 2
+            link="/trips/2"
+            duration="1 day trip"
+            compact={true}
           />
+
+          {/* Historical Journey */}
           <TripPackages
-            iamgeSrc="/oasis2.jpg"
-            iamgeAlt="kasbah"
+            imageSrc="/oasis2.jpg"
+            imageAlt="kasbah"
             heading="Historical Journey"
             text="Visit the UNESCO World Heritage site of Ait Ben Haddou and explore Morocco's rich history on this 3-day tour. See famous movie locations, visit ancient kasbahs, and travel through stunning mountain scenery."
             width={1920}
             height={1280}
-            btnType="button"
             btnTitle={t("moreDetails")}
-            link="/trips/3" // Dynamic ID for package 3
+            link="/trips/3"
+            duration="3 day trip"
+            compact={true}
           />
         </div>
       </AnimatedSection>

@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../lib/generated/prisma"
 }
 
 datasource db {
@@ -16,10 +15,9 @@ datasource db {
 
 model Review {
   id        String   @id @default(uuid())
-  tripId    String
   fullName  String
-  rating    Int
+  rating    Int      @default(5)
   comment   String
-  date      String
+  date      String?  // Optional date
   createdAt DateTime @default(now())
 }

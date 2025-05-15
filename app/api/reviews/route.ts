@@ -1,96 +1,103 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import prisma from '@/lib/prisma';
+import { z } from 'zod';
 
-// Define the path to the reviews.json file
-const reviewsFilePath = path.join(process.cwd(), 'data', 'reviews.json');
-
-// Define the review type
-export interface Review {
-  id: string;
-  tripId: string;
-  fullName: string;
-  rating: number;
-  comment: string;
-  date: string;
-}
-
-// Function to read reviews from the JSON file
-function getReviews(): { reviews: Review[] } {
-  try {
-    const fileData = fs.readFileSync(reviewsFilePath, 'utf8');
-    return JSON.parse(fileData);
-  } catch (error) {
-    // If file doesn't exist or is corrupted, return empty reviews array
-    return { reviews: [] };
-  }
-}
-
-// Function to write reviews to the JSON file
-function saveReviews(data: { reviews: Review[] }): void {
-  try {
-    fs.writeFileSync(reviewsFilePath, JSON.stringify(data, null, 2));
-  } catch (error) {
-    console.error('Error saving reviews:', error);
-  }
-}
+// Zod Schema for input validation
+const ReviewSchema = z.object({
+  fullName: z.string().trim().min(1, "Name is required"),
+  rating: z.number().min(1).max(5).default(5),
+  comment: z.string().trim().min(1, "Comment is required")
+});
 
 // GET handler - Return all reviews or filtered by tripId
 export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const tripId = searchParams.get('tripId');
-  
-  const reviewsData = getReviews();
-  
-  // If tripId is provided, filter reviews for that trip
-  //if (tripId) {
-  //  const filteredReviews = reviewsData.reviews.filter(review => review.tripId === tripId);
-  //  return NextResponse.json({ reviews: filteredReviews });
-  //}
-  
-  // Return all reviews
-  return NextResponse.json(reviewsData);
+  try {
+    console.log('GET request received');
+    
+
+    
+    // Query the database with or without a filter
+    const reviews = await prisma.review.findMany({
+      orderBy: { createdAt: 'desc' }
+    });
+    
+    console.log('Reviews found:', reviews.length);
+    
+    return NextResponse.json({ reviews });
+  } catch (error) {
+    console.error('Error in GET request:', error);
+    
+    return new NextResponse(
+      JSON.stringify({
+        error: 'Failed to fetch reviews',
+        details: error instanceof Error ? error.message : 'Unknown error',
+        stack: error instanceof Error ? error.stack : null
+      }),
+      { 
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      }
+    );
+  }
 }
 
 // POST handler - Add a new review
 export async function POST(request: NextRequest) {
   try {
+    console.log('POST request received');
+    
     const data = await request.json();
     
-    // Validate required fields
-    console.log(data)
-    if (!data.fullName || !data.comment) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      );
-    }
+    console.log('Received review data:', data);
     
-    // Create a new review object
-    const newReview: Review = {
-      id: Date.now().toString(), // Generate a unique ID
-      tripId: data.tripId,
+    // Validate input
+    const validatedData = ReviewSchema.parse({
       fullName: data.fullName,
-      rating: data.rating || 5,
-      comment: data.comment,
-      date: new Date().toLocaleDateString(),
-    };
+      rating: data.rating,
+      comment: data.comment
+    });
     
-    // Get existing reviews
-    const reviewsData = getReviews();
+    // Create a new review in the database
+    const newReview = await prisma.review.create({
+      data: {
+        fullName: validatedData.fullName,
+        rating: validatedData.rating,
+        comment: validatedData.comment,
+        date: new Date().toLocaleDateString()
+      }
+    });
     
-    // Add new review
-    reviewsData.reviews.push(newReview);
-    
-    // Save updated reviews
-    saveReviews(reviewsData);
+    console.log('New review created:', newReview);
     
     return NextResponse.json({ success: true, review: newReview });
   } catch (error) {
-    console.error('Error processing review:', error);
-    return NextResponse.json(
-      { error: 'Failed to process review' },
-      { status: 500 }
+    console.error('Error in POST request:', error);
+    
+    // Handle Zod validation errors
+    if (error instanceof z.ZodError) {
+      return new NextResponse(
+        JSON.stringify({
+          error: 'Invalid input',
+          details: error.errors
+        }),
+        { 
+          status: 400,
+          headers: { 'Content-Type': 'application/json' }
+        }
+      );
+    }
+    
+    // More detailed error response
+    return new NextResponse(
+      JSON.stringify({
+        error: 'Failed to process review',
+        details: error instanceof Error ? error.message : 'Unknown error',
+        stack: error instanceof Error ? error.stack : null
+      }),
+      { 
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      }
     );
   }
 }

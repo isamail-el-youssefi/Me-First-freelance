@@ -57,7 +57,7 @@ const CarouselMain = () => {
       } else if (e.key === "ArrowRight") {
         showNext();
       } else if (e.key === "Escape") {
-        closeModal();npx prisma init
+        closeModal();
       }
     };
 

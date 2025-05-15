@@ -24,8 +24,8 @@ const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
       animate={controls}
       transition={{ duration: 0.8, ease: "easeInOut" }}
       variants={{
-        visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, filter: "saturate(100%)" },
+        hidden: { opacity: 0, y: 20, filter: "saturate(50%)",},
       }}
     >
       {children}

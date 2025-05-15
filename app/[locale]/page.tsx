@@ -12,10 +12,11 @@ const page = () => {
       <Hero />
       <About />
       <Packages />
+      <Feedback />
       <CarouselMain />
 
       
-      <Feedback />
+      
     </>
   );
 };
