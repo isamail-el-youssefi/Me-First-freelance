@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     }
     
     // Check if date is already booked
-    const isDateBooked = bookings[tripId].some(booking => 
+    const isDateBooked = bookings[tripId].some((booking: { date: string | number | Date; }) => 
       booking.date === date || new Date(booking.date).toDateString() === new Date(date).toDateString()
     );
     

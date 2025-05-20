@@ -135,7 +135,7 @@ const BookingCalendar: React.FC<BookingCalendarProps> = ({
             <h3 className="text-lg font-medium text-amber-900">Booking Successful!</h3>
             <p className="text-center text-amber-800">
               Thank you, {form.getValues('fullName')}! Your trip is reserved for {form.getValues('date')?.toLocaleDateString()}.
-              We'll contact you shortly at {form.getValues('phoneNumber')} to confirm the details.
+              We will contact you shortly at {form.getValues('phoneNumber')} to confirm the details.
             </p>
             <Button 
               className="bg-amber-600 hover:bg-amber-700 text-white"

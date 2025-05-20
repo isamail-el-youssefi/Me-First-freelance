@@ -1,6 +1,8 @@
+
 "use client";
 
 import React, { useState, useCallback, useEffect } from "react";
+import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -10,9 +12,17 @@ import {
 import { testimonials } from "@/constant";
 
 export default function TestimonialsCarousel() {
-  // State to track the current slide
+  // State to track the current slide and expanded testimonials
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const [expandedIds, setExpandedIds] = useState<number[]>([]);
+
+  // Toggle expanded state for a testimonial
+  const toggleExpand = (id: number) => {
+    setExpandedIds(prev => 
+      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+    );
+  };
 
   // When the carousel API is available, set up a listener for slide changes
   useEffect(() => {
@@ -48,8 +58,8 @@ export default function TestimonialsCarousel() {
   }
 
   return (
-    <div className="mb-6 relative max-container padding-container flex flex-col justify-center items-center text-center pt-12">
-      <h2 className="md:text-4xl text-3xl font-semibold uppercase pb-8 text-amber-900">
+    <div className="mb-10 relative max-container padding-container flex flex-col justify-center items-center text-center pt-10">
+      <h2 className="md:text-4xl text-2xl font-semibold uppercase pb-12 text-amber-900">
         What Travelers Say
       </h2>
       <Carousel 
@@ -61,47 +71,69 @@ export default function TestimonialsCarousel() {
           {groupedTestimonials.map((group, groupIndex) => (
             <CarouselItem key={groupIndex} className="px-4 md:px-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {group.map((testimonial, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-[#faece56c] p-6 rounded-xl shadow-md text-amber-950 relative mx-auto"
-                  >
-                    {/* Large quote mark */}
-                    <div className="absolute top-3 left-6 text-7xl text-amber-800 opacity-30">
-                      &ldquo;
-                    </div>
-                    
-                    <p className="text-amber-950 text-md lg:text-md font-normal tracking-tight leading-relaxed text-left mt-6 mb-6">
-                      {testimonial.recommendation}
-                    </p>
-                    
-                    <div className="flex items-center mt-4">
-                      {/* Profile image */}
-                      <div className="w-12 h-12 bg-amber-100 rounded-full overflow-hidden mr-4 border border-amber-200">
-                        {/* If you have profile images, you can add them here */}
-                        {/* <img src={testimonial.image} alt={testimonial.name} /> */}
-                        {/* Placeholder for demo */}
-                        <div className="w-full h-full bg-amber-50"></div>
+                {group.map((testimonial, index) => {
+                  const globalIndex = groupIndex * 2 + index;
+                  const isExpanded = expandedIds.includes(globalIndex);
+                  const needsReadMore = testimonial.recommendation.length > 700;
+                  
+                  return (
+                    <div 
+                      key={index} 
+                      className="bg-[#faece56c] p-6 rounded-xl shadow-md text-amber-950 relative mx-auto flex flex-col h-full"
+                    >
+                      {/* Large quote mark */}
+                      <div className="absolute top-3 left-6 text-7xl text-amber-800 opacity-30">
+                        &ldquo;
                       </div>
                       
-                      <div className="text-left">
-                        <p className="font-semibold text-amber-800">{testimonial.name}</p>
-                        <p className="text-sm text-amber-700">{testimonial.country}</p>
+                      <div className="flex-grow">
+                        <p className="text-amber-950 text-sm md:text-md font-normal tracking-tight leading-loose md:leading-relaxed text-left mt-6 mb-2">
+                          {needsReadMore && !isExpanded 
+                            ? `${testimonial.recommendation.substring(0, 700)}...` 
+                            : testimonial.recommendation}
+                        </p>
+                        {needsReadMore && (
+                          <button 
+                            onClick={() => toggleExpand(globalIndex)}
+                            className="text-amber-800 text-sm hover:underline mb-4"
+                          >
+                            {isExpanded ? "Read Less" : "Read More"}
+                          </button>
+                        )}
                       </div>
                       
-                      <div className="ml-auto">
-                        <a
-                          href={testimonial.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-amber-800 hover:underline inline-block"
-                        >
-                          View Original Review
-                        </a>
+                      <div className="flex items-center mt-4">
+                        {/* Profile image - replaced with Next.js Image component */}
+                        <div className="w-12 h-12 bg-amber-100 rounded-full overflow-hidden mr-4 border border-amber-200 flex-shrink-0 relative">
+                          <Image 
+                            src={testimonial.image} 
+                            alt={testimonial.name}
+                            fill
+                            sizes="48px"
+                            style={{ objectFit: 'cover' }}
+                            priority={groupIndex === 0}
+                          />
+                        </div>
+                        
+                        <div className="text-left">
+                          <p className="font-semibold text-md text-amber-800">{testimonial.name}</p>
+                          <p className="text-sm text-amber-700">{testimonial.country}</p>
+                        </div>
+                        
+                        <div className="ml-auto">
+                          <a
+                            href={testimonial.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-amber-800 hover:underline inline-block"
+                          >
+                            View Original Review
+                          </a>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </CarouselItem>
           ))}

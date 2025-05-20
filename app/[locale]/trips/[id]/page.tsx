@@ -3,18 +3,48 @@ import { useParams } from "next/navigation";
 import TripDetails2 from "../../../../components/TripDetails2";
 import { TRIPDAY } from "@/constant";
 
+// Define types for better type safety
+interface PricingTier {
+  persons: number;
+  price: string;
+}
+
+interface DayImages {
+  day1: string[];
+  day2: string[];
+  day3: string[];
+  [key: string]: string[]; // For any additional days
+}
+
+interface PackageData {
+  heading: string;
+  pricing: PricingTier[];
+  keyStops: string[];
+  days: number;
+  carousel1: string;
+  carousel2: string;
+  carousel3: string;
+  map: string;
+  dayImages: DayImages;
+}
+
+// Add index signature to the packageInfo object
+interface PackageInfo {
+  [key: string]: PackageData;
+}
+
 // Package information mapping with day-specific images
-const packageInfo = {
+const packageInfo: PackageInfo = {
   "1": {
-    heading: "Desert Adventure - Erg Chegaga",
-    
+    heading: "5 DAYS DESERT ADVENTURE",
+
     pricing: [
       { persons: 1, price: "100$" },
       { persons: 2, price: "200$" },
       { persons: 3, price: "300$" },
     ],
     keyStops: [
-      "Telouat Oasis",
+      "1Telouat Oasis",
       "Ait Benhaddou",
       "Erg Chegaga",
       "Tizi N'Tichka Pass",
@@ -71,14 +101,14 @@ const packageInfo = {
     },
   },
   "2": {
-    heading: "Oasis Explorer - Fint Oasis",
+    heading: "3 DAYS DESERT ADVENTURE - TIZI N'TICHKA PASS",
     pricing: [
       { persons: 1, price: "100$" },
       { persons: 2, price: "200$" },
       { persons: 3, price: "300$" },
     ],
     keyStops: [
-      "Telouat Oasis",
+      "2Telouat Oasis",
       "Ait Benhaddou",
       "Erg Chegaga",
       "Tizi N'Tichka Pass",
@@ -149,14 +179,14 @@ const packageInfo = {
     },
   },
   "3": {
-    heading: "Historical Journey - Ait Ben Haddou",
+    heading: "6 DAYS DESERT ADVENTURE - TIZI N'TICHKA PASS",
     pricing: [
       { persons: 1, price: "100$" },
       { persons: 2, price: "200$" },
       { persons: 3, price: "300$" },
     ],
     keyStops: [
-      "Telouat Oasis",
+      "3Telouat Oasis",
       "Ait Benhaddou",
       "Erg Chegaga",
       "Tizi N'Tichka Pass",
@@ -175,6 +205,33 @@ const packageInfo = {
       day3: ["/kasbah/day3-1.jpg", "/kasbah/day3-2.jpg", "/kasbah/day3-3.jpg"],
     },
   },
+  "4": {
+    heading: "2 DAYS DESERT ADVENTURE",
+    pricing: [
+      { persons: 1, price: "100$" },
+      { persons: 2, price: "200$" },
+      { persons: 3, price: "300$" },
+    ],
+    keyStops: [
+      "2Telouat Oasis",
+      "Ait Benhaddou",
+      "Erg Chegaga",
+      "Tizi N'Tichka Pass",
+      "Ouarzgane",
+      "Tamegroute Clay",
+    ],
+    days: 3, // Index to TRIPDAY array
+    carousel1: "/test2.jpg",
+    carousel2: "/oasis1.jpg",
+    carousel3: "/oasis2.jpg",
+    map: "https://www.google.com/maps/d/embed?mid=1dSeOzM2YSbCVON6pqMFE1oDFABuVjAU0&hl=en_US&ehbc=2E312F",
+    // Day-specific images
+    dayImages: {
+      day1: ["/3jp/day1/1d1.jpg"],
+      day2: ["/3jp/day2/25.jpg"],
+      day3: [],
+    },
+  },
 };
 
 const TripDetailsPage = () => {
@@ -189,7 +246,6 @@ const TripDetailsPage = () => {
       <TripDetails2
         Heading={packageData.heading}
         pricing={packageData.pricing}
-        duration={packageData.duration}
         days={packageData.days}
         carousel1={packageData.carousel1}
         carousel2={packageData.carousel2}
@@ -197,7 +253,7 @@ const TripDetailsPage = () => {
         map={packageData.map}
         dayImages={packageData.dayImages}
         keyStops={packageData.keyStops}
-
+        tripId={id}
       />
     </div>
   );

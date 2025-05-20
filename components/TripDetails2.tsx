@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Carousel,
@@ -14,9 +14,17 @@ import { useTranslation } from "react-i18next";
 import AnimatedSectionText from "./AnimatedSectionText";
 import { motion, AnimatePresence } from "framer-motion";
 import BookingCalendar from "./BookingCalendar";
-import { User } from "lucide-react";
+import {
+  User,
+  ChevronDown,
+  ChevronUp,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 import ReviewList from "./ReviewList";
 import ReviewModal from "./ReviewModal";
+import SimilarSection from "./SimilarSection";
+import ReviewSection from "./ReviewSection";
 
 // Add this type for the day images
 interface DayImages {
@@ -24,6 +32,17 @@ interface DayImages {
   day2: string[];
   day3: string[];
   [key: string]: string[]; // Index signature for any additional days
+}
+
+// Define the Review interface
+interface Review {
+  id: string;
+  name: string;
+  rating: number;
+  comment: string;
+  tripId: string;
+  createdAt: string;
+  // Add any other fields that might be in your Review type
 }
 
 interface PageProps {
@@ -36,8 +55,11 @@ interface PageProps {
   carousel3: string;
   // Optional day images object that can be passed from the parent
   dayImages?: DayImages;
-  pricing: string;
-  duration: string;
+  // Change pricing from string to an array of pricing tiers
+  pricing: {
+    persons: number;
+    price: string;
+  }[];
   keyStops: string[];
   tripId: string;
 }
@@ -56,6 +78,9 @@ const Page: React.FC<PageProps> = (props) => {
 
   const [calendarOpen, setCalendarOpen] = useState(false);
 
+  // State to track character limit based on screen size
+  const [charLimit, setCharLimit] = useState(300); // Default to mobile size
+
   // Default images if no day-specific images are provided
   const defaultDayImages: DayImages = {
     day1: [props.carousel1, props.carousel2, props.carousel3],
@@ -68,6 +93,19 @@ const Page: React.FC<PageProps> = (props) => {
 
   // Get the current day's images
   const currentDayImages = dayImages[activeDay] || dayImages.day1;
+
+  // State to track which days have expanded content
+  const [expandedDays, setExpandedDays] = useState<{ [key: string]: boolean }>(
+    {}
+  );
+
+  // Function to toggle expanded state for a specific day
+  const toggleReadMore = (dayKey: string) => {
+    setExpandedDays((prev) => ({
+      ...prev,
+      [dayKey]: !prev[dayKey],
+    }));
+  };
 
   // Handle tab change to update the active day
   const handleDayChange = (value: string) => {
@@ -88,12 +126,35 @@ const Page: React.FC<PageProps> = (props) => {
     }
   }, [showNotification]);
 
+  // Effect to update character limit based on screen size
+  useEffect(() => {
+    // Function to update character limit based on window width
+    const updateCharLimit = () => {
+      if (window.innerWidth >= 768) {
+        // Typical breakpoint for tablets/desktops
+        setCharLimit(530); // Larger screens
+      } else {
+        setCharLimit(300); // Smartphones
+      }
+    };
+
+    // Set initial value
+    updateCharLimit();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", updateCharLimit);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", updateCharLimit);
+  }, []);
+
   const [reviewModalOpen, setReviewModalOpen] = useState(false);
   const [reviews, setReviews] = useState<Review[]>([]);
+
   const [isLoadingReviews, setIsLoadingReviews] = useState(false);
 
   // Add this function to fetch reviews
-  const fetchReviews = async () => {
+  const fetchReviews = useCallback(async () => {
     try {
       setIsLoadingReviews(true);
       const response = await fetch(`/api/reviews?tripId=${props.tripId}`);
@@ -106,12 +167,11 @@ const Page: React.FC<PageProps> = (props) => {
     } finally {
       setIsLoadingReviews(false);
     }
-  };
+  }, [props.tripId]);
 
-  // Add this useEffect to load reviews when the component mounts
   useEffect(() => {
     fetchReviews();
-  }, [props.tripId]);
+  }, [fetchReviews]);
 
   // Add this function to handle when a new review is added
   const handleReviewAdded = () => {
@@ -126,7 +186,7 @@ const Page: React.FC<PageProps> = (props) => {
           {props.Heading}
         </h1>
       </div>
-      <div className="flex flex-col gap-10 lg:gap-28 lg:flex-row pt-6  ">
+      <div className="flex flex-col  lg:gap-28 lg:flex-row pt-6  ">
         {/* LEFT */}
         <div className="flex-1 ">
           {/* MAIN TABS */}
@@ -165,7 +225,7 @@ const Page: React.FC<PageProps> = (props) => {
             </TabsList>
             {/* TOUR TAB CONTENT */}
             <TabsContent value="tour" className="pt-4">
-              <div className="bg-amber-50 rounded-xl p-3 md:min-h-[680px] min-h-[500px]">
+              <div className="bg-amber-50 rounded-xl p-3 md:min-h-[630px] min-h-[500px]">
                 {/* NESTED TABS FOR DAYS - Using a separate Tabs component */}
                 <Tabs defaultValue="day1" onValueChange={handleDayChange}>
                   <TabsList className="bg-amber-50 flex flex-wrap sm:justify-evenly gap-2 sm:gap-0 pt-6 rounded-full mb-6 min-h-[80px]">
@@ -180,30 +240,62 @@ const Page: React.FC<PageProps> = (props) => {
                     ))}
                   </TabsList>
 
-                  {/* DAY CONTENT - Each day as a separate TabsContent */}
-                  {tripData.map((trip, index) => (
-                    <TabsContent
-                      key={`day-content-${index}`}
-                      value={`day${index + 1}`}
-                    >
-                      <AnimatedSectionText triggerKey={activeDay}>
-                        <div className="bg-amber-50 rounded-xl p-6">
-                          <h1 className="capitalize pb-3 text-lg text-amber-800">
-                            {t(trip.itinerary)}
-                          </h1>
-                          <p className="text-amber-950 text-lg  leading-7 xl:leading-9 text-justify pb-3">
-                            {t(trip.details)}
-                          </p>{" "}
-                        </div>
-                      </AnimatedSectionText>
-                    </TabsContent>
-                  ))}
+                  {/* DAY CONTENT - Each day as a separate TabsContent with Read More/Less */}
+                  {tripData.map((trip, index) => {
+                    const dayKey = `day${index + 1}`;
+                    const isExpanded = expandedDays[dayKey] || false;
+
+                    const details = t(trip.details);
+                    const hasLongContent =
+                      details && details.length > charLimit;
+
+                    return (
+                      <TabsContent key={`day-content-${index}`} value={dayKey}>
+                        <AnimatedSectionText triggerKey={activeDay}>
+                          <div className="bg-amber-50 rounded-xl p-6">
+                            <h1 className="capitalize pb-3 text-lg text-amber-800">
+                              {t(trip.itinerary)}
+                            </h1>
+                            <div className="text-amber-950 text-lg leading-7 xl:leading-9 text-justify">
+                              {hasLongContent && !isExpanded ? (
+                                <>
+                                  {details.substring(0, charLimit)}
+                                  <span className="text-amber-500">...</span>
+                                </>
+                              ) : (
+                                details
+                              )}
+                            </div>
+
+                            {hasLongContent && (
+                              <div className="flex justify-center mt-4">
+                                <button
+                                  onClick={() => toggleReadMore(dayKey)}
+                                  className="flex items-center gap-2 bg-amber-100 hover:bg-amber-200 text-amber-900 rounded-full px-4 py-2 transition-colors duration-300"
+                                >
+                                  {isExpanded ? (
+                                    <>
+                                      Read Less <ChevronUp size={16} />
+                                    </>
+                                  ) : (
+                                    <>
+                                      Read More <ChevronDown size={16} />
+                                    </>
+                                  )}
+                                </button>
+                              </div>
+                            )}
+                          </div>
+                        </AnimatedSectionText>
+                      </TabsContent>
+                    );
+                  })}
                 </Tabs>
               </div>
             </TabsContent>
             {/* DETAILS TAB CONTENT */}
-            <TabsContent value="details" className="pt-4 w-full">
-              <div className="bg-amber-50 rounded-xl p-6">
+            <TabsContent value="details" className="pt-4 w-full ">
+              <div className="bg-amber-50 rounded-xl p-6 md:min-h-[630px] min-h-[500px]">
                 <h2 className="bold-20 text-amber-900 mb-4">
                   Key stops of the trip
                 </h2>
@@ -252,7 +344,7 @@ const Page: React.FC<PageProps> = (props) => {
             {/* PRICE AND RESERVATION TAB CONTENT */}
 
             <TabsContent value="prix" className="pt-4">
-              <div className="bg-amber-50 rounded-xl w-full">
+              <div className="bg-amber-50 rounded-xl w-full md:min-h-[630px] min-h-[500px]">
                 <table className="min-w-full bg-amber-50 rounded-xl overflow-hidden">
                   <thead>
                     <tr className="text-center bg-amber-100 text-amber-900 uppercase text-sm">
@@ -326,7 +418,7 @@ const Page: React.FC<PageProps> = (props) => {
 
             {/* REVIEW TAB */}
             <TabsContent value="review" className="pt-4">
-              <div className="bg-amber-50 rounded-xl">
+              <div className="bg-amber-50 rounded-xl md:min-h-[630px] min-h-[350px]">
                 <div className="p-4 flex justify-between items-center border-b border-amber-200">
                   <h2 className="text-xl font-semibold text-amber-900">
                     Customer Reviews
@@ -334,7 +426,7 @@ const Page: React.FC<PageProps> = (props) => {
                   <button
                     onClick={() => setReviewModalOpen(true)}
                     className="bg-amber-50  border-[1px] border-amber-900 hover:bg-amber-900 hover:text-amber-50 duration-300 text-amber-900 font-semibold hover:font-medium py-2 px-4 rounded-full transition mr-1"
-                    >
+                  >
                     Write a Review
                   </button>
                 </div>
@@ -345,7 +437,7 @@ const Page: React.FC<PageProps> = (props) => {
             {/* MAP TAB CONTENT */}
             <TabsContent value="map" className="pt-4">
               {/* Map container with enhanced styling */}
-              <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative rounded-2xl overflow-hidden shadow-lg md:min-h-[630px] min-h-[500px]">
                 {/* Map iframe */}
                 <iframe
                   src={props.map}
@@ -373,6 +465,8 @@ const Page: React.FC<PageProps> = (props) => {
 
         {/* RIGHT - CAROUSEL WITH DAY-SPECIFIC IMAGES */}
         <div className="flex-1 relative">
+          {/* Always-visible swipe hint */}
+
           {/* Permanent indicator below carousel */}
           <div className="mb-4 flex items-center justify-center">
             <motion.div
@@ -404,6 +498,36 @@ const Page: React.FC<PageProps> = (props) => {
             </motion.div>
           </div>
         </div>
+
+        <div className="w-full flex justify-center items-center gap-2 mb-2 text-amber-900 text-sm font-medium select-none pointer-events-none animate-pulse pt-10 md:hidden ">
+          <ChevronLeft className="w-4 h-4" />
+          Swipe
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width={24}
+            height={24}
+            color={"#7b3306"}
+            fill={"none"}
+            {...props}
+          >
+            <path
+              d="M21.001 4.49905H15.001M21.001 4.49905C21.001 3.79909 19.0067 2.49134 18.501 2M21.001 4.49905C21.001 5.19901 19.0067 6.50675 18.501 6.9981"
+              stroke="#7b3306"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+            <path
+              d="M16.8942 21.9884C16.8424 20.0751 16.9713 19.8448 17.1081 19.4191C17.2448 18.9935 18.2011 17.4587 18.5395 16.3621C19.6342 12.8141 18.6139 12.0595 17.2536 11.0534C15.7451 9.93759 12.8997 9.37252 11.4886 9.49486V3.74359C11.4886 2.78063 10.7077 2 9.74439 2C8.78106 2 8.00014 2.78063 8.00014 3.74359V14.0032L5.93997 11.8238C5.30035 11.1303 4.27243 11.06 3.5709 11.6908C2.90609 12.2886 2.80906 13.2953 3.34749 14.009L4.63984 15.722M7.87078 22.0002L7.85125 20.9498C7.89419 19.7185 6.9982 18.9151 5.82962 17.3089C5.74542 17.1931 5.6635 17.0813 5.58372 16.973M5.58372 16.973C5.22966 16.4926 4.91814 16.0832 4.63984 15.722M5.58372 16.973L6.75315 18.5231M5.58372 16.973L4.63984 15.722M4.63984 15.722C4.06847 14.9802 3.63715 14.4412 3.26531 13.9056"
+              stroke="#7b3306"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            ></path>
+          </svg>
+          <ChevronRight className="w-4 h-4" />
+        </div>
       </div>
       <ReviewModal
         open={reviewModalOpen}
@@ -412,6 +536,8 @@ const Page: React.FC<PageProps> = (props) => {
         tripName={props.Heading}
         onReviewAdded={handleReviewAdded}
       />
+      <ReviewSection tripId={props.tripId} tripName={props.Heading} />
+      <SimilarSection tripId={props.tripId} />
     </section>
   );
 };

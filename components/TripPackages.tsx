@@ -30,32 +30,33 @@ const TripPackages: React.FC<TripPackagesProps> = ({
   // New compact design (like the Camel Ride card)
   if (compact) {
     return (
-      <div className="relative rounded-xl overflow-hidden shadow-lg">
+      <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200">
         {/* Close button in top-right corner */}
 
         
         {/* Image */}
-        <div className="relative w-full md:h-56">
+        <div className="relative w-full md:h-66">
           <Image
             src={imageSrc}
             alt={imageAlt}
             width={width}
             height={height}
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            className="rounded-b-lg"
           />
         </div>
         
         {/* Content */}
         <div className="py-4 pl-6 pr-4 bg-white">
-          <h3 className="text-2xl font-semibold capitalize text-amber-900 flex justify-center">{heading}</h3>
+          <h3 className="text-xl md:text-2xl font-semibold capitalize text-amber-900 flex justify-center">{heading}</h3>
 
-          <p className="text-amber-950 text-sm font-normal leading-7 pt-4 ">{text}</p>
+          <p className="text-amber-950 text-xs md:text-sm font-normal leading-7 pt-4 ">{text}</p>
           
           {/* Button */}
           <div className="py-6 flex justify-center">
             <Link href={link}>
               <button
-                className=" gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 px-3 bg-amber-900  py-3.5 text-white  hover:text-amber-950 transition-all hover:bg-white text-xs font-medium"
+                className=" gap-2 border-2 rounded-2xl border-amber-900 hover:border-amber-950 px-4 bg-amber-900  py-3.5 text-white  hover:text-amber-950 transition-all hover:bg-white text-xs font-medium"
                 type="button"
               >
                 {btnTitle}

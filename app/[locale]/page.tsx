@@ -11,7 +11,7 @@ const page = () => {
     <>
       <Hero />
       <About />
-      <Packages />
+      <Packages limit={3} />
       <Feedback />
       <CarouselMain />
 

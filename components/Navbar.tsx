@@ -2,7 +2,7 @@
 import { NAV_LINKS } from "@/constant";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Style/Components.css";
 import { useTranslation } from "react-i18next";
 import LanguageChanger from "./LanguageChanger";
@@ -37,6 +37,25 @@ const Navbar = () => {
     };
   }, [lastScrollY, menuOpened]);
 
+  // THIS FOR MOBILE MENU TO CLOSE WHEN CLICK OUTSIDE OF IT
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpened(false);
+      }
+    };
+
+    if (menuOpened) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpened]);
+
   return (
     <nav
       className={`flexBetween max-container px-12 z-30 py-3 sm:py-1 shadow-lg bg-white rounded-xl xl:rounded-full fixed w-[95%] 
@@ -44,7 +63,10 @@ const Navbar = () => {
         showNavbar ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
       }`}
     >
-      <Link href="/" className="xs:bold-22 xs:py-2 md:py-4 md:bold-28">
+      <Link
+        href="/"
+        className="bold-16 xs:bold-22 xs:py-2 md:py-4 py-0 md:bold-28"
+      >
         <span className="text-amber-900">LOVER OF SAHARA</span>
       </Link>
 
@@ -96,6 +118,7 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       <div
+        ref={menuRef}
         className={
           menuOpened
             ? "flex flex-col justify-center w-full p-12 fixed top-[83%] bg-white rounded-b-lg border-none transition-all duration-300 ease-in-out shadow-md right-0"

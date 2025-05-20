@@ -2,67 +2,56 @@
 
 import TripPackages from "./TripPackages";
 import { useTranslation } from "react-i18next";
-import { TITLES } from "@/constant";
+import { allPackages, TITLES } from "@/constant";
 import AnimatedSection from "./AnimatedSection";
+import { ArrowRight } from "lucide-react";
 
-const Packages = () => {
+
+
+const Packages = ({ limit }: { limit?: number }) => {
   const { t } = useTranslation();
+  const displayedPackages = limit ? allPackages.slice(0, limit) : allPackages;
 
   return (
-    <section className="max-container padding-container py-10">
+    <section className="max-container padding-container">
       <AnimatedSection>
         <div className="flex flex-col justify-center items-center text-center">
-          <h1 className="md:text-4xl text-3xl font-semibold uppercase pb-8 text-amber-900">
+          <h1 className="md:text-4xl text-2xl font-semibold uppercase pb-12 text-amber-900">
             {t(TITLES.Popular)}
           </h1>
         </div>
       </AnimatedSection>
 
       <AnimatedSection>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 content-between gap-9 ">
-          {/* Desert Adventure */}
-          <TripPackages
-            imageSrc="/test1.jpg"
-            imageAlt="sahara desert"
-            heading="Desert Adventure"
-            text="Visit the UNESCO World Heritage site of Ait Ben Haddou and explore Morocco's rich history on this 3-day tour. See famous movie locations, visit ancient kasbahs, and travel through stunning mountain scenery."
-            width={1920}
-            height={1280}
-            btnTitle={t("moreDetails")}
-            link="/trips/1"
-            duration="3 day trip"
-            compact={true}
-          />
-
-          {/* Camel Ride */}
-          <TripPackages
-            imageSrc="/test2.jpg"
-            imageAlt="camel caravan"
-            heading="Camel Ride"
-            text="Visit the UNESCO World Heritage site of Ait Ben Haddou and explore Morocco's rich history on this 3-day tour. See famous movie locations, visit ancient kasbahs, and travel through stunning mountain scenery."
-            width={500}
-            height={300}
-            btnTitle={t("moreDetails")}
-            link="/trips/2"
-            duration="1 day trip"
-            compact={true}
-          />
-
-          {/* Historical Journey */}
-          <TripPackages
-            imageSrc="/oasis2.jpg"
-            imageAlt="kasbah"
-            heading="Historical Journey"
-            text="Visit the UNESCO World Heritage site of Ait Ben Haddou and explore Morocco's rich history on this 3-day tour. See famous movie locations, visit ancient kasbahs, and travel through stunning mountain scenery."
-            width={1920}
-            height={1280}
-            btnTitle={t("moreDetails")}
-            link="/trips/3"
-            duration="3 day trip"
-            compact={true}
-          />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 content-between gap-9">
+          {displayedPackages.map((pkg, index) => (
+            <TripPackages
+              key={index}
+              imageSrc={pkg.imageSrc}
+              imageAlt={pkg.imageAlt}
+              heading={pkg.heading}
+              text={pkg.text}
+              width={pkg.width}
+              height={pkg.height}
+              btnTitle={t("moreDetails")}
+              link={pkg.link}
+              duration={pkg.duration}
+              compact={true}
+            />
+          ))}
         </div>
       </AnimatedSection>
+
+      {limit && (
+        <div className="text-center mt-10">
+          <a
+            href="/trips"
+            className="inline-block text-amber-800 font-medium text-lg hover:text-amber-700"
+          >
+            {t("viewAllTrips") || "View All Trips"}
+          </a>
+        </div>
+      )}
     </section>
   );
 };

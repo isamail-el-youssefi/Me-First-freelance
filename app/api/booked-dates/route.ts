@@ -38,7 +38,7 @@ export async function GET(request: NextRequest) {
     const tripBookings = bookings[tripId] || [];
     
     // Extract only the dates for the calendar
-    const bookedDates = tripBookings.map(booking => 
+    const bookedDates = tripBookings.map((booking: { date: any; }) => 
       typeof booking === 'string' ? booking : booking.date
     );
     

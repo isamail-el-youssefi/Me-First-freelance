@@ -9,6 +9,16 @@ const ReviewSchema = z.object({
   comment: z.string().trim().min(1, "Comment is required")
 });
 
+// Define the Review interface and export it
+export interface Review {
+  id: string;
+  fullName: string;
+  rating: number;
+  comment: string;
+  date: string;
+  createdAt: Date;
+}
+
 // GET handler - Return all reviews or filtered by tripId
 export async function GET(request: NextRequest) {
   try {

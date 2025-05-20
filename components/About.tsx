@@ -18,7 +18,7 @@ const About = () => {
       <AnimatedSection>
         <div className="bg-[#faece570]">
           <div className=" max-container padding-container flex flex-col justify-center items-center text-center pt-16">
-            <h1 className="md:text-4xl text-3xl font-semibold uppercase pb-8 text-amber-900">
+            <h1 className="md:text-4xl text-2xl font-semibold uppercase pb-14 text-amber-900">
               {t(TITLES.MustSee)}
             </h1>
           </div>

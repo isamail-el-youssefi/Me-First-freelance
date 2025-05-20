@@ -1,9 +1,16 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
+import { motion, useInView } from "framer-motion";
+import { Mail, PhoneForwarded } from "lucide-react";
 
 const Contact = () => {
+  const ref = useRef(null);
+
+  // Trigger when 30% of the element is in the viewport
+  const isInView = useInView(ref, { amount: 0.3, once: true });
   return (
     <section className="bg-amber-50">
       <div className="relative h-[100vh] w-full z-10 pb-12">
@@ -37,26 +44,21 @@ const Contact = () => {
           className="max-container padding-container bg-amber-50"
         >
           <div className=" py-20 px-4 md:px-8 lg:px-12 rounded-lg">
-            <h2 className="text-5xl font-bold mb-6 text-amber-900">
+            <h2 className="md:text-5xl text-4xl font-bold mb-6 text-amber-900">
               Contact us
             </h2>
 
             <div className="flex flex-col md:flex-row md:justify-between md:items-center">
               <div className="md:w-3/5 lg:w-1/2 mb-16 md:mb-0">
                 <p className="text-amber-950 text-lg mb-12 max-w-xl">
-                  We're here to help and answer any questions you might have. We
-                  look forward to hearing from you!
+                  We are here to help and answer any questions you might have.
+                  We look forward to hearing from you!
                 </p>
 
                 <div className="space-y-8">
                   <div className="flex items-center">
-                    <div className="w-8 h-8 mr-4 text-amber-950">
-                      <Image
-                        src="/email.png"
-                        alt="email"
-                        height={32}
-                        width={32}
-                      />
+                    <div className="w-8 h-8 mr-4 text-amber-950 pt-1">
+                      <Mail />
                     </div>
                     <a
                       target="_blank"
@@ -69,13 +71,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-center">
-                    <div className="w-8 h-8 mr-4 text-amber-950">
-                      <Image
-                        src="/phone.png"
-                        alt="phone"
-                        height={32}
-                        width={32}
-                      />
+                    <div className="w-8 h-8 mr-4 text-amber-950 pt-1">
+                      <PhoneForwarded />
                     </div>
                     <a
                       target="_blank"
@@ -88,19 +85,11 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-center">
-                    <div className="w-8 h-8 mr-4 text-amber-950">
-                      <Image
-                        src="/whatsapp.png"
-                        alt="whatsapp"
-                        height={32}
-                        width={32}
-                      />
-                    </div>
                     <a
                       target="_blank"
                       rel="noopener noreferrer"
                       href="https://wa.me/212661842609"
-                      className="px-6 py-2 bg-amber-50 text-amber-950 border-[3px] border-amber-900 rounded-xl hover:bg-amber-800 hover:border-amber-800 hover:text-amber-50 transition-colors text-base font-medium"
+                      className="px-6 py-2 bg-amber-50 text-amber-950 border-[2px] border-amber-900 rounded-xl hover:bg-amber-800 hover:border-amber-800 hover:text-amber-50 transition-colors text-base font-medium"
                     >
                       WhatsApp
                     </a>
@@ -110,19 +99,25 @@ const Contact = () => {
 
               <div className="md:w-2/5 lg:w-1/3">
                 {/* Placeholder for your custom vector/illustration */}
-                <div className="h-96 w-full relative rounded-lg overflow-hidden">
+                <motion.div
+                  ref={ref}
+                  initial={{ opacity: 0, translateX: -150,  }}
+                  animate={isInView ? { opacity: 1, translateX: 1 } : {}}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  className="h-96 w-full relative rounded-lg overflow-hidden"
+                >
                   <Image
-                    src="/camel2.png"
+                    src="/camel3.png"
                     alt="Camel illustration"
                     fill
                     className="object-contain"
                   />
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
 
-          <div className="mt-12 mb-16">
+          <div className="mt-12 pb-16 hidden md:block">
             <iframe
               className="rounded-2xl"
               width="100%"

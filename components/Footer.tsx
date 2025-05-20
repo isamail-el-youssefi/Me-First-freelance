@@ -10,60 +10,147 @@ const Footer = () => {
 
   return (
     <div className="bg-[#faece570]">
-      <footer className=" bg-[#faece570]   flex flex-col content-center pb-24 pt-16  padding-container max-container border-gray-200    ">
-        <div className="  flex justify-between pb-6  ">
-          <h1 className="bold-18 lg:bold-28 text-amber-900">LOVER OF SAHARA</h1>
-          <div className="grid grid-flow-col gap-[2vw] text-sm font-medium leading-7 lg:text-lg lg:font-normal text-amber-900">
-            <Link href={"/about"}>
-              <h1 className="border-b-[1px] font-semibold hover:border-amber-900 border-white transition-all ease-in-out duration-500">
+      <footer className="bg-[#faece570] flex flex-col padding-container max-container pb-12 pt-8 lg:pb-24 lg:pt-16">
+        {/* Mobile layout - navigation at top, logo and social at bottom */}
+        <div className="md:hidden flex flex-col">
+          {/* Navigation Links at top for mobile */}
+          <nav className="flex flex-col items-start gap-3 text-sm font-semibold text-amber-900 mb-6">
+            <Link href="/about">
+              <span className="border-b-[1px] hover:border-amber-900 border-white transition-all ease-in-out duration-500">
                 {t("About")}
-              </h1>
+              </span>
             </Link>
-            <Link href={"/trips"}>
-              <h1 className="border-b-[1px] font-semibold hover:border-amber-900 border-white transition-all ease-in-out duration-500">
+            <Link href="/trips">
+              <span className="border-b-[1px] hover:border-amber-900 border-white transition-all ease-in-out duration-500">
                 {t("Trips")}
-              </h1>
+              </span>
             </Link>
-            <Link href={"/gallery"}>
-              <h1 className="border-b-[1px] font-semibold hover:border-amber-900 border-white transition-all ease-in-out duration-500">
+            <Link href="/gallery">
+              <span className="border-b-[1px] hover:border-amber-900 border-white transition-all ease-in-out duration-500">
                 {t("Gallery")}
-              </h1>
+              </span>
             </Link>
-            <Link href={"/contact"}>
-              <h1 className="border-b-[1px] font-semibold hover:border-amber-900 border-white transition-all ease-in-out duration-500">
+            <Link href="/contact">
+              <span className="border-b-[1px] hover:border-amber-900 border-white transition-all ease-in-out duration-500">
                 {t("nav-btn")}
-              </h1>
+              </span>
             </Link>
+          </nav>
+
+          {/* Logo and Social Icons at bottom for mobile, in one row */}
+          <div className="flex justify-between items-center mt-4">
+            <h1 className="bold-16 text-amber-900 whitespace-nowrap">
+              LOVER OF SAHARA
+            </h1>
+
+            <div className="flex gap-4 items-center">
+              <Link
+                href="https://www.instagram.com/lover_of_sahara/"
+                aria-label="Instagram"
+              >
+                <Image
+                  src="/nav2.png"
+                  alt="Instagram"
+                  height={32}
+                  width={32}
+                  className="w-7 h-7"
+                />
+              </Link>
+              <Link href="https://wa.me/yourphonenumber" aria-label="WhatsApp">
+                <Image
+                  src="/nav1.png"
+                  alt="WhatsApp"
+                  height={32}
+                  width={32}
+                  className="w-7 h-7"
+                />
+              </Link>
+              <Link
+                href="https://www.facebook.com/loveroffsahara"
+                aria-label="Facebook"
+              >
+                <Image
+                  src="/nav3.png"
+                  alt="Facebook"
+                  height={32}
+                  width={32}
+                  className="w-7 h-7"
+                />
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="flex font-semibold justify-between flex-row-reverse pt-3 text-amber-900  text-sm   lg:text-[1rem]  ">
-          <div className=" grid grid-flow-col justify-center gap-6 pb-1">
-            <Link href={"https://www.instagram.com/lover_of_sahara/"}>
-              <Image
-                src="/nav2.png"
-                alt="ig"
-                height={32}
-                width={32}
-                style={{ width: "100%", height: "100%" }}
-              />
-            </Link>
 
-            <Image
-              src="/nav1.png"
-              alt="whatsapp"
-              height={32}
-              width={32}
-              style={{ width: "100%", height: "100%" }}
-            />
-            <Link href={"https://www.facebook.com/loveroffsahara"}>
-              <Image
-                src="/nav3.png"
-                alt="fb"
-                height={32}
-                width={32}
-                style={{ width: "100%", height: "100%" }}
-              />
-            </Link>
+        {/* Desktop layout - remains the same */}
+        <div className="hidden md:flex md:flex-col">
+          <div className="flex flex-row justify-between items-center gap-6 pb-6">
+            {/* Logo/Brand */}
+            <h1 className="bold-28 text-amber-900 whitespace-nowrap">
+              LOVER OF SAHARA
+            </h1>
+
+            {/* Navigation Links */}
+            <nav className="flex flex-wrap gap-6 text-lg font-medium text-amber-900">
+              <Link href="/about">
+                <span className="border-b-[1px] font-semibold hover:border-amber-900 border-white transition-all ease-in-out duration-500">
+                  {t("About")}
+                </span>
+              </Link>
+              <Link href="/trips">
+                <span className="border-b-[1px] font-semibold hover:border-amber-900 border-white transition-all ease-in-out duration-500">
+                  {t("Trips")}
+                </span>
+              </Link>
+              <Link href="/gallery">
+                <span className="border-b-[1px] font-semibold hover:border-amber-900 border-white transition-all ease-in-out duration-500">
+                  {t("Gallery")}
+                </span>
+              </Link>
+              <Link href="/contact">
+                <span className="border-b-[1px] font-semibold hover:border-amber-900 border-white transition-all ease-in-out duration-500">
+                  {t("nav-btn")}
+                </span>
+              </Link>
+            </nav>
+          </div>
+
+          {/* Social Media Icons */}
+          <div className="flex justify-end pt-6 pb-2">
+            <div className="flex gap-6 items-center">
+              <Link
+                href="https://www.instagram.com/lover_of_sahara/"
+                aria-label="Instagram"
+              >
+                <Image
+                  src="/nav2.png"
+                  alt="Instagram"
+                  height={32}
+                  width={32}
+                  className="w-8 h-8"
+                />
+              </Link>
+              <Link href="https://wa.me/yourphonenumber" aria-label="WhatsApp">
+                <Image
+                  src="/nav1.png"
+                  alt="WhatsApp"
+                  height={32}
+                  width={32}
+                  className="w-8 h-8"
+                />
+              </Link>
+              <Link
+                href="https://www.facebook.com/loveroffsahara"
+                aria-label="Facebook"
+              >
+                <Image
+                  src="/nav3.png"
+                  alt="Facebook"
+                  height={32}
+                  width={32}
+                  className="w-8 h-8"
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
