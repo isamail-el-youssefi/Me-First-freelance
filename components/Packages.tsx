@@ -36,6 +36,7 @@ const Packages = ({ limit }: { limit?: number }) => {
               btnTitle={t("moreDetails")}
               link={pkg.link}
               duration={pkg.duration}
+              price={pkg.price}
               compact={true}
             />
           ))}

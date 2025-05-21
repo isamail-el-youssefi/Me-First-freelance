@@ -118,7 +118,7 @@ export const TRIPDAY = [
     },
   ],
   //programme 2 jours:
-    [
+  [
     {
       d: "d1",
       itinerary: "MARRAKECH - TICHKA - AIT BEN HADDOU - ZAGORA - ERG LIHODI:",
@@ -129,7 +129,6 @@ export const TRIPDAY = [
       itinerary: "ERG LIHODI - LES DUNES DE CHEGAGA",
       details: "package2-day2",
     },
-
   ],
 ];
 
@@ -157,7 +156,7 @@ When we drove through a sand storm we even encountered a stunning white gazelle 
   },
 
   {
-    name: "— Nicolas",
+    name: "Nicolas",
     country: "France",
     recommendation: `Merci pour cette expérience incroyable et inoubliable.
 Merci Salah pour ce moment magique.`,
@@ -165,7 +164,7 @@ Merci Salah pour ce moment magique.`,
     image: "/nicolas.jpg",
   },
   {
-    name: "— Pomme Cannelle",
+    name: "Pomme Cannelle",
     country: "France",
     recommendation: `Une excursion d'exception vers Chegaga. Nous rencontrons notre chauffeur-guide Salah. Il nous embarque dans son 4x4. C’est génial car nous avons le véhicule juste pour nous ! C’est parti, nous quittons Foum Zguid. Nous apprécions beaucoup l’ambiance du trajet en sa compagnie. Nous discutons. Il est très agréable, sympathique, disponible, souriant, généreux, toujours bienveillant et à l’écoute. Un vrai plaisir. Il a le souci du détail et fait le maximum pour nous satisfaire. Durant les jours passés avec lui, il nous fait découvrir de multiples facettes de son pays. Il est vraiment serviable et adorable, un homme au grand cœur. Nous avons eu de beaux échanges.
 Salah est un chauffeur parfait et très professionnel. Il conduit d’une manière rassurante. C’est un excellent pilote sur la piste et dans les dunes du désert. Il maîtrise parfaitement son véhicule.
@@ -175,7 +174,7 @@ MILLE FOIS MERCI SALAH POUR TES ATTENTIONS, TES SOURIRES, TA GENTILLESSE ET TES 
     image: "/pomme.jpg",
   },
   {
-    name: "— Mounya",
+    name: "Mounya",
     country: "Morocco",
     recommendation: `SALAH guide touristique de notre aventure vers le desert du Chegaga, a été accueillant et nous a fait découvrir tout au long du parcours les spécialités géographiques et les espèces animales qui y survivent. Il a animé notre voyage d'une valeur ajoutée indiscutable. C'est un connaisseur professionnel du parcours du désert, a éveillé notre curiosité. Il fait de son mieux pour nous faire découvrir tout détail intéressant tout au long du circuit choisi. C'était un voyage exceptionnel en plein desert depuis Tagounite à Chegaga pour la nuité au bivouac puis vers Foum Zguid en passant par Iriki. Merci beaucoup SALAH.`,
     link: "https://www.facebook.com/share/p/1Bb3ASpYkw/",
@@ -183,28 +182,28 @@ MILLE FOIS MERCI SALAH POUR TES ATTENTIONS, TES SOURIRES, TA GENTILLESSE ET TES 
   },
 
   {
-    name: "— Lauriane",
+    name: "Lauriane",
     country: "France",
     recommendation: `Très belle journée avec Salah qui nous a fait découvrir les dunes de chegaga , un village nomade avec sa gentillesse et son honnêteté qui nous a guidé à travers de très belles rencontres. On recommande vivement !!! Vous repartirez avec de superbes images et souvenirs.`,
     link: "https://www.facebook.com/share/p/1NEpy6uCeg/",
     image: "/lauriane.jpg",
   },
   {
-    name: "— Andrea",
+    name: "Andrea",
     country: "Italy",
     recommendation: `Competent and friendly. Salah knows everything about the desert and its secrets. Truly recommended.`,
     link: "https://www.facebook.com/share/p/1AoLT233ga/",
     image: "/andrea.jpg",
   },
   {
-    name: "— Fan",
+    name: "Fan",
     country: "France",
     recommendation: `Salah est le meilleur guide et un amoureux du désert qui transmet sa passion : en trek ou en famille, Salah vous concoctera le meilleur séjour hors des sentiers battus et vous accompagnera avec toute sa gentillesse.`,
     link: "https://web.facebook.com/story.php?story_fbid=10160275476145893&id=718475892&rdid=1FyJaTVKtWdGmozg",
     image: "/fan.jpg",
   },
   {
-    name: "— Andre",
+    name: "Andre",
     country: "France",
     recommendation: `Une semaine de bonheur et de découverte au Maroc : 3 jours à Marrakech et 3 jours dans le désert de Chegaga avec Salah (Lover of Sahara)`,
     link: "https://www.facebook.com/share/p/199EwtwgN8/",
@@ -212,50 +211,53 @@ MILLE FOIS MERCI SALAH POUR TES ATTENTIONS, TES SOURIRES, TA GENTILLESSE ET TES 
   },
 ];
 
-
 export const allPackages = [
   {
-    id:1,
+    id: 1,
     imageSrc: "/test1.jpg",
     imageAlt: "sahara desert",
-    heading: "5 Days Desert Adventure",
+    heading: "Sahara Trails - 5 Day Nomad Journey",
     text: "Visit the UNESCO World Heritage site of Ait Ben Haddou and explore Morocco's rich history on this 3-day tour. See famous movie locations, visit ancient kasbahs,",
     width: 1920,
     height: 1280,
     link: "/trips/1",
-    duration: "3 day trip",
+    duration: "5 Days",
+    price: "$130",
   },
   {
-    id:2,
+    id: 2,
     imageSrc: "/test2.jpg",
     imageAlt: "camel caravan",
-    heading: "3 Days Desert Adventure",
+    heading: "Desert Escape - 3 Day Sahara Sprint",
     text: "Visit the UNESCO World Heritage site of Ait Ben Haddou and explore Morocco's rich history on this 3-day tour. See famous movie locations, visit ancient kasbahs,",
     width: 500,
     height: 300,
     link: "/trips/2",
-    duration: "1 day trip",
+    duration: "3 Days",
+    price: "$130",
   },
   {
-    id:3,
+    id: 3,
     imageSrc: "/oasis2.jpg",
     imageAlt: "kasbah",
-    heading: "6 Days Desert Adventure",
+    heading: "Dune Horizons - 6 Day Sahara Odyssey",
     text: "Visit the UNESCO World Heritage site of Ait Ben Haddou and explore Morocco's rich history on this 3-day tour. See famous movie locations, visit ancient kasbahs,",
     width: 1920,
     height: 1280,
     link: "/trips/3",
-    duration: "3 day trip",
+    duration: "6 Days",
+    price: "$130",
   },
   {
-    id:4,
+    id: 4,
     imageSrc: "/oasis2.jpg",
     imageAlt: "kasbah",
-    heading: "2 Days Desert Adventure",
+    heading: "Sahara Teaser - 2 Day Desert Getaway",
     text: "Visit the UNESCO World Heritage site of Ait Ben Haddou and explore Morocco's rich history on this 3-day tour. See famous movie locations, visit ancient kasbahs,",
     width: 1920,
     height: 1280,
     link: "/trips/4",
-    duration: "3 day trip",
+    duration: "2 Days",
+    price: "$130",
   },
 ];

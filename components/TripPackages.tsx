@@ -1,6 +1,16 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  Clock,
+  Clock1,
+  Clock10,
+  Clock10Icon,
+  Clock11,
+  Clock2,
+  Clock7,
+  LucideClock,
+} from "lucide-react";
 
 interface TripPackagesProps {
   imageSrc: string;
@@ -10,6 +20,7 @@ interface TripPackagesProps {
   width: number;
   height: number;
   btnTitle: string;
+  price: string;
   link: string;
   duration?: string; // New prop for trip duration (e.g. "1 day trip")
   compact?: boolean; // New prop to toggle between original and new compact design
@@ -25,6 +36,7 @@ const TripPackages: React.FC<TripPackagesProps> = ({
   btnTitle,
   link,
   duration,
+  price,
   compact = false,
 }) => {
   // New compact design (like the Camel Ride card)
@@ -33,7 +45,6 @@ const TripPackages: React.FC<TripPackagesProps> = ({
       <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200">
         {/* Close button in top-right corner */}
 
-        
         {/* Image */}
         <div className="relative w-full md:h-66">
           <Image
@@ -45,29 +56,46 @@ const TripPackages: React.FC<TripPackagesProps> = ({
             className="rounded-b-lg"
           />
         </div>
-        
+
         {/* Content */}
         <div className="py-4 pl-6 pr-4 bg-white">
-          <h3 className="text-xl md:text-2xl font-semibold capitalize text-amber-900 flex justify-center">{heading}</h3>
+          <h3 className="text-xl md:tracking-wider tracking-wide  font-semibold capitalize text-amber-900 pr-3 md:pr-0">
+            {heading}
+          </h3>
+          {/* Price */}
+          <p className="text-md text-amber-800 font-normal pt-3 ">
+            From {price}
+          </p>
 
-          <p className="text-amber-950 text-xs md:text-sm font-normal leading-7 pt-4 ">{text}</p>
-          
-          {/* Button */}
-          <div className="py-6 flex justify-center">
+          <p className="text-amber-950 text-xs md:text-sm font-light leading-5 pt-3 pr-3 md:pr-0 pb-3">
+            {text}
+          </p>
+
+          {/* Duration & Button */}
+          <div className="flex justify-between items-center  pt-4 py-4">
+            <div className="flex items-center gap-[6px]">
+              <Clock className="text-amber-800 stroke-[1.5px] h-5" />
+              <span className="text-sm font-normal text-amber-800">
+                {duration}
+              </span>
+            </div>
+
             <Link href={link}>
-              <button
-                className=" gap-2 border-2 rounded-2xl border-amber-900 hover:border-amber-950 px-4 bg-amber-900  py-3.5 text-white  hover:text-amber-950 transition-all hover:bg-white text-xs font-medium"
-                type="button"
-              >
-                {btnTitle}
-              </button>
+              <div className="pr-3 md:pr-0">
+                <button
+                  className="  border-2 rounded-2xl border-amber-900 hover:border-amber-950 px-4 bg-amber-900 py-3 text-white hover:text-amber-950 transition-all hover:bg-white text-xs font-medium"
+                  type="button"
+                >
+                  {btnTitle}
+                </button>
+              </div>
             </Link>
           </div>
         </div>
       </div>
     );
   }
-  
+
   // Original design
   return (
     <div className="group rounded-3xl cursor-pointer py-6 px-5 shadow-md shadow-gray-200">

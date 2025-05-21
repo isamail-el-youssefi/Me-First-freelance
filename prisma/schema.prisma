@@ -18,6 +18,7 @@ model Review {
   fullName  String
   rating    Int      @default(5)
   comment   String
+  tripId    String   
   date      String?  // Optional date
   createdAt DateTime @default(now())
 }

@@ -210,12 +210,13 @@ const Page: React.FC<PageProps> = (props) => {
               >
                 Price
               </TabsTrigger>
-              <TabsTrigger
+
+              {/*<TabsTrigger
                 value="review"
                 className="rounded-full text-amber-950 text-md  px-4"
               >
                 Reviews
-              </TabsTrigger>
+              </TabsTrigger> */}
               <TabsTrigger
                 value="map"
                 className="rounded-full text-amber-950 text-md  px-4"
@@ -416,8 +417,7 @@ const Page: React.FC<PageProps> = (props) => {
               />
             </TabsContent>
 
-            {/* REVIEW TAB */}
-            <TabsContent value="review" className="pt-4">
+            {/* <TabsContent value="review" className="pt-4">
               <div className="bg-amber-50 rounded-xl md:min-h-[630px] min-h-[350px]">
                 <div className="p-4 flex justify-between items-center border-b border-amber-200">
                   <h2 className="text-xl font-semibold text-amber-900">
@@ -432,7 +432,7 @@ const Page: React.FC<PageProps> = (props) => {
                 </div>
                 <ReviewList reviews={reviews} isLoading={isLoadingReviews} />
               </div>
-            </TabsContent>
+            </TabsContent> */}
 
             {/* MAP TAB CONTENT */}
             <TabsContent value="map" className="pt-4">
