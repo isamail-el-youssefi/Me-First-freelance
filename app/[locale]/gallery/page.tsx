@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 const Page = () => {
   const images = [
@@ -40,135 +41,59 @@ const Page = () => {
     { src: "/10013.jpg", width: 1000, height: 669 },
   ];
 
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const touchStartX = useRef<number | null>(null);
-  const touchEndX = useRef<number | null>(null);
-
-  const closeModal = () => setSelectedIndex(null);
-
-  const showNext = () => {
-    if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex + 1) % images.length);
-    }
-  };
-
-  const showPrevious = () => {
-    if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex - 1 + images.length) % images.length);
-    }
-  };
-
-  // Keyboard navigation
+  // Initialize Fancybox
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (selectedIndex === null) return;
+    Fancybox.bind("[data-fancybox='masonry-gallery']", {
+      Toolbar: {
+        display: {
+          left: ["infobar"],
+          middle: ["toggleZoom"],
+          right: ["slideshow", "fullscreen", "thumbs", "close"],
+        },
+      },
+      // No more Thumbs.autoStart in v5
+      showClass: "fancybox-fadeIn",
+      hideClass: "fancybox-fadeOut",
+      on: {
+        ready: (fancybox) => {
+          if (window.innerWidth < 768) {
+            fancybox.container.style.padding = "20px";
+          }
+        },
+      },
+    });
 
-      if (e.key === "ArrowLeft") showPrevious();
-      else if (e.key === "ArrowRight") showNext();
-      else if (e.key === "Escape") closeModal();
+    // Cleanup function
+    return () => {
+      Fancybox.unbind("[data-fancybox='masonry-gallery']");
+      Fancybox.close();
     };
-
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  });
-
-  // Swipe navigation
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    touchEndX.current = e.changedTouches[0].clientX;
-    if (
-      touchStartX.current !== null &&
-      touchEndX.current !== null &&
-      selectedIndex !== null
-    ) {
-      const delta = touchStartX.current - touchEndX.current;
-      if (delta > 50) showNext(); // swipe left
-      if (delta < -50) showPrevious(); // swipe right
-    }
-  };
-
-  const [modalVisible, setModalVisible] = useState(false);
-
-  useEffect(() => {
-    if (selectedIndex !== null) {
-      // Delay to allow CSS transition to trigger
-      setTimeout(() => setModalVisible(true), 10);
-    } else {
-      setModalVisible(false);
-    }
-  }, [selectedIndex]);
+  }, []);
 
   return (
     <div className="max-container padding-container lg:pt-40 pt-36 pb-6">
       <div className="gap-4 lg:gap-5 columns-2 md:columns-3 space-y-4">
         {images.map((image, index) => (
-          <div
-            key={index}
-            className="cursor-pointer"
-            onClick={() => setSelectedIndex(index)}
-          >
-            <div className="w-full h-full overflow-hidden relative">
-              <AnimatedSection>
+          <div key={index} className="cursor-pointer">
+            <AnimatedSection>
+              <a
+                href={image.src}
+                data-fancybox="masonry-gallery"
+                data-caption={`Gallery Image ${index + 1}`}
+                className="block w-full h-full overflow-hidden relative hover:opacity-90 transition-opacity"
+              >
                 <Image
                   src={image.src}
-                  alt="gallery"
+                  alt={`gallery-${index}`}
                   width={image.width}
                   height={image.height}
-                  className="rounded-lg"
+                  className="rounded-lg w-full h-auto"
                 />
-              </AnimatedSection>
-            </div>
+              </a>
+            </AnimatedSection>
           </div>
         ))}
       </div>
-
-      {/* Modal */}
-      {selectedIndex !== null && (
-        <div
-          className={`fixed inset-0 bg-gray-90 backdrop-blur-sm bg-opacity-65 z-50 flex items-center justify-center p-4
-    transition-all duration-500 overflow-auto
-    ${modalVisible ? "opacity-100 scale-100" : "opacity-0 scale-100"}
-  `}
-          onClick={closeModal}
-        >
-          {/* Navigation Arrows */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              showPrevious();
-            }}
-            className="absolute invisible lg:visible left-0 lg:left-10 text-white hover:scale-110 transition"
-          >
-            <ChevronLeft size={40} />
-          </button>
-
-          <div
-            className="rounded-2xl overflow-hidden max-w-full max-h-full"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={images[selectedIndex].src}
-              alt="zoomed"
-              width={900}
-              height={600}
-              className="object-contain w-full h-full"
-            />
-          </div>
-
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              showNext();
-            }}
-            className="absolute invisible lg:visible right-0 lg:right-10 text-white hover:scale-110 transition"
-          >
-            <ChevronRight size={40} />
-          </button>
-        </div>
-      )}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import initTranslations from "../i18n";
 import TranslationsProvider from "@/components/TranslationsProvider";
+import BackToTop from "@/components/BackToTop";
 
 export const metadata = {
   title: "Lover Of Sahara",
@@ -25,6 +26,7 @@ export default async function RootLayout({ children, params: { locale } }) {
           <Navbar />
           <main className=" overflow-hidden">{children}</main>
           <Footer />
+          <BackToTop />
         </TranslationsProvider>
       </body>
     </html>
