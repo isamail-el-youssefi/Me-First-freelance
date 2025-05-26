@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import initTranslations from "../i18n";
 import TranslationsProvider from "@/components/TranslationsProvider";
 import BackToTop from "@/components/BackToTop";
+import PageLoader from "@/components/PagePreLoader";
 
 export const metadata = {
   title: "Lover Of Sahara",
@@ -18,6 +19,8 @@ export default async function RootLayout({ children, params: { locale } }) {
   return (
     <html lang="en">
       <body className="overflow-y-scroll h-[500px] scrollbar-thin scrollbar-thumb-amber-900 scrollbar-track-amber-100">
+        <PageLoader />
+
         <TranslationsProvider
           namespaces={i18nNamespaces}
           locale={locale}
