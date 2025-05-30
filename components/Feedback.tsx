@@ -58,7 +58,7 @@ export default function TestimonialsCarousel() {
   }
 
   return (
-    <div className="mb-10 relative max-container padding-container flex flex-col justify-center items-center text-center pt-10">
+    <div className="mb-10 relative max-container padding-container flex flex-col justify-center items-center text-center pt-16">
       <h2 className="md:text-4xl text-2xl font-semibold uppercase pb-12 text-amber-900">
         What Travelers Say
       </h2>

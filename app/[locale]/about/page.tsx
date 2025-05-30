@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import DestinationData from "../../../components/DestinationData";
 import { TRIPS } from "@/constant";
 import { TransitionLink } from "@/components/utils/TransitionLink";
+import Link from "next/link";
 
 const Page = () => {
   const { t } = useTranslation();
@@ -57,7 +58,7 @@ const Page = () => {
           </h2>
         </div>
       </div>
-      <TransitionLink href="/contact">
+      <Link href="/contact">
         <div className="w-40 lg:w-56  pt-7">
           <div className="flexCenter gap-2 border-2 rounded-full border-amber-900 hover:border-amber-950 bg-amber-900 px-1 py-3.5 text-white hover:bold-16 hover:text-amber-950 transition-all hover:bg-white">
             <div className="whitespace-nowrap cursor-pointer text-sm">
@@ -65,7 +66,7 @@ const Page = () => {
             </div>
           </div>
         </div>
-      </TransitionLink>
+      </Link>
     </section>
   );
 };

@@ -13,7 +13,7 @@ const Packages = ({ limit }: { limit?: number }) => {
   const displayedPackages = limit ? allPackages.slice(0, limit) : allPackages;
 
   return (
-    <section className="max-container padding-container">
+    <section className="max-container padding-container pt-16">
       <AnimatedSection>
         <div className="flex flex-col justify-center items-center text-center">
           <h1 className="md:text-4xl text-2xl font-semibold uppercase pb-12 text-amber-900">
@@ -44,7 +44,7 @@ const Packages = ({ limit }: { limit?: number }) => {
       </AnimatedSection>
 
       {limit && (
-        <div className="text-center mt-10">
+        <div className="text-center mt-5">
           <a
             href="/trips"
             className="inline-block text-amber-800 font-medium text-lg hover:text-amber-700"

@@ -59,31 +59,35 @@ const TripPackages: React.FC<TripPackagesProps> = ({
 
         {/* Content */}
         <div className="py-4 pl-6 pr-4 bg-white">
-          <h3 className="text-xl md:tracking-wider tracking-wide  font-semibold capitalize text-amber-900 pr-3 md:pr-0">
+          <h3 className="text-xl md:tracking-wider tracking-wide  font-semibold  capitalize text-amber-900 pr-3 md:pr-0">
             {heading}
           </h3>
           {/* Price */}
-          <p className="text-md text-amber-800 font-normal pt-3 ">
+          {/*           <p className="text-md text-amber-950 font-light pt-2  ">
             From {price}
-          </p>
+          </p> */}
 
-          <p className="text-amber-950 text-xs md:text-sm font-light leading-5 pt-3 pr-3 md:pr-0 pb-3">
+          <p className="text-amber-950 text-xs md:text-sm font-light leading-5 pt-4 pr-3 md:pr-0 pb-3">
             {text}
           </p>
 
           {/* Duration & Button */}
           <div className="flex justify-between items-center  pt-4 py-4">
-            <div className="flex items-center gap-[6px]">
+            {/*             <div className="flex items-center gap-[6px]">
               <Clock className="text-amber-800 stroke-[1.5px] h-5" />
               <span className="text-sm font-normal text-amber-800">
                 {duration}
               </span>
-            </div>
+            </div> */}
+
+            <p className="text-md text-amber-900 font-normal pt-2  ">
+              From {price}
+            </p>
 
             <Link href={link}>
               <div className="pr-3 md:pr-0">
                 <button
-                  className="  border-2 rounded-2xl border-amber-900 hover:border-amber-950 px-4 bg-amber-900 py-3 text-white hover:text-amber-950 transition-all hover:bg-white text-xs font-medium"
+                  className="  border-[1.5px] md:border-[1.9px] rounded-2xl hover:border-amber-900 focus:border-amber-900 border-amber-900 px-4 hover:bg-amber-900 py-3 hover:text-white focus:bg-amber-900  focus:text-white  text-amber-900 transition-all bg-white text-xs font-semibold"
                   type="button"
                 >
                   {btnTitle}
