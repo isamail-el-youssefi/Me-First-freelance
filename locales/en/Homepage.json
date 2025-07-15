@@ -1,4 +1,7 @@
 {
+  "travelersSection": "What Travelers Say",
+  "viewOriginalReview": "View Original Review",
+  "viewAllTrips": "View All Trips",
   "d1": "Day 1",
   "d2": "Day 2",
   "d3": "Day 3",
@@ -59,5 +62,144 @@
   "package3-day4": "Day of relaxation to enjoy the maximum and the best visit to the Nomads with lunch at their place and visit to the oasis or lunch at the Camp, your choice. In the afternoon, a camel ride in the dunes to admire the sunset. Night at the camp with dinner and entertainment under the stars around a fire 🔥",
 
   "package3-day5": "Early wake up to watch the sunrise over the dunes, then breakfast. Departure for Foum Zguid passing by Lake Iriqui and the desert plateau dotted with acacia trees before reaching the paved road at Foum Zguid. Lunch on site, then continuation to Taznakhte, village of Berber carpets, continuing on to the final oasis. Visit the Fint Oasis. Dinner and overnight in a clean and very quiet guesthouse.",
-  "package3-day6": "Return to Marrakech with a detour through the Ourika Valley, lunch on site with delicious traditional tagine, walking to see the waterfalls. Return to Marrakech. End of tour."
+  "package3-day6": "Return to Marrakech with a detour through the Ourika Valley, lunch on site with delicious traditional tagine, walking to see the waterfalls. Return to Marrakech. End of tour.",
+
+  "packages": {
+    "package1": {
+      "heading": "Sahara Trails - 5 Day Nomad Journey",
+      "text": "Cross the High Atlas, explore ancient kasbahs, hike through canyons, meet nomads, and ride camels into the dunes of Chegaga. Experience desert sunsets and starlit nights in a traditional camp."
+    },
+    "package2": {
+      "heading": "Desert Escape - 3 Day Sahara Sprint",
+      "text": "Journey through kasbahs, oases, and valleys to reach the golden dunes of Erg Lihoudi and Chigaga. Ride camels, enjoy Berber hospitality, and sleep under starry desert skies with unforgettable moments."
+    },
+    "package3": {
+      "heading": "Dune Horizons - 6 Day Sahara Odyssey",
+      "text": "Explore kasbahs, valleys, and gorges. Meet nomads, trek through mountain passes, and experience desert life with camel rides, sunsets, and starlit bivouacs. End with a peaceful visit to the Fint and Ourika Valleys."
+    },
+    "package4": {
+      "heading": "Sahara Teaser - 2 Day Desert Getaway",
+      "text": "A quick but immersive desert experience, perfect for those short on time but eager to experience the magic of the Sahara."
+    }
+  },
+  "tripDetails": {
+    "trip1": {
+      "heading": "5 Day Nomad Journey",
+      "keyStops": [
+        "Tizi N'Tichka Pass",
+        "Telouet & Ounilla Valley",
+        "Kasbah Ait Ben Haddou",
+        "El Kelâa des M'Gouna (Valley of Roses)",
+        "Dades Gorges & Todra Gorges",
+        "Jebel Saghrou Massif & Ait Ata Nomads",
+        "Draa Valley & Palm Grove",
+        "Tamegroute (Pottery Village & Library)",
+        "Mhamid Desert & Erg Chegaga Dunes",
+        "Foum Zguid & Lake Iriqui",
+        "Taznakhte (Carpet Village)"
+      ]
+    },
+    "trip2": {
+      "heading": "3 Day Sahara Sprint",
+      "keyStops": [
+        "Tizi n'Tichka Pass",
+        "Kasbah of Telouet & Ounila Valley",
+        "Kasbah Ait Ben Haddou",
+        "Tizi n'Tinifift Pass",
+        "Draa Valley",
+        "Tamegroute (Pottery Village & Library)",
+        "Mhamid Desert & Erg Lihoudi Dunes",
+        "Erg Chegaga Dunes",
+        "Taznakhte (Carpet Village)"
+      ]
+    },
+    "trip3": {
+      "heading": "6 Day Sahara Odyssey",
+      "keyStops": [
+        "Tizi n'Tichka Pass",
+        "Kasbah Ait Ben Haddou",
+        "El Kelâa des M'Gouna (Valley of Roses)",
+        "Bou-Tgharar & Ait-Youl Kasbah",
+        "Dades Gorges & Todra Gorges",
+        "Tizi Nogdal Pass & Atlas Viewpoints",
+        "Jebel Saghrou Massif & Ait Ata Nomads",
+        "Draa Valley & Palm Grove",
+        "Tamegroute (Pottery Village & Library)",
+        "Mhamid Desert & Erg Chegaga Dunes",
+        "Erg Chegaga Dunes",
+        "Taznakhte (Carpet Village)",
+        "Fint Oasis",
+        "Ourika Valley & Waterfalls"
+      ]
+    },
+    "trip4": {
+      "heading": "2 Day Desert Getaway",
+      "keyStops": [
+        "Telouat Oasis",
+        "Ait Benhaddou",
+        "Erg Chegaga",
+        "Tizi N'Tichka Pass",
+        "Ouarzgane",
+        "Tamegroute Clay"
+      ]
+    },
+    "ui": {
+      "back": "Back",
+      "tour": "Tour",
+      "details": "Details",
+      "price": "Price",
+      "mapp": "Map",
+      "readMore": "Read More",
+      "readLess": "Read Less",
+      "keyStopsTitle": "Key stops of the trip",
+      "tripHighlights": "Trip Highlights",
+      "highlights": {
+        "localExperience": "Authentic local experiences",
+        "guides": "Professional guides",
+        "meals": "Traditional meals included",
+        "transport": "Comfortable transportation",
+        "photography": "Photography opportunities"
+      },
+      "pricing": {
+        "persons": "Persons",
+        "price": "Price",
+        "action": "Action",
+        "reserve": "Reserve",
+        "swipe": "Swipe"
+      },
+      "imageUpdate": "Images updated for Day",
+      "from": "From"
+    },
+    "reviews": {
+      "title": "Reviews",
+      "writeReview": "Write a Review",
+      "noReviews": "No reviews yet. Be the first to share your experience!",
+      "readMore": "Read more",
+      "readLess": "Read less",
+      "showLess": "Show Less",
+      "readMoreOf": "Read More ({{displayed}} of {{total}})",
+      "loading": "Loading reviews..."
+    },
+    "reviewModal": {
+      "title": "Write a Review",
+      "shareExperience": "Share your experience about {{tripName}}",
+      "nameLabel": "Your Name",
+      "namePlaceholder": "Enter your full name",
+      "ratingLabel": "Rating",
+      "reviewLabel": "Your Review",
+      "reviewPlaceholder": "Share your experience...",
+      "cancelButton": "Cancel",
+      "submitButton": "Submit Review",
+      "submitting": "Submitting...",
+      "errors": {
+        "nameRequired": "Please enter your name",
+        "reviewRequired": "Please enter your review",
+        "generic": "An error occurred"
+      }
+    },
+    "similarSection": {
+      "title": "Similar Trips",
+      "moreDetails": "More Details"
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface ReviewModalProps {
   open: boolean;
@@ -17,6 +18,7 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
   tripName,
   onReviewAdded,
 }) => {
+  const { t } = useTranslation();
   const [fullName, setFullName] = useState("");
   const [rating, setRating] = useState(5);
   const [comment, setComment] = useState("");
@@ -30,12 +32,12 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
 
     // Validate form
     if (!fullName.trim()) {
-      setError("Please enter your name");
+      setError(t("reviewModal.errors.nameRequired"));
       return;
     }
 
     if (!comment.trim()) {
-      setError("Please enter your review");
+      setError(t("reviewModal.errors.reviewRequired"));
       return;
     }
 
@@ -59,7 +61,7 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to submit review");
+        throw new Error(errorData.error || t("reviewModal.errors.generic"));
       }
 
       // Reset form
@@ -73,7 +75,9 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
       // Close modal
       onOpenChange(false);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
+      setError(
+        err instanceof Error ? err.message : t("reviewModal.errors.generic")
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -108,7 +112,7 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
       >
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold text-amber-900">
-            Write a Review
+            {t("reviewModal.title")}
           </h2>
           <button
             onClick={() => onOpenChange(false)}
@@ -119,7 +123,7 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
         </div>
 
         <p className="text-amber-800 mb-4">
-          Share your experience about {tripName}
+          {t("reviewModal.shareExperience", { tripName })}
         </p>
 
         {error && (
@@ -130,18 +134,22 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-amber-800 mb-1">Your Name</label>
+            <label className="block text-amber-800 mb-1">
+              {t("reviewModal.nameLabel")}
+            </label>
             <input
               type="text"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               className="w-full p-2 border border-amber-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-              placeholder="Enter your full name"
+              placeholder={t("reviewModal.namePlaceholder")}
             />
           </div>
 
           <div className="mb-4">
-            <label className="block text-amber-800 mb-1">Rating</label>
+            <label className="block text-amber-800 mb-1">
+              {t("reviewModal.ratingLabel")}
+            </label>
             <div className="flex items-center">
               {[1, 2, 3, 4, 5].map((star) => (
                 <button
@@ -163,12 +171,14 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
           </div>
 
           <div className="mb-4">
-            <label className="block text-amber-800 mb-1">Your Review</label>
+            <label className="block text-amber-800 mb-1">
+              {t("reviewModal.reviewLabel")}
+            </label>
             <textarea
               value={comment}
               onChange={(e) => setComment(e.target.value)}
               className="w-full p-2 border border-amber-300 rounded-lg min-h-[100px] focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-              placeholder="Share your experience..."
+              placeholder={t("reviewModal.reviewPlaceholder")}
             />
           </div>
 
@@ -179,14 +189,16 @@ const ReviewModal: React.FC<ReviewModalProps> = ({
               className="mr-2 px-4 py-2 text-amber-900 rounded-lg hover:bg-amber-100"
               disabled={isSubmitting}
             >
-              Cancel
+              {t("reviewModal.cancelButton")}
             </button>
             <button
               type="submit"
-              className=" bg-amber-50  border-[1px] border-amber-900 hover:bg-amber-900 hover:text-amber-50 duration-300 text-amber-900 font-semibold hover:font-medium py-2 px-4 rounded-full transition mr-1"
+              className="bg-amber-50 border-[1px] border-amber-900 hover:bg-amber-900 hover:text-amber-50 duration-300 text-amber-900 font-semibold hover:font-medium py-2 px-4 rounded-full transition mr-1"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Submitting..." : "Submit Review"}
+              {isSubmitting
+                ? t("reviewModal.submitting")
+                : t("reviewModal.submitButton")}
             </button>
           </div>
         </form>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -8,20 +8,65 @@ import { Mail, PhoneForwarded } from "lucide-react";
 
 const Contact = () => {
   const ref = useRef(null);
+  const [showSecondImage, setShowSecondImage] = useState(false);
 
   // Trigger when 30% of the element is in the viewport
   const isInView = useInView(ref, { amount: 0.3, once: true });
+
+  useEffect(() => {
+    // Start transition after 2 seconds
+    const timer = setTimeout(() => {
+      setShowSecondImage(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="bg-amber-50">
       <div className="relative h-[100vh] w-full z-10 pb-12">
-        <Image
-          src="/contact1.jpg"
-          alt="about"
-          height={1260}
-          width={1920}
-          style={{ width: "100%", height: "100%" }}
-          className="absolute top-0 left-0 object-cover w-full h-full"
-        />
+        {/* First Image */}
+        <motion.div
+          initial={{ opacity: 1, filter: "blur(0px)" }}
+          animate={
+            showSecondImage
+              ? { opacity: 0, filter: "blur(4px)" }
+              : { opacity: 1, filter: "blur(0px)" }
+          }
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="absolute top-0 left-0 w-full h-full"
+        >
+          <Image
+            src="/contact3.jpg"
+            alt="contact background 1"
+            height={1260}
+            width={1920}
+            style={{ width: "100%", height: "100%" }}
+            className="object-cover w-full h-full"
+          />
+        </motion.div>
+
+        {/* Second Image */}
+        <motion.div
+          initial={{ opacity: 0, filter: "blur(4px)" }}
+          animate={
+            showSecondImage
+              ? { opacity: 1, filter: "blur(0px)" }
+              : { opacity: 0, filter: "blur(4px)" }
+          }
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          className="absolute top-0 left-0 w-full h-full"
+        >
+          <Image
+            src="/contact1.jpg" // Change this to your second image path
+            alt="contact background 2"
+            height={1260}
+            width={1920}
+            style={{ width: "100%", height: "100%" }}
+            className="object-cover w-full h-full"
+          />
+        </motion.div>
+
         <div className="flex flex-col justify-center items-center padding-container relative top-[38%] md:top-[34%] z-10">
           <span className="bold-32 sm:bold-32 lg:bold-64 text-white capitalize px-5 sm:px-20 text-center">
             CONTACT ME.

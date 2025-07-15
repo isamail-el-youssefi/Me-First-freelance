@@ -35,7 +35,7 @@ const CarouselMain = () => {
 
   // Initialize Fancybox
   useEffect(() => {
-    Fancybox.bind("[data-fancybox='masonry-gallery']", {
+    Fancybox.bind("[data-fancybox='gallery']", {
       Toolbar: {
         display: {
           left: ["infobar"],
@@ -43,13 +43,24 @@ const CarouselMain = () => {
           right: ["slideshow", "fullscreen", "thumbs", "close"],
         },
       },
-      // No more Thumbs.autoStart in v5
       showClass: "fancybox-fadeIn",
       hideClass: "fancybox-fadeOut",
       on: {
         ready: (fancybox) => {
           if (window.innerWidth < 768) {
             fancybox.container.style.padding = "20px";
+          }
+          // Add Tailwind classes to the image
+          const img = fancybox.container.querySelector('.fancybox__content img');
+          if (img) {
+            img.classList.add('rounded-xl', 'overflow-hidden');
+          }
+        },
+        reveal: (fancybox) => {
+          // Also apply on each slide reveal
+          const img = fancybox.container.querySelector('.fancybox__content img');
+          if (img) {
+            img.classList.add('rounded-xl', 'overflow-hidden');
           }
         },
       },
@@ -63,10 +74,10 @@ const CarouselMain = () => {
   }, []);
 
   return (
-    <div className="max-container padding-container pb-10 pt-12">
+    <div className="max-container padding-container pb-10 pt-16">
       <AnimatedSection>
         <div className="flex flex-col justify-center items-center text-center">
-          <h1 className="md:text-4xl text-2xl font-semibold uppercase pb-8 text-amber-900">
+          <h1 className="md:text-3xl text-2xl font-semibold uppercase pb-10 text-amber-900">
             {t(TITLES.Happy)}
           </h1>
         </div>

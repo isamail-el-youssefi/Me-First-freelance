@@ -16,6 +16,7 @@ const Hero = () => {
         autoPlay
         loop
         muted
+        preload="auto"
         className="absolute top-0 left-0 object-cover w-full h-full"
       >
         <source src="/herovideo.mp4" type="video/mp4" />
@@ -40,13 +41,13 @@ const Hero = () => {
           ))}
         </div>
         <motion.div
-          initial={{ opacity: 0, filter: "blur(15px)"  }}
-          animate={{ opacity: 1, filter: "blur(0)"  }}
+          initial={{ opacity: 0, filter: "blur(15px)" }}
+          animate={{ opacity: 1, filter: "blur(0)" }}
           transition={{ duration: 0.7, delay: 1.4 }}
           className="mt-8"
         >
           <Link href={"/trips"}>
-            <div className="flexCenter gap-2 rounded-full  bg-transparent hover:bg-amber-900 hover:border-amber-900 focus:bg-amber-900 focus:border-amber-900 text-white border-[2px] md:border-[2.3]  border-white md:px-8 px-4 md:py-3.5 py-3   bold-16  transition-all ease-in-out duration-500 ">
+            <div className="flexCenter gap-2 rounded-full  bg-white/20 hover:bg-amber-900 hover:border-amber-900 focus:bg-amber-900 focus:border-amber-900 text-white border-[2px] md:border-[2.3]  border-white/30 md:px-8 px-4 md:py-3.5 py-3   bold-16  transition-all ease-in-out duration-500 ">
               <div className="whitespace-nowrap cursor-pointer text-md">
                 {t("view-tours")}{" "}
               </div>

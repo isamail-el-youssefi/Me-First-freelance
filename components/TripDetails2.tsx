@@ -20,11 +20,15 @@ import {
   ChevronUp,
   ChevronLeft,
   ChevronRight,
+  Maximize2,
+  X,
+  Minimize2,
 } from "lucide-react";
 import ReviewList from "./ReviewList";
 import ReviewModal from "./ReviewModal";
 import SimilarSection from "./SimilarSection";
 import ReviewSection from "./ReviewSection";
+import { useRouter } from "next/navigation";
 
 // Add this type for the day images
 interface DayImages {
@@ -65,7 +69,7 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = (props) => {
-  const { t } = useTranslation();
+  const router = useRouter();
 
   // Get the trip data for the current package
   const tripData = TRIPDAY[props.days];
@@ -99,6 +103,9 @@ const Page: React.FC<PageProps> = (props) => {
     {}
   );
 
+  // ADD THIS: State for fullscreen map
+  const [isMapFullscreen, setIsMapFullscreen] = useState(false);
+
   // Function to toggle expanded state for a specific day
   const toggleReadMore = (dayKey: string) => {
     setExpandedDays((prev) => ({
@@ -113,6 +120,11 @@ const Page: React.FC<PageProps> = (props) => {
       setActiveDay(value);
       setShowNotification(true);
     }
+  };
+
+  // ADD THIS: Function to toggle fullscreen map
+  const toggleMapFullscreen = () => {
+    setIsMapFullscreen(!isMapFullscreen);
   };
 
   // Hide notification after 3 seconds
@@ -178,14 +190,25 @@ const Page: React.FC<PageProps> = (props) => {
     fetchReviews();
   };
 
+  const { t } = useTranslation("Homepage");
+
   return (
     <section className="max-container padding-container lg:pt-40 pt-36 pb-28">
       {/* HEADING */}
-      <div className="flex flex-col justify-center items-center text-center md:pb-6 pb-4 pt-6">
-        <h1 className=" text-2xl md:text-3xl pb-2 text-amber-900">
+      <div className="flex items-center justify-between md:pb-6 pb-4 pt-6">
+        <button
+          onClick={() => router.back()}
+          className="flex items-center gap-2 text-amber-900 hover:text-amber-700"
+        >
+          <ChevronLeft size={20} />
+          <span className="hidden sm:inline">{t("tripDetails.ui.back")}</span>
+        </button>
+        <h1 className="text-xl md:text-3xl font-medium text-amber-900 flex-1 text-center">
           {props.Heading}
         </h1>
+        <div className="w-16"></div> {/* Spacer for centering */}
       </div>
+
       <div className="flex flex-col  lg:gap-28 lg:flex-row pt-6  ">
         {/* LEFT */}
         <div className="flex-1 ">
@@ -196,34 +219,28 @@ const Page: React.FC<PageProps> = (props) => {
                 value="tour"
                 className="rounded-full text-amber-950 text-md  px-4 "
               >
-                Tour
+                {t("tripDetails.ui.tour")}
               </TabsTrigger>
               <TabsTrigger
                 value="details"
                 className="rounded-full text-amber-950 text-md  px-4"
               >
-                Details
+                {t("tripDetails.ui.details")}
               </TabsTrigger>
               <TabsTrigger
                 value="prix"
                 className="rounded-full text-amber-950 text-md  px-4"
               >
-                Price
+                {t("tripDetails.ui.price")}
               </TabsTrigger>
-
-              {/*<TabsTrigger
-                value="review"
-                className="rounded-full text-amber-950 text-md  px-4"
-              >
-                Reviews
-              </TabsTrigger> */}
               <TabsTrigger
                 value="map"
                 className="rounded-full text-amber-950 text-md  px-4"
               >
-                Map
+                {t("tripDetails.ui.mapp")}
               </TabsTrigger>
             </TabsList>
+
             {/* TOUR TAB CONTENT */}
             <TabsContent value="tour" className="pt-4">
               <div className="bg-amber-50 rounded-xl p-3 md:min-h-[630px] min-h-[500px]">
@@ -234,7 +251,7 @@ const Page: React.FC<PageProps> = (props) => {
                       <TabsTrigger
                         key={`day-tab-${index}`}
                         value={`day${index + 1}`}
-                        className="rounded-full text-amber-900 text-sm py-2 px-4 border-2 border-amber-900 bg-amber-50"
+                        className="rounded-full text-amber-900 text-sm py-2 px-4 border-[1.5px] border-amber-900 bg-amber-50"
                       >
                         {t(trip.d)}
                       </TabsTrigger>
@@ -253,11 +270,11 @@ const Page: React.FC<PageProps> = (props) => {
                     return (
                       <TabsContent key={`day-content-${index}`} value={dayKey}>
                         <AnimatedSectionText triggerKey={activeDay}>
-                          <div className="bg-amber-50 rounded-xl p-6">
+                          <div className="bg-amber-50 rounded-xl py-6 px-3 md:p-6">
                             <h1 className="capitalize pb-3 text-lg text-amber-800">
                               {t(trip.itinerary)}
                             </h1>
-                            <div className="text-amber-950 text-lg leading-7 xl:leading-9 text-justify">
+                            <div className="text-amber-950 text-sm leading-7 xl:leading-9 text-justify">
                               {hasLongContent && !isExpanded ? (
                                 <>
                                   {details.substring(0, charLimit)}
@@ -276,11 +293,13 @@ const Page: React.FC<PageProps> = (props) => {
                                 >
                                   {isExpanded ? (
                                     <>
-                                      Read Less <ChevronUp size={16} />
+                                      {t("tripDetails.ui.readLess")}{" "}
+                                      <ChevronUp size={16} />
                                     </>
                                   ) : (
                                     <>
-                                      Read More <ChevronDown size={16} />
+                                      {t("tripDetails.ui.readMore")}{" "}
+                                      <ChevronDown size={16} />
                                     </>
                                   )}
                                 </button>
@@ -294,13 +313,14 @@ const Page: React.FC<PageProps> = (props) => {
                 </Tabs>
               </div>
             </TabsContent>
+
             {/* DETAILS TAB CONTENT */}
             <TabsContent value="details" className="pt-4 w-full ">
               <div className="bg-amber-50 rounded-xl p-6 md:min-h-[630px] min-h-[500px]">
                 <h2 className="bold-20 text-amber-900 mb-4">
-                  Key stops of the trip
+                  {t("tripDetails.ui.keyStopsTitle")}
                 </h2>
-                <ul className="list-disc pl-5 space-y-2">
+                <ul className="list-disc md:pl-5 pl-3 space-y-2 text-sm md:text-base">
                   {props.keyStops ? (
                     // If keyStops are provided, use them
                     props.keyStops.map((stop, index) => (
@@ -329,29 +349,43 @@ const Page: React.FC<PageProps> = (props) => {
                 </ul>
 
                 <h2 className="bold-20 text-amber-900 mb-4 mt-6">
-                  Trip Highlights
+                  {t("tripDetails.ui.tripHighlights")}
                 </h2>
-                <ul className="list-disc pl-5 space-y-2">
+                <ul className="list-disc md:pl-5 pl-3 space-y-2 text-sm md:text-base">
                   <li className="text-amber-950">
-                    Authentic local experiences
+                    {t("tripDetails.ui.highlights.localExperience")}
                   </li>
-                  <li className="text-amber-950">Professional guides</li>
-                  <li className="text-amber-950">Traditional meals included</li>
-                  <li className="text-amber-950">Comfortable transportation</li>
-                  <li className="text-amber-950">Photography opportunities</li>
+                  <li className="text-amber-950">
+                    {t("tripDetails.ui.highlights.guides")}
+                  </li>
+                  <li className="text-amber-950">
+                    {t("tripDetails.ui.highlights.meals")}
+                  </li>
+                  <li className="text-amber-950">
+                    {t("tripDetails.ui.highlights.transport")}
+                  </li>
+                  <li className="text-amber-950">
+                    {t("tripDetails.ui.highlights.photography")}
+                  </li>
                 </ul>
               </div>
             </TabsContent>
-            {/* PRICE AND RESERVATION TAB CONTENT */}
 
+            {/* PRICE AND RESERVATION TAB CONTENT */}
             <TabsContent value="prix" className="pt-4">
               <div className="bg-amber-50 rounded-xl w-full md:min-h-[630px] min-h-[500px]">
                 <table className="min-w-full bg-amber-50 rounded-xl overflow-hidden">
                   <thead>
                     <tr className="text-center bg-amber-100 text-amber-900 uppercase text-sm">
-                      <th className=" py-3 font-semibold">Personnes</th>
-                      <th className=" py-3 font-semibold">Prix</th>
-                      <th className=" py-3 font-semibold">Action</th>
+                      <th className=" py-3 font-semibold">
+                        {t("tripDetails.ui.pricing.persons")}
+                      </th>
+                      <th className=" py-3 font-semibold">
+                        {t("tripDetails.ui.pricing.price")}
+                      </th>
+                      <th className=" py-3 font-semibold">
+                        {t("tripDetails.ui.pricing.action")}
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="text-amber-800 font-medium text-center">
@@ -389,19 +423,8 @@ const Page: React.FC<PageProps> = (props) => {
                             rel="noopener noreferrer"
                             className="inline-block bg-amber-50  border-[1px] border-amber-900 hover:bg-amber-900 hover:text-amber-50 duration-300 text-amber-900 font-semibold hover:font-medium py-2 px-4 rounded-full transition mr-1"
                           >
-                            Réserver
+                            {t("tripDetails.ui.pricing.reserve")}
                           </a>
-
-                          {/*
-                            <motion.button
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                              onClick={() => setCalendarOpen(true)}
-                              className="inline-block bg-amber-500 hover:bg-amber-600 text-white font-medium py-2 px-4 rounded-full transition mt-2 sm:mt-0"
-                            >
-                              Choisir une date
-                            </motion.button>
-                          */}
                         </td>
                       </tr>
                     ))}
@@ -417,47 +440,62 @@ const Page: React.FC<PageProps> = (props) => {
               />
             </TabsContent>
 
-            {/* <TabsContent value="review" className="pt-4">
-              <div className="bg-amber-50 rounded-xl md:min-h-[630px] min-h-[350px]">
-                <div className="p-4 flex justify-between items-center border-b border-amber-200">
-                  <h2 className="text-xl font-semibold text-amber-900">
-                    Customer Reviews
-                  </h2>
-                  <button
-                    onClick={() => setReviewModalOpen(true)}
-                    className="bg-amber-50  border-[1px] border-amber-900 hover:bg-amber-900 hover:text-amber-50 duration-300 text-amber-900 font-semibold hover:font-medium py-2 px-4 rounded-full transition mr-1"
-                  >
-                    Write a Review
-                  </button>
-                </div>
-                <ReviewList reviews={reviews} isLoading={isLoadingReviews} />
-              </div>
-            </TabsContent> */}
-
-            {/* MAP TAB CONTENT */}
+            {/* MAP TAB CONTENT - UPDATED WITH FULLSCREEN */}
             <TabsContent value="map" className="pt-4">
-              {/* Map container with enhanced styling */}
-              <div className="relative rounded-2xl overflow-hidden shadow-lg md:min-h-[630px] min-h-[500px]">
-                {/* Map iframe */}
-                <iframe
-                  src={props.map}
-                  className="w-full rounded-2xl"
-                  loading="lazy"
-                  width="600"
-                  height="600"
-                  style={{ border: "13px solid white " }}
-                ></iframe>
+              {/* Regular Map View */}
+              <div className={`${isMapFullscreen ? "hidden" : "block"}`}>
+                <div className="relative rounded-2xl overflow-hidden shadow-lg md:min-h-[630px] min-h-[500px]">
+                  {/* Fullscreen Button */}
+                  <button
+                    onClick={toggleMapFullscreen}
+                    className="absolute top-5 right-5 z-10 bg-white rounded-md  text-gray-700 hover:text-gray-950 p-2  shadow-md transition-all duration-200 hover:shadow-lg"
+                  >
+                    <Maximize2 size={20} />
+                  </button>
+
+                  {/* Map iframe */}
+                  <iframe
+                    src={props.map}
+                    className="w-full rounded-2xl"
+                    loading="lazy"
+                    width="600"
+                    height="600"
+                    style={{ border: "13px solid white" }}
+                  ></iframe>
+                </div>
               </div>
+
+              {/* Fullscreen Modal */}
+              {isMapFullscreen && (
+                <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-4">
+                  <div className="relative w-full h-full max-w-7xl max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl">
+                    {/* Close Button */}
+                    <button
+                      onClick={toggleMapFullscreen}
+                      className="absolute top-5 right-5 z-20 bg-white  text-gray-700 hover:to-gray-950 p-2 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg"
+                    >
+                      <Minimize2 size={20} />
+                    </button>
+
+                    {/* Fullscreen Map */}
+                    <iframe
+                      src={props.map}
+                      className="w-full h-full rounded-2xl"
+                      loading="lazy"
+                      style={{ border: "13px solid white" }}
+                    ></iframe>
+                  </div>
+                </div>
+              )}
             </TabsContent>
           </Tabs>
+
           {/* Day indicator title */}
           <div className="flex items-center mb-4">
-            {/* Permanent indicator below carousel */}
-
             {/* Image change notification */}
             {showNotification && (
               <div className="ml-4 px-3 bg-amber-100 text-amber-900 rounded-full text-sm animate-pulse">
-                Images updated for Day {activeDay.replace("day", "")}
+                {t("tripDetails.ui.imageUpdate")} {activeDay.replace("day", "")}
               </div>
             )}
           </div>
@@ -465,8 +503,6 @@ const Page: React.FC<PageProps> = (props) => {
 
         {/* RIGHT - CAROUSEL WITH DAY-SPECIFIC IMAGES */}
         <div className="flex-1 relative">
-          {/* Always-visible swipe hint */}
-
           {/* Permanent indicator below carousel */}
           <div className="mb-4 flex items-center justify-center">
             <motion.div
@@ -501,7 +537,7 @@ const Page: React.FC<PageProps> = (props) => {
 
         <div className="w-full flex justify-center items-center gap-2 mb-2 text-amber-900 text-sm font-medium select-none pointer-events-none animate-pulse pt-10 md:hidden ">
           <ChevronLeft className="w-4 h-4" />
-          Swipe
+          {t("tripDetails.ui.pricing.swipe")}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -509,7 +545,6 @@ const Page: React.FC<PageProps> = (props) => {
             height={24}
             color={"#7b3306"}
             fill={"none"}
-            {...props}
           >
             <path
               d="M21.001 4.49905H15.001M21.001 4.49905C21.001 3.79909 19.0067 2.49134 18.501 2M21.001 4.49905C21.001 5.19901 19.0067 6.50675 18.501 6.9981"
@@ -529,6 +564,7 @@ const Page: React.FC<PageProps> = (props) => {
           <ChevronRight className="w-4 h-4" />
         </div>
       </div>
+
       <ReviewModal
         open={reviewModalOpen}
         onOpenChange={setReviewModalOpen}

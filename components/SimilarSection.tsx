@@ -1,19 +1,22 @@
 "use client";
 
 import React from "react";
-import { allPackages } from "@/constant"; // or wherever you keep this data
+import { allPackages } from "@/constant";
 import TripPackages from "./TripPackages";
+import { useTranslation } from "react-i18next";
 
 interface SimilarSectionProps {
   tripId: string;
 }
 
 const SimilarSection: React.FC<SimilarSectionProps> = ({ tripId }) => {
+  const { t } = useTranslation();
+
   return (
-    <section className="max-container padding-container lg:pt-40 pt-36 pb-28">
+    <section className="max-container padding-container  pt-16 pb-28">
       <div className="mt-20">
         <h2 className="text-2xl font-semibold text-center text-amber-900 mb-8">
-          Similar Trips
+          {t("similarSection.title")}
         </h2>
 
         {/* Desktop grid / Mobile horizontal scroll */}
@@ -29,9 +32,10 @@ const SimilarSection: React.FC<SimilarSectionProps> = ({ tripId }) => {
                 text={trip.text}
                 width={trip.width}
                 height={trip.height}
-                btnTitle="More Details"
+                btnTitle={t("similarSection.moreDetails")}
                 link={trip.link}
                 duration={trip.duration}
+                price={trip.price}
                 compact={true}
               />
             ))}
@@ -50,9 +54,10 @@ const SimilarSection: React.FC<SimilarSectionProps> = ({ tripId }) => {
                   text={trip.text}
                   width={trip.width}
                   height={trip.height}
-                  btnTitle="More Details"
+                  btnTitle={t("similarSection.moreDetails")}
                   link={trip.link}
                   duration={trip.duration}
+                  price={trip.price}
                   compact={true}
                 />
               </div>

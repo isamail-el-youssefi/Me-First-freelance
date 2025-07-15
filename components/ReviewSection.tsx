@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { User, Star } from "lucide-react";
 import ReviewModal from "./ReviewModal";
+import { useTranslation } from "react-i18next";
 
 // Define the Review interface
 interface Review {
@@ -19,10 +20,11 @@ interface ReviewSectionProps {
 }
 
 const ReviewSection: React.FC<ReviewSectionProps> = ({ tripId, tripName }) => {
+  const { t } = useTranslation();
   const [reviews, setReviews] = useState<Review[]>([]);
   const [isLoadingReviews, setIsLoadingReviews] = useState(false);
   const [reviewModalOpen, setReviewModalOpen] = useState(false);
-  const [displayCount, setDisplayCount] = useState(6); // Start by showing 6 reviews
+  const [displayCount, setDisplayCount] = useState(6);
   const [expandedReviews, setExpandedReviews] = useState<
     Record<string, boolean>
   >({});
@@ -84,7 +86,7 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ tripId, tripName }) => {
         <div>
           <div className="flex md:gap-4 gap-[5px] items-center">
             <h2 className="text-lg md:text-3xl font-medium text-amber-900 pb-3">
-              Reviews
+              {t("reviews.title")}
             </h2>
             <span className="text-amber-700 text-md md:text-lg pb-2">
               ({reviews.length})
@@ -107,7 +109,7 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ tripId, tripName }) => {
           onClick={() => setReviewModalOpen(true)}
           className="hover:bg-amber-50 border-[1px] border-amber-900 bg-amber-900 text-amber-50 duration-300 hover:text-amber-900 font-medium hover:font-medium py-2 md:px-6 px-3 rounded-full transition mt-4 md:mt-0 text-sm md:text-lg mb-7 md:mb-0"
         >
-          Write a Review
+          {t("reviews.writeReview")}
         </button>
       </div>
 
@@ -117,9 +119,7 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ tripId, tripName }) => {
         </div>
       ) : reviews.length === 0 ? (
         <div className="text-center p-10 bg-amber-50 rounded-lg">
-          <p className="text-amber-900">
-            No reviews yet. Be the first to share your experience!
-          </p>
+          <p className="text-amber-900">{t("reviews.noReviews")}</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 2xl:px-16">
@@ -131,7 +131,7 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ tripId, tripName }) => {
               transition={{ duration: 0.3 }}
               className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-amber-100"
             >
-              <div className="flex items-center justify-between text-xl  gap-3 mb-1">
+              <div className="flex items-center justify-between text-xl gap-3 mb-1">
                 <h3 className="font-medium text-amber-900">
                   {review.fullName}
                 </h3>
@@ -166,7 +166,9 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ tripId, tripName }) => {
                   onClick={() => toggleExpand(review.id)}
                   className="text-sm text-amber-700 underline mt-2"
                 >
-                  {expandedReviews[review.id] ? "Read less" : "Read more"}
+                  {expandedReviews[review.id]
+                    ? t("reviews.readLess")
+                    : t("reviews.readMore")}
                 </button>
               )}
             </motion.div>
@@ -181,8 +183,11 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ tripId, tripName }) => {
             className="bg-amber-100 text-amber-900 px-6 py-2 rounded-full hover:bg-amber-200 transition duration-300"
           >
             {displayCount >= reviews.length
-              ? "Show Less"
-              : `Read More (${displayCount} of ${reviews.length})`}
+              ? t("reviews.showLess")
+              : t("reviews.readMoreOf", {
+                  displayed: displayCount,
+                  total: reviews.length,
+                })}
           </button>
         </div>
       )}

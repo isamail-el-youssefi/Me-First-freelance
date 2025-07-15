@@ -1,4 +1,7 @@
 {
+  "travelersSection": "Ce que disent les voyageurs",
+  "viewOriginalReview": "Voir l'avis original",
+  "viewAllTrips": "Voir tous les voyages",
   "d1": "Jour 1",
   "d2": "Jour 2",
   "d3": "Jour 3",
@@ -46,10 +49,152 @@
   "package2-day2": "premier réveil tranquille au désert et un délicieux petit déjeuner avant le départ pour rejoindre  les grands dunes de Chigaga en profitant des belle paysage merveilleux Erg ,Reg , hamada, arrête pour le déjeuner dans l'ombre de Tamaris . continuer des belle paysage Arrivé à au Camp.. Nos staff de bivouac vous accueille et s'installer avec un thé à la menthe fraîche   puis petit marche  dans les dunes pour admirer le coucher du soleil. Soirée avec feu  de camp et chants berbères par notre équipe de camp dîner et nuit toujours au bivouac.",
   "package2-day3": "Réveil matinal pour assister au lever de soleil sur les dunes, puis petit déjeuner.Départ pour Foum Zguid en rendant passage au lac d’iriqui, et le plateau désertique parsemé d’acacias puis rejoindre la route goudronnée a foum Zguid. Continuation ver  Taznakhte village des tapis berberes  déjeuner sur place pour suit  rejoindre pied de montagne  haute Atlass retraverser la Coline Tizi Ntichka pour arriver à Marrakech fin d'après-midi.",
 
-  "package3-day1": "Départ de Marrakech la matinée, direction le Haut Atlas via le col de Tichka situé à 2260 d’altitude. Le premier arrêt sera, la Kasbah Ait ben Hadou  villages fortifiés, …Déjeuner à la Kasbah et direction vers Ouarzazate stop pour la photo au studio cinéma et la Kasbah de Taourirt, avant de rejoindre El Kelâa des M’Gouna, gros village à 1450 m d’altitude, situé presque à la jonction des vallées du M’Goun et du Dadès. Piste de la Vallée des Roses en passant par Ait Saîd, Tourbist, Tamalout, qui nous amènera à Bou-Tgharar dans la Vallée des Roses. On continue sur la piste vers la kasbah du Glaoui Ait-Youl en bordure de la vallée du Dadès. Première nuit à l’auberge. Très propre et confortable, idéal pour un passage d'une nuitée.",
+  "package3-day1": "Départ de Marrakech la matinée, direction le Haut Atlas via le col de Tichka situé à 2260 d’altitude. Le premier arrêt sera, la Kasbah Ait ben Hadou  villages fortifiés, …Déjeuner à la Kasbah et direction vers Ouarzazate stop pour la photo au studio cinéma et la Kasbah de Taourirt, avant de rejoindre El Kelâa des M’Gouna, gros village à 1450 m d'altitude, situé presque à la jonction des vallées du M’Goun et du Dadès. Piste de la Vallée des Roses en passant par Ait Saîd, Tourbist, Tamalout, qui nous amènera à Bou-Tgharar dans la Vallée des Roses. On continue sur la piste vers la kasbah du Glaoui Ait-Youl en bordure de la vallée du Dadès. Première nuit à l’auberge. Très propre et confortable, idéal pour un passage d'une nuitée.",
   "package3-day2": "Après petit déjeuner au riad, promenade dans les gorges et canyons de Dades. Traversée du massif par la vallée du Dades et Msamrir  pour rejoindre la Coline Tizi Nogdal et ses beaux canyons. Pause pique-nic dans la montagne avec vue sur l'Atlas, puis descente vers les gorges du Toudra. Nuit et dîner à l'hôtel.",
   "package3-day3": "Après le petit déjeuner, départ vers les massif montagnes de Jebel Saghrou, rencontres des Nomades des Ait Ata. Descente vers la vallée du Draa, pause de midi pour déjeuner dans un auberge sur la palmeraie . Nous continuons la route vers le désert de Erg Chegaga en passant par  Tamegroute le village des poterie et l'ancien bibliothèque coranique pour suite le désert de Mhamid Par la piste, accès aux dunes de Chegaga en profitant de paysages merveilleux: erg, reg, hamada,  coucher de soleil sur les dunes, nuit en bivouac. à la belle étoile.",
   "package3-day4": "Jour de repos pour profiter le maximum et le meilleur visit des Nomades avec déjeuner chez eux  et visite de oasis ou déjeuner au Camp a votre choix, l'après midi  une balade à dos de dromadaire dans les dunes Pour admirer le coucher du soleil. Nuit au camp avec dîner et animations sous les étoiles au tour de feu 🔥 ",
   "package3-day5": "Réveil matinal pour assister au lever de soleil sur les dunes, puis petit déjeuner.Départ pour Foum Zguid en rendant passage au lac d’iriqui, et le plateau désertique parsemé d’acacias puis rejoindre la route goudronnée a foum Zguid . déjeuné sur place, après Continuation vers Taznakhte village des tapis berberes , continuation vers oasis finit Visite de l’Oasis de Fint. Dîner et nuit dans un maison d'hôtes Propre es très calme.",
-  "package3-day6": "Retour vers Marrakech avec détour par la Valée de Ourika déjeuné sur place délicieux tajine traditionnel, promenade à pied d'avoir le cascades.retour a Marrakech.Fin de circuits"
+  "package3-day6": "Retour vers Marrakech avec détour par la Valée de Ourika déjeuné sur place délicieux tajine traditionnel, promenade à pied d'avoir le cascades.retour a Marrakech.Fin de circuits",
+  "packages": {
+    "package1": {
+      "heading": "Pistes du Sahara - Voyage Nomade de 5 Jours",
+      "text": "Traversez le Haut Atlas, explorez d'anciennes kasbahs, randonnez dans les canyons, rencontrez des nomades et montez à dos de chameau dans les dunes de Chegaga. Vivez des couchers de soleil dans le désert et des nuits étoilées dans un camp traditionnel."
+    },
+    "package2": {
+      "heading": "Évasion Désert - Sprint Saharien de 3 Jours",
+      "text": "Voyagez à travers les kasbahs, les oasis et les vallées pour atteindre les dunes dorées d'Erg Lihoudi et Chigaga. Montez à dos de chameau, profitez de l'hospitalité berbère et dormez sous les étoiles du désert avec des moments inoubliables."
+    },
+    "package3": {
+      "heading": "Horizons des Dunes – 6 Jours au Sahara",
+      "text": "Explorez les kasbahs, les vallées et les gorges. Rencontrez des nomades, traversez des cols de montagne et vivez la vie du désert avec des balades à dos de chameau, des couchers de soleil et des bivouacs étoilés. Terminez par une visite paisible des vallées de Fint et d'Ourika."
+    },
+    "package4": {
+      "heading": "Escapade Saharienne - Découverte de 2 Jours",
+      "text": "Une expérience courte mais immersive du désert, parfaite pour ceux qui ont peu de temps mais qui souhaitent découvrir la magie du Sahara."
+    }
+  },
+  "tripDetails": {
+    "trip1": {
+      "heading": "Voyage Nomade de 5 Jours",
+      "keyStops": [
+        "Col du Tizi N'Tichka",
+        "Telouet & Vallée d'Ounilla",
+        "Kasbah Ait Ben Haddou",
+        "El Kelâa des M'Gouna (Vallée des Roses)",
+        "Gorges du Dadès & Gorges du Todra",
+        "Massif du Jebel Saghrou & Nomades Ait Ata",
+        "Vallée du Draa & Palmeraie",
+        "Tamegroute (Village de Poterie & Bibliothèque)",
+        "Désert de Mhamid & Dunes de l'Erg Chegaga",
+        "Foum Zguid & Lac Iriqui",
+        "Taznakhte (Village des Tapis)"
+      ]
+    },
+    "trip2": {
+      "heading": "Sprint Saharien de 3 Jours",
+      "keyStops": [
+        "Col du Tizi n'Tichka",
+        "Kasbah de Telouet & Vallée d'Ounila",
+        "Kasbah Ait Ben Haddou",
+        "Col du Tizi n'Tinifift",
+        "Vallée du Draa",
+        "Tamegroute (Village de Poterie & Bibliothèque)",
+        "Désert de Mhamid & Dunes de l'Erg Lihoudi",
+        "Dunes de l'Erg Chegaga",
+        "Taznakhte (Village des Tapis)"
+      ]
+    },
+    "trip3": {
+      "heading": "Odyssée Saharienne de 6 Jours",
+      "keyStops": [
+        "Col du Tizi n'Tichka",
+        "Kasbah Ait Ben Haddou",
+        "El Kelâa des M'Gouna (Vallée des Roses)",
+        "Bou-Tgharar & Kasbah Ait-Youl",
+        "Gorges du Dadès & Gorges du Todra",
+        "Col du Tizi Nogdal & Points de Vue de l'Atlas",
+        "Massif du Jebel Saghrou & Nomades Ait Ata",
+        "Vallée du Draa & Palmeraie",
+        "Tamegroute (Village de Poterie & Bibliothèque)",
+        "Désert de Mhamid & Dunes de l'Erg Chegaga",
+        "Dunes de l'Erg Chegaga",
+        "Taznakhte (Village des Tapis)",
+        "Oasis de Fint",
+        "Vallée d'Ourika & Cascades"
+      ]
+    },
+    "trip4": {
+      "heading": "Escapade Désert de 2 Jours",
+      "keyStops": [
+        "Oasis de Telouat",
+        "Ait Benhaddou",
+        "Erg Chegaga",
+        "Col du Tizi N'Tichka",
+        "Ouarzgane",
+        "Argile de Tamegroute"
+      ]
+    },
+    "ui": {
+      "back": "Retour",
+      "tour": "Circuit",
+      "details": "Détails",
+      "price": "Prix",
+      "mapp": "Itineraire",
+      "readMore": "Lire la suite",
+      "readLess": "Voir moins",
+      "keyStopsTitle": "Points clés du voyage",
+      "tripHighlights": "Points forts du voyage",
+      "highlights": {
+        "localExperience": "Expériences locales authentiques",
+        "guides": "Guides professionnels",
+        "meals": "Repas traditionnels inclus",
+        "transport": "Transport confortable",
+        "photography": "Opportunités photographiques"
+      },
+      "pricing": {
+        "persons": "Personnes",
+        "price": "Prix",
+        "action": "Action",
+        "reserve": "Réserver",
+        "swipe": "Glisser"
+      },
+      "mapActions": {
+        "expandFullscreen": "Agrandir en plein écran",
+        "exitFullscreen": "Quitter le plein écran"
+      },
+      "imageUpdate": "Images mises à jour pour le Jour",
+      "from": "À partir de"
+    }
+  },
+  "reviews": {
+    "title": "Avis",
+    "writeReview": "Écrire un avis",
+    "noReviews": "Pas encore d'avis. Soyez le premier à partager votre expérience !",
+    "readMore": "Lire la suite",
+    "readLess": "Voir moins",
+    "showLess": "Afficher moins",
+    "readMoreOf": "Voir plus ({{displayed}} sur {{total}})",
+    "loading": "Chargement des avis..."
+  },
+  "reviewModal": {
+    "title": "Écrire un avis",
+    "shareExperience": "Partagez votre expérience sur {{tripName}}",
+    "nameLabel": "Votre nom",
+    "namePlaceholder": "Entrez votre nom complet",
+    "ratingLabel": "Note",
+    "reviewLabel": "Votre avis",
+    "reviewPlaceholder": "Partagez votre expérience...",
+    "cancelButton": "Annuler",
+    "submitButton": "Envoyer l'avis",
+    "submitting": "Envoi en cours...",
+    "errors": {
+      "nameRequired": "Veuillez entrer votre nom",
+      "reviewRequired": "Veuillez entrer votre avis",
+      "generic": "Une erreur s'est produite"
+    }
+  },
+  "similarSection": {
+    "title": "Voyages similaires",
+    "moreDetails": "Plus de détails"
+  }
 }

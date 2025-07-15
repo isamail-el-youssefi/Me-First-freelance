@@ -1,4 +1,7 @@
 {
+  "travelersSection": "Was Reisende sagen",
+  "viewOriginalReview": "Originalbewertung anzeigen",
+  "viewAllTrips": "Alle Reisen anzeigen",
   "d1": "Tag 1",
   "d2": "Tag 2",
   "d3": "Tag 3",
@@ -35,7 +38,7 @@
 
   "trip4-title": "Salah Mouna | Reiseführer",
   "trip4-detail": "Geboren und aufgewachsen in Zagora, dem Tor zur Sahara-Wüste im Süden Marokkos, habe ich tiefe Wurzeln in dieser bezaubernden Landschaft. Durch mein Aufwachsen in dieser Wüstenregion habe ich ein intimes Wissen über die Dünen, Oasen und verborgenen Schätze erworben, die die meisten Besucher nie entdecken. Meine Verbindung zu diesem Land geht weit über den Beruf des Führers hinaus - die Wüste ist mein Erbe und meine Heimat. Als Einwohner von Zagora biete ich Ihnen einen authentischen Blick auf das Leben in der Wüste, wie ihn nur ein Einheimischer vermitteln kann. Ich spreche fließend Berberisch, Arabisch, Französisch und Englisch, was es mir ermöglicht, kulturelle Unterschiede zu überbrücken und Reisenden aus aller Welt ein wirklich immersives Erlebnis zu bieten. Meine Familie lebt seit Generationen hier, und ich freue mich darauf, unsere Traditionen, Geschichten und geheimen Orte mit Ihnen zu teilen. Meine Wüstentouren umfassen Kamelritte in den Dünen von Erg Chigaga, Übernachtungen in traditionellen Berberlagern unter den Sternen, Besuche abgelegener Dörfer und authentische kulinarische Erlebnisse.",
-  
+
   "package1-day1": "Abfahrt von Marrakesch am Morgen, Richtung Hoher Atlas über den Tichka-Pass auf 2260 m Höhe. Wir fahren durch Telouet und das Ounilla-Tal... weiter zur Kasbah Ait ben Hadou, befestigte Dörfer (eine der schönsten Kasbahs im Süden Marokkos. Sie profitierte finanziell von mehreren wichtigen Filmdreharbeiten, darunter Lawrence von Arabien, Gladiator und Jesus von Nazareth, und ist jetzt UNESCO-Weltkulturerbe). Mittagessen in der Kasbah und weiter nach Ouarzazate mit Fotostopp an den Filmstudios, bevor wir El Kelâa des M'Gouna erreichen, ein großes Dorf auf 1450 m Höhe, fast an der Kreuzung der Täler von M'Goun und Dadès. Piste durch das Tal der Rosen über Ait Saïd, Tourbist, Tamalout, die uns nach Bou-Tgharar im Tal der Rosen führt. Wir fahren weiter auf der Piste zur Kasbah des Glaoui Ait-Youl am Rande des Feigentals. Erste Nacht in einer sehr sympathischen Familienherberge, sehr sauber und komfortabel, ideal für einen einzigen Aufenthalt.",
   "package1-day2": "Nach dem Frühstück im Riad, Spaziergang durch die Schluchten und Canyons von Dades. Durchquerung des Massivs durch das Dades-Tal und Msamrir, um die felsigen Berge zu erreichen und zu erkunden, die über den Klippen und der grünen Oase aufragen, wo sich geheimnisvoll die Ruinen alter Festungen aus Erde und Stroh verstecken. Unsere Reise geht weiter zu den Toudgha-Schluchten, über ein weites felsiges Plateau, das von Nomadenstämmen bewohnt wird, auf einer Höhe von über 2000 Metern. Picknick-Pause in den Bergen mit Blick auf den Atlas, dann Abstieg zu den Toudra-Schluchten. Übernachtung und Abendessen im Hotel.",
   "package1-day3": "Nach dem Frühstück Abfahrt zu den Bergmassiven des Jebel Saghrou, Begegnung mit den Nomaden der Ait Ata. Abstieg ins Draa-Tal, Mittagspause zum Essen in einer Herberge in der Palmenoase. Wir setzen unsere Reise in die Erg Chegaga-Wüste fort, vorbei an Tamegroute, dem Töpferdorf, und der alten Koranischen Bibliothek, um weiter in die Wüste von Mhamid zu reisen. Über die Piste gelangen wir zu den Dünen von Chegaga und genießen wunderbare Landschaften: Erg, Reg, Hamada, Sonnenuntergang über den Dünen, Nacht im Biwak unter dem Sternenhimmel.",
@@ -51,5 +54,116 @@
   "package3-day3": "Nach dem Frühstück Abfahrt zu den Bergmassiven des Jebel Saghrou, Begegnung mit den Nomaden der Ait Ata. Abstieg ins Draa-Tal, Mittagspause zum Essen in einer Herberge in der Palmenoase. Wir setzen unsere Reise in die Erg Chegaga-Wüste fort, vorbei an Tamegroute, dem Töpferdorf, und der alten Koranischen Bibliothek, um weiter in die Wüste von Mhamid zu reisen. Über die Piste gelangen wir zu den Dünen von Chegaga und genießen wunderbare Landschaften: Erg, Reg, Hamada, Sonnenuntergang über den Dünen, Nacht im Biwak unter dem Sternenhimmel.",
   "package3-day4": "Ruhetag, um das Maximum zu genießen und den besten Besuch bei den Nomaden mit Mittagessen bei ihnen und Besuch der Oase oder Mittagessen im Camp nach Ihrer Wahl. Am Nachmittag ein Kamelritt in den Dünen, um den Sonnenuntergang zu bewundern. Übernachtung im Camp mit Abendessen und Unterhaltung unter den Sternen am Lagerfeuer 🔥",
   "package3-day5": "Frühes Aufwachen, um den Sonnenaufgang über den Dünen zu erleben, dann Frühstück. Abfahrt nach Foum Zguid über den Iriqui-See und die mit Akazien übersäte Wüstenebene, bevor wir die geteerte Straße in Foum Zguid erreichen. Mittagessen vor Ort, danach Weiterfahrt nach Taznakhte, dem Dorf der Berberteppiche, Weiterfahrt zur Oase Fint. Besuch der Oase Fint. Abendessen und Übernachtung in einem sauberen und sehr ruhigen Gästehaus.",
-  "package3-day6": "Rückkehr nach Marrakesch mit einem Umweg durch das Ourika-Tal, Mittagessen vor Ort mit köstlichem traditionellem Tajine, Spaziergang zu den Wasserfällen. Rückkehr nach Marrakesch. Ende der Tour"
+  "package3-day6": "Rückkehr nach Marrakesch mit einem Umweg durch das Ourika-Tal, Mittagessen vor Ort mit köstlichem traditionellem Tajine, Spaziergang zu den Wasserfällen. Rückkehr nach Marrakesch. Ende der Tour",
+
+  "packages": {
+    "package1": {
+      "heading": "Sahara-Pfade - 5-Tägige Nomadenreise",
+      "text": "Überqueren Sie den Hohen Atlas, erkunden Sie alte Kasbahs, wandern Sie durch Schluchten, treffen Sie Nomaden und reiten Sie auf Kamelen durch die Dünen von Chegaga. Erleben Sie Wüstensonnenuntergänge und sternenklare Nächte in einem traditionellen Camp."
+    },
+    "package2": {
+      "heading": "Wüstenflucht - 3-Tägiger Sahara-Sprint",
+      "text": "Reisen Sie durch Kasbahs, Oasen und Täler zu den goldenen Dünen von Erg Lihoudi und Chigaga. Reiten Sie auf Kamelen, genießen Sie die berberische Gastfreundschaft und schlafen Sie unter dem Sternenhimmel der Wüste mit unvergesslichen Momenten."
+    },
+    "package3": {
+      "heading": "Dünenhorizonte - 6-Tägige Sahara-Odyssee",
+      "text": "Erkunden Sie Kasbahs, Täler und Schluchten. Treffen Sie Nomaden, wandern Sie über Bergpässe und erleben Sie das Wüstenleben mit Kamelritten, Sonnenuntergängen und Biwaks unter Sternen. Beenden Sie die Reise mit einem friedlichen Besuch in den Tälern von Fint und Ourika."
+    },
+    "package4": {
+      "heading": "Sahara-Kostprobe - 2-Tägiger Wüstenausflug",
+      "text": "Ein kurzes, aber intensives Wüstenerlebnis, perfekt für diejenigen, die wenig Zeit haben, aber die Magie der Sahara erleben möchten."
+    }
+  },
+  "tripDetails": {
+    "trip1": {
+      "heading": "5-Tägige Nomadenreise",
+      "keyStops": [
+        "Tizi N'Tichka-Pass",
+        "Telouet & Ounilla-Tal",
+        "Kasbah Ait Ben Haddou",
+        "El Kelâa des M'Gouna (Tal der Rosen)",
+        "Dadès-Schlucht & Todra-Schlucht",
+        "Jebel Saghrou-Massiv & Ait Ata Nomaden",
+        "Draa-Tal & Palmenhain",
+        "Tamegroute (Töpferdorf & Bibliothek)",
+        "Mhamid-Wüste & Erg Chegaga-Dünen",
+        "Foum Zguid & Iriqui-See",
+        "Taznakhte (Teppichdorf)"
+      ]
+    },
+    "trip2": {
+      "heading": "3-Tägiger Sahara-Sprint",
+      "keyStops": [
+        "Tizi n'Tichka-Pass",
+        "Kasbah von Telouet & Ounila-Tal",
+        "Kasbah Ait Ben Haddou",
+        "Tizi n'Tinifift-Pass",
+        "Draa-Tal",
+        "Tamegroute (Töpferdorf & Bibliothek)",
+        "Mhamid-Wüste & Erg Lihoudi-Dünen",
+        "Erg Chegaga-Dünen",
+        "Taznakhte (Teppichdorf)"
+      ]
+    },
+    "trip3": {
+      "heading": "6-Tägige Sahara-Odyssee",
+      "keyStops": [
+        "Tizi n'Tichka-Pass",
+        "Kasbah Ait Ben Haddou",
+        "El Kelâa des M'Gouna (Tal der Rosen)",
+        "Bou-Tgharar & Kasbah Ait-Youl",
+        "Dadès-Schlucht & Todra-Schlucht",
+        "Tizi Nogdal-Pass & Atlas-Aussichtspunkte",
+        "Jebel Saghrou-Massiv & Ait Ata Nomaden",
+        "Draa-Tal & Palmenhain",
+        "Tamegroute (Töpferdorf & Bibliothek)",
+        "Mhamid-Wüste & Erg Chegaga-Dünen",
+        "Erg Chegaga-Dünen",
+        "Taznakhte (Teppichdorf)",
+        "Fint-Oase",
+        "Ourika-Tal & Wasserfälle"
+      ]
+    },
+    "trip4": {
+      "heading": "2-Tägiger Wüstenausflug",
+      "keyStops": [
+        "Telouat-Oase",
+        "Ait Benhaddou",
+        "Erg Chegaga",
+        "Tizi N'Tichka-Pass",
+        "Ouarzgane",
+        "Tamegroute-Tonerde"
+      ]
+    },
+    "ui": {
+      "back": "Zurück",
+      "tour": "Reise",
+      "details": "Einzelheiten",
+      "price": "Preis",
+      "mapp": "Karte",
+      "readMore": "Mehr lesen",
+      "readLess": "Weniger anzeigen",
+      "keyStopsTitle": "Wichtige Haltepunkte der Reise",
+      "tripHighlights": "Reise-Highlights",
+      "highlights": {
+        "localExperience": "Authentische lokale Erlebnisse",
+        "guides": "Professionelle Reiseführer",
+        "meals": "Traditionelle Mahlzeiten inklusive",
+        "transport": "Komfortabler Transport",
+        "photography": "Fotomöglichkeiten"
+      },
+      "pricing": {
+        "persons": "Personen",
+        "price": "Preis",
+        "action": "Aktion",
+        "reserve": "Reservieren",
+        "swipe": "Wischen"
+      },
+      "mapActions": {
+        "expandFullscreen": "Vollbild erweitern",
+        "exitFullscreen": "Vollbild beenden"
+      },
+      "imageUpdate": "Bilder aktualisiert für Tag"
+    }
+  }
 }

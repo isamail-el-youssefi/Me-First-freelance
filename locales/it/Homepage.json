@@ -1,4 +1,7 @@
 {
+  "travelersSection": "Cosa dicono i viaggiatori",
+  "viewOriginalReview": "Visualizza recensione originale",
+  "viewAllTrips": "Visualizza tutti i viaggi",
   "d1": "Giorno 1",
   "d2": "Giorno 2",
   "d3": "Giorno 3",
@@ -36,31 +39,174 @@
   "trip4-title": "Salah Mouna | Guida turistica",
   "trip4-detail": "Nato e cresciuto a Zagora, porta d'ingresso del deserto del Sahara nel sud del Marocco, ho radici profonde in questo paesaggio affascinante. Crescendo in questa regione desertica, ho sviluppato una conoscenza intima delle dune, delle oasi e dei tesori nascosti che la maggior parte dei visitatori non scopre mai. Il mio legame con questa terra va oltre quello di una guida turistica: il deserto è la mia eredità e la mia casa. Come nativo di Zagora, offro prospettive autentiche sulla vita nel deserto che solo un locale può fornire. Parlo fluentemente berbero, arabo, francese e inglese, il che mi consente di colmare le differenze culturali e offrire un'esperienza veramente immersiva ai viaggiatori internazionali. La mia famiglia vive in questa regione da generazioni e sono entusiasta di condividere con te le nostre tradizioni, storie e posti segreti. I miei tour nel deserto includono passeggiate in cammello attraverso le spettacolari dune di Erg Chigaga, pernottamenti in campi berberi tradizionali sotto le stelle, visite a villaggi remoti e esperienze culinarie autentiche.",
 
-  "package1-day1": "Partenza mattutina da Marrakech, direzione Alto Atlante attraverso il passo di Tichka situato a 2.260 metri di altitudine. Passando per Telouet e la valle dell'Ounilla, continuiamo verso la Kasbah Ait ben Hadou, villaggi fortificati (una delle più belle kasbah del sud del Marocco. Ha beneficiato, sul piano finanziario, di diverse importanti riprese cinematografiche, tra cui Lawrence d'Arabia, Il Gladiatore e Gesù di Nazareth, ed è ora classificata come patrimonio mondiale dell'UNESCO). Pranzo alla Kasbah e direzione verso Ouarzazate con sosta per foto allo studio cinematografico, prima di raggiungere El Kelâa des M'Gouna, grande villaggio a 1.450 metri di altitudine, situato quasi alla giunzione delle valli del M'Goun e del Dadès. Pista della Valle delle Rose passando per Ait Saïd, Tourbist, Tamalout, che ci porterà a Bou-Tgharar nella Valle delle Rose. Continuiamo sulla pista verso la kasbah del Glaoui Ait-Youl al confine della valle dei fichi. Prima notte in un ostello familiare molto simpatico, molto pulito e confortevole, ideale per un soggiorno di una notte.",
+  "package1-day1": "Partenza mattutina da Marrakech, direzione Alto Atlante attraverso il passo di Tichka situato a 2.260 metri di altitudine. Passando per Telouet e la valle dell'Ounilla, continuiamo verso la Kasbah Ait ben Hadou, villaggi fortificati (una delle più belle kasbah del sud del Marocco. Ha beneficiato, sul piano finanziario, di diverse importanti riprese cinematografiche, tra cui Lawrence d'Arabia, Il Gladiatore e Gesù di Nazareth, ed è ora classificata come patrimonio mondiale dell'UNESCO). Pranzo alla Kasbah e direzione verso Ouarzazate con sosta per foto allo studio cinematografico, prima di raggiungere El Kelâa des M'Gouna, grande villaggio a 1.450 metri di altitudine, situato quasi alla giunzione delle valli del M'Goun e del Dadès. Pista della Valle delle Rose passando per Ait Saïd, Tourbist, Tamalout, che ci porterà a Bou-Tgharar nella Valle delle Rose. Continuiamo sulla pista verso la kasbah del Glaoui Ait-Youl al confine della valle del fichi. Prima notte in un ostello familiare molto simpatico, molto pulito e confortevole, ideale per un soggiorno di una notte.",
 
-"package1-day2": "Dopo colazione al riad, passeggiata nelle gole e nei canyon del Dades. Attraversamento del massiccio attraverso la valle del Dades e Msamrir per raggiungere ed esplorare le montagne rocciose che dominano le scogliere e l'oasi verdeggiante dove misteriosamente si nascondono le rovine di antiche fortezze di terra e paglia. Il nostro viaggio continuerà verso le gole del Toudgha, attraverso un vasto altopiano roccioso popolato da tribù nomadi, ad un'altitudine di oltre 2.000 metri, con i suoi bei canyon. Pausa pic-nic in montagna con vista sull'Atlante, poi discesa verso le gole del Todra. Pernottamento e cena in hotel.",
+  "package1-day2": "Dopo colazione al riad, passeggiata nelle gole e nei canyon del Dades. Attraversamento del massiccio attraverso la valle del Dades e Msamrir per raggiungere ed esplorare le montagne rocciose che dominano le scogliere e l'oasi verdeggiante dove misteriosamente si nascondono le rovine di antiche fortezze di terra e paglia. Il nostro viaggio continuerà verso le gole del Toudgha, attraverso un vasto altopiano roccioso popolato da tribù nomadi, ad un'altitudine di oltre 2.000 metri, con i suoi bei canyon. Pausa pic-nic in montagna con vista sull'Atlante, poi discesa verso le gole del Todra. Pernottamento e cena in hotel.",
 
-"package1-day3": "Dopo colazione, partenza verso i massicci montuosi del Jebel Saghrou, incontro con i Nomadi degli Ait Ata. Discesa verso la valle del Draa, pausa di mezzogiorno per pranzo in un ostello sul palmeto. Continuiamo la strada verso il deserto di Erg Chegaga passando per Tamegroute, il villaggio delle ceramiche e l'antica biblioteca coranica, per poi proseguire verso il deserto di Mhamid. Con la pista, accesso alle dune di Chegaga godendo di paesaggi meravigliosi: erg, reg, hamada, tramonto sulle dune, notte in bivacco sotto le stelle.",
+  "package1-day3": "Dopo colazione, partenza verso i massicci montuosi del Jebel Saghrou, incontro con i Nomadi degli Ait Ata. Discesa verso la valle del Draa, pausa di mezzogiorno per pranzo in un ostello sul palmeto. Continuiamo la strada verso il deserto di Erg Chegaga passando per Tamegroute, il villaggio delle ceramiche e l'antica biblioteca coranica, per poi proseguire verso il deserto di Mhamid. Con la pista, accesso alle dune di Chegaga godendo di paesaggi meravigliosi: erg, reg, hamada, tramonto sulle dune, notte in bivacco sotto le stelle.",
 
-"package1-day4": "Giorno di riposo per godere al massimo e al meglio, visita dei Nomadi con pranzo da loro e visita dell'oasi o pranzo al Campo all'ombra dei tamerici, a vostra scelta. Nel pomeriggio, una passeggiata a dorso di dromedario nelle dune per ammirare il tramonto. Notte al campo con cena e animazioni sotto le stelle intorno al fuoco 🔥",
+  "package1-day4": "Giorno di riposo per godere al massimo e al meglio, visita dei Nomadi con pranzo da loro e visita dell'oasi o pranzo al Campo all'ombra dei tamerici, a vostra scelta. Nel pomeriggio, una passeggiata a dorso di dromedario nelle dune per ammirare il tramonto. Notte al campo con cena e animazioni sotto le stelle intorno al fuoco 🔥",
 
-"package1-day5": "Sveglia mattutina per assistere all'alba sulle dune, poi colazione. Partenza per Foum Zguid passando per il lago di Iriqui e l'altopiano desertico punteggiato di acacie per poi raggiungere la strada asfaltata a Foum Zguid. Pranzo sul posto, dopo proseguimento verso Taznakhte, villaggio dei tappeti berberi, sosta per visitare un'associazione femminile di tappeti, per poi trasferirsi a Marrakech passando per Imerzgan e il Passo di Tizi ntichka, arrivando nel tardo pomeriggio a Marrakech. Fine del circuito.",
+  "package1-day5": "Sveglia mattutina per assistere all'alba sulle dune, poi colazione. Partenza per Foum Zguid passando per il lago di Iriqui e l'altopiano desertico punteggiato di acacie per poi raggiungere la strada asfaltata a Foum Zguid. Pranzo sul posto, dopo proseguimento verso Taznakhte, villaggio dei tappeti berberi, sosta per visitare un'associazione femminile di tappeti, per poi trasferirsi a Marrakech passando per Imerzgan e il Passo di Tizi ntichka, arrivando nel tardo pomeriggio a Marrakech. Fine del circuito.",
 
-"package2-day1": "Dopo il prelievo dal vostro hotel o Riad a Marrakech, partiremo presto al mattino in un circuito 4x4 verso il deserto. Attraverseremo il passo di Tizi n'Tichka, poi visiteremo la Kasbah di Telouet prima di scendere verso la magnifica valle di Ounila dove faremo una pausa per visitare la Kasbah di Ait Ben Haddou. Dopo il passo di Tizi n'Tinifift attraverseremo la valle del Draa passando per magnifici oasi, palme e ksour. Poi prendiamo la strada verso il Deserto di Erg Lihodi passando per Zagora, Tamegroute il villaggio delle ceramiche e l'antica biblioteca coranica, per poi continuare verso il deserto di Mhamid al bivacco di Erg Lihodi, cena e notte nelle tende con serata attorno al fuoco 🔥 di campo e canti berberi sotto le stelle.",
+  "package2-day1": "Dopo il prelievo dal vostro hotel o Riad a Marrakech, partiremo presto al mattino in un circuito 4x4 verso il deserto. Attraverseremo il passo di Tizi n'Tichka, poi visiteremo la Kasbah di Telouet prima di scendere verso la magnifica valle di Ounila dove faremo una pausa per visitare la Kasbah di Ait Ben Haddou. Dopo il passo di Tizi n'Tinifift attraverseremo la valle del Draa passando per magnifici oasi, palme e ksour. Poi prendiamo la strada verso il Deserto di Erg Lihodi passando per Zagora, Tamegroute il villaggio delle ceramiche e l'antica biblioteca coranica, per poi continuare verso il deserto di Mhamid al bivacco di Erg Lihodi, cena e notte nelle tende con serata attorno al fuoco 🔥 di campo e canti berberi sotto le stelle.",
 
-"package2-day2": "Primo risveglio tranquillo nel deserto e una deliziosa colazione prima della partenza per raggiungere le grandi dune di Chigaga godendo di bellissimi paesaggi meravigliosi di Erg, Reg, hamada, fermandoci per il pranzo all'ombra dei Tamerici. Continuare con bei paesaggi arrivando al Campo. Il nostro staff del bivacco vi accoglie e vi sistema con un tè alla menta fresca, poi una breve passeggiata nelle dune per ammirare il tramonto. Serata con fuoco di campo e canti berberi dal nostro team di campo, cena e notte sempre al bivacco.",
+  "package2-day2": "Primo risveglio tranquillo nel deserto e una deliziosa colazione prima della partenza per raggiungere le grandi dune di Chigaga godendo di bellissimi paesaggi meravigliosi di Erg, Reg, hamada, fermandoci per il pranzo all'ombra dei Tamerici. Continuare con bei paesaggi arrivando al Campo. Il nostro staff del bivacco vi accoglie e vi sistema con un tè alla menta fresca, poi una breve passeggiata nelle dune per ammirare il tramonto. Serata con fuoco di campo e canti berberi dal nostro team di campo, cena e notte sempre al bivacco.",
 
-"package2-day3": "Sveglia mattutina per assistere all'alba sulle dune, poi colazione. Partenza per Foum Zguid passando per il lago di Iriqui e l'altopiano desertico punteggiato di acacie per poi raggiungere la strada asfaltata a Foum Zguid. Proseguimento verso Taznakhte, villaggio dei tappeti berberi, pranzo sul posto per poi continuare per raggiungere il piede delle montagne dell'Alto Atlante, riattraversando la Collina Tizi Ntichka per arrivare a Marrakech nel tardo pomeriggio.",
+  "package2-day3": "Sveglia mattutina per assistere all'alba sulle dune, poi colazione. Partenza per Foum Zguid passando per il lago di Iriqui e l'altopiano desertico punteggiato di acacie per poi raggiungere la strada asfaltata a Foum Zguid. Proseguimento verso Taznakhte, villaggio dei tappeti berberi, pranzo sul posto per poi continuare per raggiungere il piede delle montagne dell'Alto Atlante, riattraversando la Collina Tizi Ntichka per arrivare a Marrakech nel tardo pomeriggio.",
 
-"package3-day1": "Partenza da Marrakech la mattina, direzione Alto Atlante via il passo di Tichka situato a 2.260 metri di altitudine. La prima tappa sarà la Kasbah Ait ben Hadou, villaggi fortificati... Pranzo alla Kasbah e direzione verso Ouarzazate con sosta per foto allo studio cinematografico e alla Kasbah di Taourirt, prima di raggiungere El Kelâa des M'Gouna, grande villaggio a 1.450 metri di altitudine, situato quasi alla giunzione delle valli del M'Goun e del Dadès. Pista della Valle delle Rose passando per Ait Saïd, Tourbist, Tamalout, che ci porterà a Bou-Tgharar nella Valle delle Rose. Continuiamo sulla pista verso la kasbah del Glaoui Ait-Youl al confine della valle del Dadès. Prima notte all'ostello Rihana. Molto pulito e confortevole, ideale per un soggiorno di una notte.",
+  "package3-day1": "Partenza da Marrakech la mattina, direzione Alto Atlante via il passo di Tichka situato a 2.260 metri di altitudine. La prima tappa sarà la Kasbah Ait ben Hadou, villaggi fortificati... Pranzo alla Kasbah e direzione verso Ouarzazate con sosta per foto allo studio cinematografico e alla Kasbah di Taourirt, prima di raggiungere El Kelâa des M'Gouna, grande villaggio a 1.450 metri di altitudine, situato quasi alla giunzione delle valli del M'Goun e del Dadès. Pista della Valle delle Rose passando per Ait Saïd, Tourbist, Tamalout, che ci porterà a Bou-Tgharar nella Valle delle Rose. Continuiamo sulla pista verso la kasbah del Glaoui Ait-Youl al confine della valle del Dadès. Prima notte all'ostello Rihana. Molto pulito e confortevole, ideale per un soggiorno di una notte.",
 
-"package3-day2": "Dopo colazione al riad, passeggiata nelle gole e nei canyon del Dades. Attraversamento del massiccio attraverso la valle del Dades e Msamrir per raggiungere la Collina Tizi Nogdal e i suoi bei canyon. Pausa pic-nic in montagna con vista sull'Atlante, poi discesa verso le gole del Todra. Pernottamento e cena in hotel.",
+  "package3-day2": "Dopo colazione al riad, passeggiata nelle gole e nei canyon del Dades. Attraversamento del massiccio attraverso la valle del Dades e Msamrir per raggiungere la Collina Tizi Nogdal e i suoi bei canyon. Pausa pic-nic in montagna con vista sull'Atlante, poi discesa verso le gole del Todra. Pernottamento e cena in hotel.",
 
-"package3-day3": "Dopo colazione, partenza verso i massicci montuosi del Jebel Saghrou, incontro con i Nomadi degli Ait Ata. Discesa verso la valle del Draa, pausa di mezzogiorno per pranzo in un ostello sul palmeto. Continuiamo la strada verso il deserto di Erg Chegaga passando per Tamegroute, il villaggio delle ceramiche e l'antica biblioteca coranica, per poi proseguire verso il deserto di Mhamid. Con la pista, accesso alle dune di Chegaga godendo di paesaggi meravigliosi: erg, reg, hamada, tramonto sulle dune, notte in bivacco sotto le stelle.",
+  "package3-day3": "Dopo colazione, partenza verso i massicci montuosi del Jebel Saghrou, incontro con i Nomadi degli Ait Ata. Discesa verso la valle del Draa, pausa di mezzogiorno per pranzo in un ostello sul palmeto. Continuiamo la strada verso il deserto di Erg Chegaga passando per Tamegroute, il villaggio delle ceramiche e l'antica biblioteca coranica, per poi proseguire verso il deserto di Mhamid. Con la pista, accesso alle dune di Chegaga godendo di paesaggi meravigliosi: erg, reg, hamada, tramonto sulle dune, notte in bivacco sotto le stelle.",
 
-"package3-day4": "Giorno di riposo per godere al massimo e al meglio, visita dei Nomadi con pranzo da loro e visita dell'oasi o pranzo al Campo, a vostra scelta. Nel pomeriggio, una passeggiata a dorso di dromedario nelle dune per ammirare il tramonto. Notte al campo con cena e animazioni sotto le stelle intorno al fuoco 🔥",
+  "package3-day4": "Giorno di riposo per godere al massimo e al meglio, visita dei Nomadi con pranzo da loro e visita dell'oasi o pranzo al Campo, a vostra scelta. Nel pomeriggio, una passeggiata a dorso di dromedario nelle dune per ammirare il tramonto. Notte al campo con cena e animazioni sotto le stelle intorno al fuoco 🔥",
 
-"package3-day5": "Sveglia mattutina per assistere all'alba sulle dune, poi colazione. Partenza per Foum Zguid passando per il lago di Iriqui e l'altopiano desertico punteggiato di acacie per poi raggiungere la strada asfaltata a Foum Zguid. Pranzo sul posto, dopo proseguimento verso Taznakhte, villaggio dei tappeti berberi, continuazione verso l'oasi finale. Visita dell'Oasi di Fint. Cena e notte in una casa di ospiti pulita e molto tranquilla.",
+  "package3-day5": "Sveglia mattutina per assistere all'alba sulle dune, poi colazione. Partenza per Foum Zguid passando per il lago di Iriqui e l'altopiano desertico punteggiato di acacie per poi raggiungere la strada asfaltata a Foum Zguid. Pranzo sul posto, dopo proseguimento verso Taznakhte, villaggio dei tappeti berberi, continuazione verso l'oasi finale. Visita dell'Oasi di Fint. Cena e notte in una casa di ospiti pulita e molto tranquilla.",
 
-"package3-day6": "Ritorno verso Marrakech con deviazione attraverso la Valle di Ourika, pranzo sul posto con delizioso tajine tradizionale, passeggiata a piedi per vedere le cascate. Ritorno a Marrakech. Fine del circuito."
+  "package3-day6": "Ritorno verso Marrakech con deviazione attraverso la Valle di Ourika, pranzo sul posto con delizioso tajine tradizionale, passeggiata a piedi per vedere le cascate. Ritorno a Marrakech. Fine del circuito.",
+
+  "packages": {
+    "package1": {
+      "heading": "Sentieri del Sahara - Viaggio Nomade di 5 Giorni",
+      "text": "Attraversa l'Alto Atlante, esplora antiche kasbah, cammina tra i canyon, incontra i nomadi e cavalca cammelli nelle dune di Chegaga. Vivi tramonti nel deserto e notti stellate in un campo tradizionale."
+    },
+    "package2": {
+      "heading": "Fuga nel Deserto - Sprint Sahariano di 3 Giorni",
+      "text": "Viaggia attraverso kasbah, oasi e valli fino alle dune dorate di Erg Lihoudi e Chigaga. Cavalca cammelli, goditi l'ospitalità berbera e dormi sotto le stelle del deserto con momenti indimenticabili."
+    },
+    "package3": {
+      "heading": "Orizzonti di Dune - Odissea Sahariana di 6 Giorni",
+      "text": "Esplora kasbah, valli e gole. Incontra i nomadi, attraversa passi montani e vivi la vita del deserto con passeggiate in cammello, tramonti e bivacchi stellati. Concludi con una tranquilla visita alle valli di Fint e Ourika."
+    },
+    "package4": {
+      "heading": "Assaggio del Sahara - Gita di 2 Giorni",
+      "text": "Un'esperienza breve ma immersiva nel deserto, perfetta per chi ha poco tempo ma desidera sperimentare la magia del Sahara."
+    }
+  },
+  "tripDetails": {
+    "trip1": {
+      "heading": "Viaggio Nomade di 5 Giorni",
+      "keyStops": [
+        "Passo del Tizi N'Tichka",
+        "Telouet e Valle dell'Ounilla",
+        "Kasbah Ait Ben Haddou",
+        "El Kelâa des M'Gouna (Valle delle Rose)",
+        "Gole del Dadès e Gole del Todra",
+        "Massiccio del Jebel Saghrou e Nomadi Ait Ata",
+        "Valle del Draa e Palmeto",
+        "Tamegroute (Villaggio della Ceramica e Biblioteca)",
+        "Deserto di Mhamid e Dune dell'Erg Chegaga",
+        "Foum Zguid e Lago Iriqui",
+        "Taznakhte (Villaggio dei Tappeti)"
+      ]
+    },
+    "trip2": {
+      "heading": "Sprint nel Sahara di 3 Giorni",
+      "keyStops": [
+        "Passo del Tizi n'Tichka",
+        "Kasbah di Telouet e Valle dell'Ounila",
+        "Kasbah Ait Ben Haddou",
+        "Passo del Tizi n'Tinifift",
+        "Valle del Draa",
+        "Tamegroute (Villaggio della Ceramica e Biblioteca)",
+        "Deserto di Mhamid e Dune dell'Erg Lihoudi",
+        "Dune dell'Erg Chegaga",
+        "Taznakhte (Villaggio dei Tappeti)"
+      ]
+    },
+    "trip3": {
+      "heading": "Odissea nel Sahara di 6 Giorni",
+      "keyStops": [
+        "Passo del Tizi n'Tichka",
+        "Kasbah Ait Ben Haddou",
+        "El Kelâa des M'Gouna (Valle delle Rose)",
+        "Bou-Tgharar e Kasbah Ait-Youl",
+        "Gole del Dadès e Gole del Todra",
+        "Passo del Tizi Nogdal e Belvedere dell'Atlante",
+        "Massiccio del Jebel Saghrou e Nomadi Ait Ata",
+        "Valle del Draa e Palmeto",
+        "Tamegroute (Villaggio della Ceramica e Biblioteca)",
+        "Deserto di Mhamid e Dune dell'Erg Chegaga",
+        "Dune dell'Erg Chegaga",
+        "Taznakhte (Villaggio dei Tappeti)",
+        "Oasi di Fint",
+        "Valle dell'Ourika e Cascate"
+      ]
+    },
+    "package4": {
+      "heading": "Fuga nel Deserto di 2 Giorni",
+      "keyStops": [
+        "Oasi di Telouat",
+        "Ait Benhaddou",
+        "Erg Chegaga",
+        "Passo del Tizi N'Tichka",
+        "Ouarzgane",
+        "Argilla di Tamegroute"
+      ]
+    },
+    "ui": {
+      "back": "Indietro",
+      "tour": "il viaggio",
+      "details": "Dettagli",
+      "price": "Prezzo",
+      "mapp": "Mappa",
+      "readMore": "Leggi di più",
+      "readLess": "Mostra meno",
+      "keyStopsTitle": "Tappe principali del viaggio",
+      "tripHighlights": "Punti salienti del viaggio",
+      "highlights": {
+        "localExperience": "Esperienze locali autentiche",
+        "guides": "Guide professionali",
+        "meals": "Pasti tradizionali inclusi",
+        "transport": "Trasporto confortevole",
+        "photography": "Opportunità fotografiche"
+      },
+      "pricing": {
+        "persons": "Persone",
+        "price": "Prezzo",
+        "action": "Azione",
+        "reserve": "Prenota",
+        "swipe": "Scorri"
+      },
+      "mapActions": {
+        "expandFullscreen": "Espandi a schermo intero",
+        "exitFullscreen": "Esci da schermo intero"
+      },
+      "imageUpdate": "Immagini aggiornate per il giorno",
+      "from": "Da"
+    }
+  },
+  "reviews": {
+    "title": "Recensioni",
+    "writeReview": "Scrivi una recensione",
+    "noReviews": "Ancora nessuna recensione. Sii il primo a condividere la tua esperienza!",
+    "readMore": "Leggi di più",
+    "readLess": "Mostra meno",
+    "showLess": "Mostra meno",
+    "readMoreOf": "Leggi altro ({{displayed}} di {{total}})",
+    "loading": "Caricamento recensioni..."
+  },
+  "reviewModal": {
+    "title": "Scrivi una recensione",
+    "shareExperience": "Condividi la tua esperienza su {{tripName}}",
+    "nameLabel": "Il tuo nome",
+    "namePlaceholder": "Inserisci il tuo nome completo",
+    "ratingLabel": "Valutazione",
+    "reviewLabel": "La tua recensione",
+    "reviewPlaceholder": "Condividi la tua esperienza...",
+    "cancelButton": "Annulla",
+    "submitButton": "Invia recensione",
+    "submitting": "Invio in corso...",
+    "errors": {
+      "nameRequired": "Inserisci il tuo nome",
+      "reviewRequired": "Inserisci la tua recensione",
+      "generic": "Si è verificato un errore"
+    }
+  },
+  "similarSection": {
+    "title": "Viaggi simili",
+    "moreDetails": "Maggiori dettagli"
+  }
 }

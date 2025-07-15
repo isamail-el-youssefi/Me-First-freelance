@@ -242,7 +242,6 @@ body {
   }
 }
 
-
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -261,4 +260,15 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Apply Tailwind-style border radius to Fancybox modal images */
+@layer components {
+  .fancybox__content img {
+    @apply rounded-xl overflow-hidden;
+  }
+
+  .fancybox__slide img {
+    @apply rounded-xl overflow-hidden;
+  }
 }

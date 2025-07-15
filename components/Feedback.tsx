@@ -3,6 +3,7 @@
 
 import React, { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import {
   Carousel,
   CarouselContent,
@@ -12,6 +13,7 @@ import {
 import { testimonials } from "@/constant";
 
 export default function TestimonialsCarousel() {
+  const { t } = useTranslation("Homepage");
   // State to track the current slide and expanded testimonials
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
@@ -58,9 +60,9 @@ export default function TestimonialsCarousel() {
   }
 
   return (
-    <div className="mb-10 relative max-container padding-container flex flex-col justify-center items-center text-center pt-16">
-      <h2 className="md:text-4xl text-2xl font-semibold uppercase pb-12 text-amber-900">
-        What Travelers Say
+    <div className="mb-10 relative max-container padding-container flex flex-col justify-center items-center text-center pt-20">
+      <h2 className="md:text-3xl text-2xl font-semibold uppercase pb-12 text-amber-900">
+        {t("travelersSection")}
       </h2>
       <Carousel 
         opts={{ loop: true }} 
@@ -87,7 +89,7 @@ export default function TestimonialsCarousel() {
                       </div>
                       
                       <div className="flex-grow">
-                        <p className="text-amber-950 text-sm md:text-md font-normal tracking-tight leading-loose md:leading-relaxed text-left mt-6 mb-2">
+                        <p className="text-amber-950 text-md md:text-md font-normal tracking-tight leading-loose md:leading-relaxed text-left mt-6 mb-2">
                           {needsReadMore && !isExpanded 
                             ? `${testimonial.recommendation.substring(0, 700)}...` 
                             : testimonial.recommendation}
@@ -127,7 +129,7 @@ export default function TestimonialsCarousel() {
                             rel="noopener noreferrer"
                             className="text-xs text-amber-800 hover:underline inline-block"
                           >
-                            View Original Review
+                            {t("viewOriginalReview")}
                           </a>
                         </div>
                       </div>

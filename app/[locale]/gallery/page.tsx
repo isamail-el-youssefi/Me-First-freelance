@@ -59,6 +59,13 @@ const Page = () => {
           if (window.innerWidth < 768) {
             fancybox.container.style.padding = "20px";
           }
+          // Add Tailwind classes to the image
+          const img = fancybox.container.querySelector(
+            ".fancybox__content img"
+          );
+          if (img) {
+            img.classList.add("rounded-xl", "overflow-hidden");
+          }
         },
       },
     });

@@ -1,16 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Clock,
-  Clock1,
-  Clock10,
-  Clock10Icon,
-  Clock11,
-  Clock2,
-  Clock7,
-  LucideClock,
-} from "lucide-react";
+import { Clock } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface TripPackagesProps {
   imageSrc: string;
@@ -39,10 +31,12 @@ const TripPackages: React.FC<TripPackagesProps> = ({
   price,
   compact = false,
 }) => {
+  const { t } = useTranslation("Homepage");
+
   // New compact design (like the Camel Ride card)
   if (compact) {
     return (
-      <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200">
+      <div className="relative flex flex-col h-full rounded-xl overflow-hidden shadow-lg border border-gray-200">
         {/* Close button in top-right corner */}
 
         {/* Image */}
@@ -58,41 +52,25 @@ const TripPackages: React.FC<TripPackagesProps> = ({
         </div>
 
         {/* Content */}
-        <div className="py-4 pl-6 pr-4 bg-white">
-          <h3 className="text-xl md:tracking-wider tracking-wide  font-semibold  capitalize text-amber-900 pr-3 md:pr-0">
-            {heading}
-          </h3>
-          {/* Price */}
-          {/*           <p className="text-md text-amber-950 font-light pt-2  ">
-            From {price}
-          </p> */}
-
-          <p className="text-amber-950 text-xs md:text-sm font-light leading-5 pt-4 pr-3 md:pr-0 pb-3">
-            {text}
-          </p>
-
-          {/* Duration & Button */}
-          <div className="flex justify-between items-center  pt-4 py-4">
-            {/*             <div className="flex items-center gap-[6px]">
-              <Clock className="text-amber-800 stroke-[1.5px] h-5" />
-              <span className="text-sm font-normal text-amber-800">
-                {duration}
-              </span>
-            </div> */}
-
-            <p className="text-md text-amber-900 font-normal pt-2  ">
-              From {price}
+        <div className="flex flex-col justify-between h-full pb-5 pt-5 pl-5 pr-4 bg-white">
+          <div>
+            <h3 className="text-xl md:tracking-wider tracking-wide font-semibold capitalize text-amber-900 pr-3 md:pr-0">
+              {t(heading)}
+            </h3>
+            <p className="text-amber-950 text-xs md:text-sm font-light leading-5 pt-4 pr-3 md:pr-0 pb-3">
+              {t(text)}
             </p>
+          </div>
 
+          <div className="flex justify-between items-center pt-4">
+            <p className="text-md text-amber-900 font-normal">{t('tripDetails.ui.from')} {price}</p>
             <Link href={link}>
-              <div className="pr-3 md:pr-0">
-                <button
-                  className="  border-[1.5px] md:border-[1.9px] rounded-2xl hover:border-amber-900 focus:border-amber-900 border-amber-900 px-4 hover:bg-amber-900 py-3 hover:text-white focus:bg-amber-900  focus:text-white  text-amber-900 transition-all bg-white text-xs font-semibold"
-                  type="button"
-                >
-                  {btnTitle}
-                </button>
-              </div>
+              <button
+                className="border-[1.5px] md:border-[1.9px] rounded-2xl hover:border-amber-900 focus:border-amber-900 border-amber-900 px-4 bg-amber-900 py-3 text-white focus:bg-amber-900 focus:text-white hover:text-amber-900 transition-all hover:bg-white text-xs font-semibold"
+                type="button"
+              >
+                {btnTitle}
+              </button>
             </Link>
           </div>
         </div>
@@ -115,9 +93,9 @@ const TripPackages: React.FC<TripPackagesProps> = ({
         <div className="absolute inset-0 bg-gradient-to-br from-transparent to-white opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none rounded-xl" />
       </div>
       <h4 className="bold-22 md:bold-22 capitalize pt-4 pb-4 px-1 text-amber-900 text-center">
-        {heading}
+        {t(heading)}
       </h4>
-      <p className="text-amber-950 text-justify px-1 pb-4">{text}</p>
+      <p className="text-amber-950 text-justify px-1 pb-4">{t(text)}</p>
       <div className="flex justify-center pt-4 pb-3">
         <Link href={link}>
           <button

@@ -129,15 +129,15 @@ const Navbar = () => {
         ref={menuRef}
         className={
           menuOpened
-            ? "flex flex-col justify-center w-full p-12 fixed top-[83%] bg-white rounded-b-lg border-none transition-all duration-300 ease-in-out shadow-md right-0"
-            : "flex flex-col justify-center w-full p-12 fixed top-[83%] bg-white rounded-b-lg border-none transition-all duration-300 ease-out shadow-md right-[-500%]"
+            ? "flex flex-col justify-center w-full p-12 fixed top-[83%] bg-white rounded-b-lg border-none transition-all duration-500 ease-in-out shadow-md opacity-100  right-0"
+            : "flex flex-col justify-center w-full p-12 fixed top-[83%] bg-white rounded-b-lg border-none transition-all duration-500 ease-out shadow-md blur-3xl opacity-50 right-[-10000px] "
         }
       >
         {NAV_LINKS.map((link) => (
           <Link
             href={link.href}
             key={link.key}
-            className="flex text-amber-900 gap-2 my-7 mx-7 text-xl font-medium hover:font-semibold hover:text-amber-950 relative group"
+            className="flex text-amber-900 gap-2 my-7 mx-7 text-lg font-semibold self-center hover:font-semibold hover:text-amber-950 relative group"
             onClick={toggleMenu}
           >
             {t(link.label)}
